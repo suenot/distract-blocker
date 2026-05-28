@@ -45,5 +45,17 @@
   "blockedOpenPanel": { "message": "Open panel" },
 
   "languageLabel": { "message": "Language" },
-  "localeAuto": { "message": "Auto (browser)" }
+  "localeAuto": { "message": "Auto (browser)" },
+
+  "scheduleLabel": { "message": "Schedule" },
+  "scheduleAlways": { "message": "Always" },
+  "scheduleBlockDuring": { "message": "Block during" },
+  "scheduleAllowDuring": { "message": "Allow during" },
+  "addRange": { "message": "+ Add range" },
+  "removeRangeAria": {
+    "message": "Remove range $N$",
+    "placeholders": { "n": { "content": "$1", "example": "1" } }
+  },
+  "statusActive": { "message": "blocking now" },
+  "statusIdle": { "message": "idle now" }
 }

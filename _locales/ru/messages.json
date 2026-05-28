@@ -45,5 +45,17 @@
   "blockedOpenPanel": { "message": "Открыть панель" },
 
   "languageLabel": { "message": "Язык" },
-  "localeAuto": { "message": "Авто (браузер)" }
+  "localeAuto": { "message": "Авто (браузер)" },
+
+  "scheduleLabel": { "message": "Расписание" },
+  "scheduleAlways": { "message": "Всегда" },
+  "scheduleBlockDuring": { "message": "Блокировать в" },
+  "scheduleAllowDuring": { "message": "Разрешать в" },
+  "addRange": { "message": "+ Добавить интервал" },
+  "removeRangeAria": {
+    "message": "Удалить интервал $N$",
+    "placeholders": { "n": { "content": "$1", "example": "1" } }
+  },
+  "statusActive": { "message": "блокирует сейчас" },
+  "statusIdle": { "message": "ожидает" }
 }

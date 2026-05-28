@@ -2,6 +2,11 @@ const $mascot = document.getElementById("mascot");
 const $toggle = document.getElementById("enabledToggle");
 const $card = document.getElementById("statusCard");
 const $statusValue = document.getElementById("statusValue");
+const $statusSub = document.getElementById("statusSub");
+const $schedModeBtns = document.querySelectorAll("[data-sched-mode]");
+const $schedRanges = document.getElementById("schedRanges");
+const $rangeList = document.getElementById("rangeList");
+const $addRangeBtn = document.getElementById("addRangeBtn");
 const $list = document.getElementById("sitesList");
 const $form = document.getElementById("addForm");
 const $input = document.getElementById("newSite");
@@ -23,6 +28,7 @@ const $langBackBtn = document.getElementById("langBackBtn");
 const $langList = document.getElementById("langList");
 
 const MODE_KEY = "editMode";
+const DEFAULT_SCHEDULE = { mode: "always", ranges: [] };
 
 renderMascot($mascot);
 
@@ -53,19 +59,122 @@ function parseTextSites(text) {
 }
 
 async function getState() {
-  const data = await chrome.storage.local.get(["enabled", "sites", MODE_KEY]);
+  const data = await chrome.storage.local.get(["enabled", "sites", MODE_KEY, "schedule"]);
   return {
     enabled: data.enabled ?? true,
     sites: Array.isArray(data.sites) ? data.sites : [],
-    mode: data[MODE_KEY] === "text" ? "text" : "list"
+    mode: data[MODE_KEY] === "text" ? "text" : "list",
+    schedule: data.schedule ?? DEFAULT_SCHEDULE
   };
 }
 
-function renderToggle(enabled) {
+function timeToMinutes(t) {
+  const [h, m] = String(t).split(":").map(Number);
+  return (h || 0) * 60 + (m || 0);
+}
+
+function rangeActive(range, date) {
+  if (Array.isArray(range.days) && range.days.length > 0 && !range.days.includes(date.getDay())) return false;
+  const cur = date.getHours() * 60 + date.getMinutes();
+  const start = timeToMinutes(range.start);
+  const end = timeToMinutes(range.end);
+  return start < end && cur >= start && cur < end;
+}
+
+function isBlockingNow(enabled, schedule, date = new Date()) {
+  if (!enabled) return false;
+  if (!schedule || schedule.mode === "always") return true;
+  const anyActive = (schedule.ranges || []).some(r => rangeActive(r, date));
+  return schedule.mode === "blockDuring" ? anyActive : !anyActive;
+}
+
+function getDayNames(locale) {
+  const tag = locale.replace("_", "-");
+  const fmt = new Intl.DateTimeFormat(tag, { weekday: "short" });
+  const names = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(2024, 0, 7 + i);
+    names.push(fmt.format(d));
+  }
+  return names;
+}
+
+function renderToggle(enabled, schedule) {
   $toggle.checked = enabled;
   $card.classList.toggle("on", enabled);
   $statusValue.textContent = t(enabled ? "stateOn" : "stateOff");
-  $mascot.dataset.state = enabled ? "on" : "off";
+
+  const showSub = enabled && schedule && schedule.mode !== "always";
+  if (showSub) {
+    const blocking = isBlockingNow(enabled, schedule);
+    $statusSub.textContent = t(blocking ? "statusActive" : "statusIdle");
+    $statusSub.classList.toggle("is-active", blocking);
+    $statusSub.hidden = false;
+    $mascot.dataset.state = blocking ? "on" : "off";
+  } else {
+    $statusSub.hidden = true;
+    $mascot.dataset.state = enabled ? "on" : "off";
+  }
+}
+
+function renderSchedule(schedule) {
+  for (const b of $schedModeBtns) {
+    const active = b.dataset.schedMode === schedule.mode;
+    b.classList.toggle("is-active", active);
+    b.setAttribute("aria-selected", String(active));
+  }
+  $schedRanges.hidden = schedule.mode === "always";
+
+  const dayNames = getDayNames(getCurrentLocale());
+  const items = (schedule.ranges || []).map((range, i) => buildRangeItem(range, i, dayNames));
+  $rangeList.replaceChildren(...items);
+}
+
+function buildRangeItem(range, index, dayNames) {
+  const li = document.createElement("li");
+  li.className = "range-item";
+
+  const times = document.createElement("div");
+  times.className = "range-times";
+
+  const startInput = document.createElement("input");
+  startInput.type = "time";
+  startInput.value = range.start || "09:00";
+  startInput.addEventListener("change", () => updateRange(index, { start: startInput.value }));
+
+  const sep = document.createElement("span");
+  sep.className = "range-sep";
+  sep.textContent = "–";
+
+  const endInput = document.createElement("input");
+  endInput.type = "time";
+  endInput.value = range.end || "18:00";
+  endInput.addEventListener("change", () => updateRange(index, { end: endInput.value }));
+
+  const removeBtn = document.createElement("button");
+  removeBtn.type = "button";
+  removeBtn.className = "remove";
+  removeBtn.textContent = "×";
+  removeBtn.setAttribute("aria-label", t("removeRangeAria", [String(index + 1)]));
+  removeBtn.addEventListener("click", () => removeRange(index));
+
+  times.append(startInput, sep, endInput, removeBtn);
+
+  const chips = document.createElement("div");
+  chips.className = "day-chips";
+  const days = new Set(range.days || []);
+  for (let d = 0; d < 7; d++) {
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "day-chip";
+    if (days.has(d)) chip.classList.add("is-active");
+    chip.textContent = dayNames[d];
+    chip.addEventListener("click", () => toggleDay(index, d));
+    chips.append(chip);
+  }
+
+  li.append(times, chips);
+  return li;
 }
 
 function renderSites(sites) {
@@ -104,10 +213,62 @@ function renderMode(mode) {
 }
 
 async function render() {
-  const { enabled, sites, mode } = await getState();
-  renderToggle(enabled);
+  const { enabled, sites, mode, schedule } = await getState();
+  renderToggle(enabled, schedule);
   renderSites(sites);
   renderMode(mode);
+  renderSchedule(schedule);
+}
+
+async function setSchedule(patch) {
+  const data = await chrome.storage.local.get("schedule");
+  const cur = data.schedule || DEFAULT_SCHEDULE;
+  await chrome.storage.local.set({ schedule: { ...cur, ...patch } });
+}
+
+async function setSchedMode(mode) {
+  const data = await chrome.storage.local.get("schedule");
+  const cur = data.schedule || DEFAULT_SCHEDULE;
+  const next = { ...cur, mode };
+  if (mode !== "always" && (!next.ranges || next.ranges.length === 0)) {
+    next.ranges = [{ days: [1, 2, 3, 4, 5], start: "09:00", end: "18:00" }];
+  }
+  await chrome.storage.local.set({ schedule: next });
+}
+
+async function updateRange(index, patch) {
+  const data = await chrome.storage.local.get("schedule");
+  const sched = { ...(data.schedule || DEFAULT_SCHEDULE) };
+  sched.ranges = [...(sched.ranges || [])];
+  sched.ranges[index] = { ...sched.ranges[index], ...patch };
+  await chrome.storage.local.set({ schedule: sched });
+}
+
+async function toggleDay(index, day) {
+  const data = await chrome.storage.local.get("schedule");
+  const sched = { ...(data.schedule || DEFAULT_SCHEDULE) };
+  sched.ranges = [...(sched.ranges || [])];
+  const r = { ...sched.ranges[index] };
+  const days = new Set(r.days || []);
+  if (days.has(day)) days.delete(day); else days.add(day);
+  r.days = [...days].sort((a, b) => a - b);
+  sched.ranges[index] = r;
+  await chrome.storage.local.set({ schedule: sched });
+}
+
+async function removeRange(index) {
+  const data = await chrome.storage.local.get("schedule");
+  const sched = { ...(data.schedule || DEFAULT_SCHEDULE) };
+  sched.ranges = [...(sched.ranges || [])];
+  sched.ranges.splice(index, 1);
+  await chrome.storage.local.set({ schedule: sched });
+}
+
+async function addRange() {
+  const data = await chrome.storage.local.get("schedule");
+  const sched = { ...(data.schedule || DEFAULT_SCHEDULE) };
+  sched.ranges = [...(sched.ranges || []), { days: [1, 2, 3, 4, 5], start: "09:00", end: "18:00" }];
+  await chrome.storage.local.set({ schedule: sched });
 }
 
 async function setEnabled(enabled) {
@@ -228,6 +389,11 @@ for (const b of $modeBtns) {
   });
 }
 
+for (const b of $schedModeBtns) {
+  b.addEventListener("click", () => setSchedMode(b.dataset.schedMode));
+}
+$addRangeBtn.addEventListener("click", addRange);
+
 $infoBtn.addEventListener("click", e => {
   e.stopPropagation();
   const open = !$tooltip.hidden;
@@ -257,8 +423,14 @@ document.addEventListener("visibilitychange", () => {
 
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area !== "local") return;
-  if (changes.enabled || changes.sites || changes[MODE_KEY]) render();
+  if (changes.enabled || changes.sites || changes[MODE_KEY] || changes.schedule) render();
 });
+
+setInterval(async () => {
+  const { enabled, schedule } = await getState();
+  if (!enabled || !schedule || schedule.mode === "always") return;
+  renderToggle(enabled, schedule);
+}, 30000);
 
 window.addEventListener("localechange", async () => {
   await populateLangList();

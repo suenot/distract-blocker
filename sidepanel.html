@@ -38,11 +38,27 @@
     <div class="status-info">
       <span class="status-label" data-i18n="blockingLabel">Blocking</span>
       <span class="status-value" id="statusValue">on</span>
+      <span class="status-sub" id="statusSub" hidden></span>
     </div>
     <label class="switch">
       <input type="checkbox" id="enabledToggle">
       <span class="slider"></span>
     </label>
+  </section>
+
+  <section class="schedule-section">
+    <div class="section-header">
+      <h2 data-i18n="scheduleLabel">Schedule</h2>
+    </div>
+    <div class="mode-switch mode-switch--full" role="tablist">
+      <button type="button" class="mode-btn" data-sched-mode="always" role="tab" data-i18n="scheduleAlways">Always</button>
+      <button type="button" class="mode-btn" data-sched-mode="blockDuring" role="tab" data-i18n="scheduleBlockDuring">Block during</button>
+      <button type="button" class="mode-btn" data-sched-mode="allowDuring" role="tab" data-i18n="scheduleAllowDuring">Allow during</button>
+    </div>
+    <div id="schedRanges" hidden>
+      <ul class="range-list" id="rangeList"></ul>
+      <button type="button" class="add-range-btn" id="addRangeBtn" data-i18n="addRange">+ Add range</button>
+    </div>
   </section>
 
   <section class="sites-section">
