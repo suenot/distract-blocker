@@ -1,0 +1,1 @@
+Block distracting sites with a side panel: toggle, schedule, custom shortcut, 21 languages. No tracking, MIT-licensed.

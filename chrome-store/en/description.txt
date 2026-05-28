@@ -1,0 +1,44 @@
+Distract Blocker is a small, focused Chrome extension that blocks distracting websites — quietly, without ads, telemetry, or an account.
+
+The whole UI lives in a side panel that slides out when you click the icon. Everything you need is in one place: a one-tap toggle, your blocklist, a schedule, language settings, and a friendly guardian mascot. No popup that disappears the moment your cursor wanders. No options page buried five clicks deep.
+
+
+★ KEY FEATURES
+
+• Side panel UI — toggle blocking, edit your list, set a schedule. Stays open while you browse.
+
+• Two ways to edit your list — pick sites one by one (list view), or paste an entire list as plain text (textarea view). Subdomains are blocked automatically.
+
+• Schedule — three modes:
+  – Always: block whenever the toggle is on.
+  – Block during: block only inside your chosen day-of-week + time ranges. Perfect for work hours.
+  – Allow during: block always, except inside your chosen ranges. Perfect for a controlled break window.
+
+• Custom keyboard shortcut — assign any combination at chrome://extensions/shortcuts. The shortcut instantly toggles blocking without opening anything — handy for that one moment you actually need a peek.
+
+• 21 languages — English, Русский, 中文, 日本語, 한국어, Español, Português, हिन्दी, العربية (with RTL layout), Français, Deutsch, Italiano, Nederlands, Türkçe, Қазақша, Oʻzbek, Кыргызча, Bahasa Indonesia, Tiếng Việt, ไทย, Bahasa Melayu. Auto-detected from your browser, switchable from the panel header.
+
+• Friendly blocked page — instead of a generic Chrome error, blocked sites redirect to a small in-extension page that explains what happened, with a "Go back" button and a sleepy mascot.
+
+
+★ HOW IT WORKS
+
+Blocking uses Chrome's native declarativeNetRequest API. No content script is injected into pages, no remote code runs, and no network traffic leaves your machine. Everything is local: your blocklist, your schedule, your language. The extension never sees the content of the pages you visit.
+
+
+★ DEFAULTS
+
+The extension ships with a sensible starter list (YouTube, Facebook, Instagram, Twitter / X, TikTok, Reddit, VK, OK) which you can fully replace. The master toggle starts ON.
+
+
+★ PRIVACY
+
+• No analytics
+• No remote code
+• No login
+• No data leaves your device
+• Source code: github.com/suenot/distract-blocker (MIT licensed)
+
+
+Website: https://distract-blocker.marketmaker.cc
+Made by marketmaker.cc.

@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <defs>
+    <radialGradient id="bg" cx="30%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#1e1418"/>
+      <stop offset="100%" stop-color="#0d0e11"/>
+    </radialGradient>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#a8aab0"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff7c7c"/>
+      <stop offset="100%" stop-color="#e63946"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="800" fill="url(#bg)"/>
+
+  <g opacity="0.14">
+    <ellipse cx="-100" cy="200" rx="500" ry="100" fill="#e63946" transform="rotate(-15 -100 200)"/>
+  </g>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif">
+    <text x="80" y="180" font-size="13" font-weight="600" fill="#ff9aa3" letter-spacing="3">04 · LANGUAGES</text>
+
+    <text x="80" y="270" font-size="84" font-weight="800" fill="url(#titleGrad)" letter-spacing="-2">21 languages,</text>
+    <text x="80" y="354" font-size="84" font-weight="800" fill="url(#accentGrad)" letter-spacing="-2">one click away.</text>
+
+    <text x="80" y="430" font-size="20" fill="#9aa0aa">From English to العربية with RTL — auto-detected</text>
+    <text x="80" y="458" font-size="20" fill="#9aa0aa">from your browser, switchable from the header.</text>
+
+    <!-- chip cloud -->
+    <g transform="translate(80, 510)" font-size="14" font-weight="500">
+      <g><rect width="90" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="45" y="21" text-anchor="middle" fill="#e9eaec">English</text></g>
+      <g transform="translate(100, 0)"><rect width="90" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="45" y="21" text-anchor="middle" fill="#e9eaec">Русский</text></g>
+      <g transform="translate(200, 0)"><rect width="70" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="35" y="21" text-anchor="middle" fill="#e9eaec">中文</text></g>
+      <g transform="translate(280, 0)"><rect width="80" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="40" y="21" text-anchor="middle" fill="#e9eaec">日本語</text></g>
+      <g transform="translate(370, 0)"><rect width="80" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="40" y="21" text-anchor="middle" fill="#e9eaec">한국어</text></g>
+
+      <g transform="translate(0, 42)"><rect width="90" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="45" y="21" text-anchor="middle" fill="#e9eaec">Español</text></g>
+      <g transform="translate(100, 42)"><rect width="110" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="55" y="21" text-anchor="middle" fill="#e9eaec">Português</text></g>
+      <g transform="translate(220, 42)"><rect width="80" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="40" y="21" text-anchor="middle" fill="#e9eaec">हिन्दी</text></g>
+      <g transform="translate(310, 42)"><rect width="90" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="45" y="21" text-anchor="middle" fill="#e9eaec">العربية</text></g>
+      <g transform="translate(410, 42)"><rect width="100" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="50" y="21" text-anchor="middle" fill="#e9eaec">Français</text></g>
+
+      <g transform="translate(0, 84)"><rect width="90" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="45" y="21" text-anchor="middle" fill="#e9eaec">Deutsch</text></g>
+      <g transform="translate(100, 84)"><rect width="90" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="45" y="21" text-anchor="middle" fill="#e9eaec">Italiano</text></g>
+      <g transform="translate(200, 84)"><rect width="110" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="55" y="21" text-anchor="middle" fill="#e9eaec">Nederlands</text></g>
+      <g transform="translate(320, 84)"><rect width="80" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="40" y="21" text-anchor="middle" fill="#e9eaec">Türkçe</text></g>
+      <g transform="translate(410, 84)"><rect width="100" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="50" y="21" text-anchor="middle" fill="#e9eaec">Қазақша</text></g>
+
+      <g transform="translate(0, 126)"><rect width="80" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="40" y="21" text-anchor="middle" fill="#e9eaec">Oʻzbek</text></g>
+      <g transform="translate(90, 126)"><rect width="120" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="60" y="21" text-anchor="middle" fill="#e9eaec">Кыргызча</text></g>
+      <g transform="translate(220, 126)"><rect width="160" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="80" y="21" text-anchor="middle" fill="#e9eaec">Bahasa Indonesia</text></g>
+      <g transform="translate(390, 126)"><rect width="100" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="50" y="21" text-anchor="middle" fill="#e9eaec">Tiếng Việt</text></g>
+
+      <g transform="translate(0, 168)"><rect width="70" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="35" y="21" text-anchor="middle" fill="#e9eaec">ไทย</text></g>
+      <g transform="translate(80, 168)"><rect width="150" height="32" rx="16" fill="#20232a" stroke="#2a2e36"/><text x="75" y="21" text-anchor="middle" fill="#e9eaec">Bahasa Melayu</text></g>
+    </g>
+  </g>
+
+  <!-- RIGHT: language aside open -->
+  <g transform="translate(820, 60)">
+    <rect width="400" height="680" rx="20" fill="#16181c" stroke="#2a2e36" stroke-width="1"/>
+
+    <!-- aside header -->
+    <rect width="400" height="64" rx="20" fill="#1e2127"/>
+    <rect y="44" width="400" height="20" fill="#1e2127"/>
+    <line x1="0" y1="64" x2="400" y2="64" stroke="#2a2e36"/>
+
+    <g font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif">
+      <!-- back arrow -->
+      <g transform="translate(18, 24) scale(0.9)">
+        <path d="M 12 4 L 4 12 L 12 20" stroke="#e9eaec" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <text x="52" y="40" font-size="16" font-weight="600" fill="#e9eaec">Language</text>
+
+      <!-- language list -->
+      <g transform="translate(8, 80)" font-size="14">
+        <g transform="translate(0, 0)">
+          <rect width="384" height="44" rx="8" fill="transparent"/>
+          <text x="14" y="28" fill="#e9eaec">Auto (browser)</text>
+        </g>
+        <g transform="translate(0, 50)">
+          <rect width="384" height="44" rx="8" fill="transparent"/>
+          <text x="14" y="28" fill="#e9eaec">English</text>
+          <rect x="334" y="14" width="28" height="18" rx="4" fill="#20232a" stroke="#2a2e36"/>
+          <text x="348" y="27" text-anchor="middle" font-size="10" font-weight="600" fill="#9aa0aa" font-family="ui-monospace, Menlo, monospace">EN</text>
+        </g>
+        <g transform="translate(0, 100)">
+          <rect width="384" height="44" rx="8" fill="#3a1e22"/>
+          <text x="14" y="28" font-weight="600" fill="#ff7c7c">Русский</text>
+          <rect x="334" y="14" width="28" height="18" rx="4" fill="#e63946" stroke="#e63946"/>
+          <text x="348" y="27" text-anchor="middle" font-size="10" font-weight="600" fill="#fff" font-family="ui-monospace, Menlo, monospace">RU</text>
+          <text x="316" y="30" font-size="14" font-weight="700" fill="#ff7c7c">✓</text>
+        </g>
+        <g transform="translate(0, 150)">
+          <rect width="384" height="44" rx="8" fill="transparent"/>
+          <text x="14" y="28" fill="#e9eaec">中文 (简体)</text>
+          <rect x="334" y="14" width="28" height="18" rx="4" fill="#20232a" stroke="#2a2e36"/>
+          <text x="348" y="27" text-anchor="middle" font-size="10" font-weight="600" fill="#9aa0aa" font-family="ui-monospace, Menlo, monospace">ZH</text>
+        </g>
+        <g transform="translate(0, 200)">
+          <rect width="384" height="44" rx="8" fill="transparent"/>
+          <text x="14" y="28" fill="#e9eaec">日本語</text>
+          <rect x="334" y="14" width="28" height="18" rx="4" fill="#20232a" stroke="#2a2e36"/>
+          <text x="348" y="27" text-anchor="middle" font-size="10" font-weight="600" fill="#9aa0aa" font-family="ui-monospace, Menlo, monospace">JA</text>
+        </g>
+        <g transform="translate(0, 250)">
+          <rect width="384" height="44" rx="8" fill="transparent"/>
+          <text x="14" y="28" fill="#e9eaec">한국어</text>
+          <rect x="334" y="14" width="28" height="18" rx="4" fill="#20232a" stroke="#2a2e36"/>
+          <text x="348" y="27" text-anchor="middle" font-size="10" font-weight="600" fill="#9aa0aa" font-family="ui-monospace, Menlo, monospace">KO</text>
+        </g>
+        <g transform="translate(0, 300)">
+          <rect width="384" height="44" rx="8" fill="transparent"/>
+          <text x="14" y="28" fill="#e9eaec">Español</text>
+          <rect x="334" y="14" width="28" height="18" rx="4" fill="#20232a" stroke="#2a2e36"/>
+          <text x="348" y="27" text-anchor="middle" font-size="10" font-weight="600" fill="#9aa0aa" font-family="ui-monospace, Menlo, monospace">ES</text>
+        </g>
+        <g transform="translate(0, 350)">
+          <rect width="384" height="44" rx="8" fill="transparent"/>
+          <text x="14" y="28" fill="#e9eaec">Português (BR)</text>
+          <rect x="334" y="14" width="28" height="18" rx="4" fill="#20232a" stroke="#2a2e36"/>
+          <text x="348" y="27" text-anchor="middle" font-size="10" font-weight="600" fill="#9aa0aa" font-family="ui-monospace, Menlo, monospace">PT</text>
+        </g>
+        <g transform="translate(0, 400)">
+          <rect width="384" height="44" rx="8" fill="transparent"/>
+          <text x="14" y="28" fill="#e9eaec">हिन्दी</text>
+          <rect x="334" y="14" width="28" height="18" rx="4" fill="#20232a" stroke="#2a2e36"/>
+          <text x="348" y="27" text-anchor="middle" font-size="10" font-weight="600" fill="#9aa0aa" font-family="ui-monospace, Menlo, monospace">HI</text>
+        </g>
+        <g transform="translate(0, 450)">
+          <rect width="384" height="44" rx="8" fill="transparent"/>
+          <text x="14" y="28" fill="#e9eaec">العربية</text>
+          <rect x="334" y="14" width="28" height="18" rx="4" fill="#20232a" stroke="#2a2e36"/>
+          <text x="348" y="27" text-anchor="middle" font-size="10" font-weight="600" fill="#9aa0aa" font-family="ui-monospace, Menlo, monospace">AR</text>
+        </g>
+        <g transform="translate(0, 500)">
+          <rect width="384" height="44" rx="8" fill="transparent"/>
+          <text x="14" y="28" fill="#e9eaec">Français</text>
+          <rect x="334" y="14" width="28" height="18" rx="4" fill="#20232a" stroke="#2a2e36"/>
+          <text x="348" y="27" text-anchor="middle" font-size="10" font-weight="600" fill="#9aa0aa" font-family="ui-monospace, Menlo, monospace">FR</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

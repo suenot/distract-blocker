@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <defs>
+    <radialGradient id="bg" cx="70%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#1e1418"/>
+      <stop offset="100%" stop-color="#0d0e11"/>
+    </radialGradient>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#a8aab0"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff7c7c"/>
+      <stop offset="100%" stop-color="#e63946"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="800" fill="url(#bg)"/>
+
+  <g opacity="0.14">
+    <ellipse cx="1380" cy="700" rx="500" ry="120" fill="#e63946" transform="rotate(-12 1380 700)"/>
+  </g>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif">
+    <text x="80" y="220" font-size="13" font-weight="600" fill="#ff9aa3" letter-spacing="3">05 · EDIT MODES</text>
+
+    <text x="80" y="320" font-size="72" font-weight="800" fill="url(#titleGrad)" letter-spacing="-2">Two ways to</text>
+    <text x="80" y="392" font-size="72" font-weight="800" fill="url(#accentGrad)" letter-spacing="-2">edit your list.</text>
+
+    <text x="80" y="464" font-size="20" fill="#9aa0aa">Click sites away one by one,</text>
+    <text x="80" y="492" font-size="20" fill="#9aa0aa">or paste an entire list as text.</text>
+
+    <g transform="translate(80, 560)" font-size="15" fill="#c4c8ce">
+      <g transform="translate(0, 0)">
+        <rect width="120" height="32" rx="8" fill="#20232a" stroke="#2a2e36"/>
+        <text x="60" y="21" text-anchor="middle" font-weight="500">List view</text>
+      </g>
+      <g transform="translate(130, 0)">
+        <rect width="120" height="32" rx="8" fill="#3a1e22" stroke="#e63946"/>
+        <text x="60" y="21" text-anchor="middle" font-weight="600" fill="#ff7c7c">Text view</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- RIGHT PANEL with textarea mode -->
+  <g transform="translate(820, 60)">
+    <rect width="400" height="680" rx="20" fill="#16181c" stroke="#2a2e36" stroke-width="1"/>
+
+    <!-- header -->
+    <rect width="400" height="72" rx="20" fill="#1e2127"/>
+    <rect y="40" width="400" height="32" fill="#1e2127"/>
+    <line x1="0" y1="72" x2="400" y2="72" stroke="#2a2e36"/>
+
+    <g font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif">
+      <text x="22" y="42" font-size="16" font-weight="600" fill="#e9eaec">Distract Blocker</text>
+
+      <!-- status -->
+      <g transform="translate(20, 100)">
+        <rect width="360" height="68" rx="14" fill="#1e2127" stroke="#2a2e36"/>
+        <text x="18" y="28" font-size="11" font-weight="600" fill="#9aa0aa" letter-spacing="0.5">BLOCKING</text>
+        <text x="18" y="56" font-size="22" font-weight="700" fill="#e9eaec">on</text>
+        <rect x="290" y="20" width="50" height="28" rx="14" fill="#e63946"/>
+        <circle cx="324" cy="34" r="11" fill="#fff"/>
+      </g>
+
+      <!-- section header -->
+      <g transform="translate(20, 196)">
+        <text x="0" y="0" font-size="13" font-weight="600" fill="#9aa0aa" letter-spacing="1">BLOCKED SITES</text>
+        <g transform="translate(108, -10)">
+          <rect width="26" height="18" rx="9" fill="#20232a"/>
+          <text x="13" y="13" text-anchor="middle" font-size="11" fill="#9aa0aa">9</text>
+        </g>
+        <!-- mode switch -->
+        <g transform="translate(200, -16)">
+          <rect width="160" height="28" rx="8" fill="#1e2127" stroke="#2a2e36"/>
+          <text x="40" y="18" text-anchor="middle" font-size="11" font-weight="500" fill="#9aa0aa">List</text>
+          <rect x="82" y="2" width="76" height="24" rx="6" fill="#20232a"/>
+          <text x="120" y="18" text-anchor="middle" font-size="11" font-weight="600" fill="#e9eaec">Text</text>
+        </g>
+      </g>
+
+      <!-- textarea -->
+      <g transform="translate(20, 220)">
+        <rect width="360" height="320" rx="10" fill="#1e2127" stroke="#2a2e36"/>
+        <g font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#e9eaec">
+          <text x="14" y="28">youtube.com</text>
+          <text x="14" y="50">facebook.com</text>
+          <text x="14" y="72">instagram.com</text>
+          <text x="14" y="94">twitter.com</text>
+          <text x="14" y="116">x.com</text>
+          <text x="14" y="138">tiktok.com</text>
+          <text x="14" y="160">reddit.com</text>
+          <text x="14" y="182">vk.com</text>
+          <text x="14" y="204">ok.ru</text>
+          <text x="14" y="226" fill="#5d6168">|</text>
+        </g>
+      </g>
+
+      <!-- save -->
+      <g transform="translate(20, 556)">
+        <rect x="270" y="0" width="90" height="36" rx="6" fill="#e63946"/>
+        <text x="315" y="23" text-anchor="middle" font-size="13" font-weight="500" fill="#fff">Save</text>
+      </g>
+    </g>
+  </g>
+</svg>

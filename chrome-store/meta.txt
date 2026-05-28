@@ -1,0 +1,13 @@
+Category: Productivity
+Homepage URL: https://distract-blocker.marketmaker.cc
+Support URL: https://github.com/suenot/distract-blocker/issues
+Mature content: No
+Single purpose: Block user-defined distracting websites with a configurable schedule.
+
+Permissions justification (paste into store form when prompted):
+- declarativeNetRequest: required to block / redirect navigation to the user's blocklist using native Chrome rules (no remote code, no content script needed)
+- storage: persist user settings — blocklist, schedule, language, edit mode
+- sidePanel: the entire UI lives in the side panel that opens when the user clicks the action icon
+- alarms: re-evaluate the schedule every minute and switch blocking on/off accordingly
+- tabs (implicit via host_permissions): reload already-open tabs whose URL is now blocked so they hit the redirect rule
+- host_permissions <all_urls>: required by declarativeNetRequest's redirect action so the extension can redirect any matched navigation to the in-extension blocked.html page
