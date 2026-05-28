@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#1a1416"/>
+      <stop offset="100%" stop-color="#0d0e11"/>
+    </radialGradient>
+    <radialGradient id="bodyGrad" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#ff7c7c"/>
+      <stop offset="70%" stop-color="#e63946"/>
+      <stop offset="100%" stop-color="#b3001b"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="800" fill="url(#bg)"/>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif">
+    <text x="640" y="90" text-anchor="middle" font-size="13" font-weight="600" fill="#ff9aa3" letter-spacing="3">03 · СТРАНИЦА БЛОКИРОВКИ</text>
+    <text x="640" y="150" text-anchor="middle" font-size="44" font-weight="800" fill="#ffffff" letter-spacing="-1">Вежливое «не сейчас»</text>
+    <text x="640" y="185" text-anchor="middle" font-size="17" fill="#9aa0aa">Вместо системной ошибки — вот это.</text>
+  </g>
+
+  <g transform="translate(390, 240)">
+    <rect width="500" height="500" rx="24" fill="#221a1c" stroke="#3a262a" stroke-width="1.5"/>
+
+    <g transform="translate(150, 30) scale(1)">
+      <ellipse cx="100" cy="200" rx="56" ry="6" fill="rgba(0,0,0,0.5)"/>
+      <circle cx="100" cy="105" r="72" fill="url(#bodyGrad)" stroke="#7a0014" stroke-width="2"/>
+      <ellipse cx="100" cy="58" rx="38" ry="13" fill="rgba(255,255,255,0.25)"/>
+      <ellipse cx="100" cy="120" rx="50" ry="38" fill="#fff5f5"/>
+      <path d="M 70 110 Q 78 117 86 110" stroke="#1a1c1f" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 114 110 Q 122 117 130 110" stroke="#1a1c1f" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 90 144 Q 100 138 110 144" stroke="#1a1c1f" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <text x="148" y="60" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#fff" opacity="0.85">Z</text>
+      <text x="170" y="38" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#fff" opacity="0.65">z</text>
+    </g>
+
+    <g font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" text-anchor="middle">
+      <text x="250" y="306" font-size="40" font-weight="700" fill="#f4e8ea" letter-spacing="-1">Сейчас не время.</text>
+
+      <g transform="translate(165, 333)">
+        <rect width="170" height="28" rx="6" fill="#1a1416" stroke="#3a262a"/>
+        <text x="85" y="20" text-anchor="middle" font-size="14" font-weight="600" fill="#ff7c7c" font-family="ui-monospace, Menlo, monospace">youtube.com</text>
+      </g>
+      <text x="250" y="376" font-size="14" fill="#b39ba0">в списке отвлекающих сайтов.</text>
+
+      <text x="250" y="418" font-size="13" fill="#b39ba0">Действительно надо? Выключи Distract Blocker</text>
+      <text x="250" y="436" font-size="13" fill="#b39ba0">в боковой панели.</text>
+
+      <g transform="translate(180, 460)">
+        <rect width="140" height="44" rx="10" fill="#ff6b6b"/>
+        <text x="70" y="28" text-anchor="middle" font-size="15" font-weight="500" fill="#fff">Назад</text>
+      </g>
+    </g>
+  </g>
+</svg>

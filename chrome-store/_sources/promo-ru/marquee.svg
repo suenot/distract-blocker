@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 560" width="1400" height="560">
+  <defs>
+    <radialGradient id="bg" cx="30%" cy="20%" r="80%">
+      <stop offset="0%" stop-color="#2a1418"/>
+      <stop offset="100%" stop-color="#0d0e11"/>
+    </radialGradient>
+    <radialGradient id="bodyGrad" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#ff7c7c"/>
+      <stop offset="70%" stop-color="#e63946"/>
+      <stop offset="100%" stop-color="#b3001b"/>
+    </radialGradient>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#a8aab0"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff7c7c"/>
+      <stop offset="100%" stop-color="#e63946"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="560" fill="url(#bg)"/>
+
+  <g opacity="0.16">
+    <ellipse cx="-100" cy="150" rx="600" ry="120" fill="#e63946" transform="rotate(-15 -100 150)"/>
+    <ellipse cx="1500" cy="450" rx="600" ry="120" fill="#e63946" transform="rotate(-12 1500 450)"/>
+  </g>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif">
+    <g transform="translate(120, 130)">
+      <g transform="translate(0, 0)">
+        <rect width="280" height="34" rx="17" fill="#3a1e22" stroke="#7a0014"/>
+        <circle cx="22" cy="17" r="4" fill="#e63946"/>
+        <text x="38" y="22" font-size="12" font-weight="600" fill="#ff9aa3" letter-spacing="2.6">РАСШИРЕНИЕ CHROME</text>
+      </g>
+
+      <text x="0" y="120" font-size="80" font-weight="800" fill="url(#titleGrad)" letter-spacing="-2">Distract Blocker</text>
+      <text x="0" y="190" font-size="40" font-weight="700" fill="url(#accentGrad)" letter-spacing="-1">Меньше. Просто меньше.</text>
+
+      <text x="0" y="248" font-size="18" fill="#9aa0aa">Сфокусированное расширение: одна панель,</text>
+      <text x="0" y="274" font-size="18" fill="#9aa0aa">расписание, шорткат, 21 язык.</text>
+
+      <g transform="translate(0, 310)" font-size="13" font-weight="500">
+        <g transform="translate(0, 0)"><rect width="170" height="34" rx="17" fill="#20232a" stroke="#2a2e36"/><circle cx="20" cy="17" r="3" fill="#e63946"/><text x="34" y="22" fill="#c4c8ce">Боковая панель</text></g>
+        <g transform="translate(180, 0)"><rect width="150" height="34" rx="17" fill="#20232a" stroke="#2a2e36"/><circle cx="20" cy="17" r="3" fill="#e63946"/><text x="34" y="22" fill="#c4c8ce">Расписание</text></g>
+        <g transform="translate(340, 0)"><rect width="180" height="34" rx="17" fill="#20232a" stroke="#2a2e36"/><circle cx="20" cy="17" r="3" fill="#e63946"/><text x="34" y="22" fill="#c4c8ce">Свой шорткат</text></g>
+
+        <g transform="translate(0, 46)"><rect width="160" height="34" rx="17" fill="#20232a" stroke="#2a2e36"/><circle cx="20" cy="17" r="3" fill="#e63946"/><text x="34" y="22" fill="#c4c8ce">21 язык</text></g>
+        <g transform="translate(170, 46)"><rect width="220" height="34" rx="17" fill="#20232a" stroke="#2a2e36"/><circle cx="20" cy="17" r="3" fill="#e63946"/><text x="34" y="22" fill="#c4c8ce">Без трекинга · MIT</text></g>
+      </g>
+    </g>
+
+    <g transform="translate(940, 110) scale(1.6)">
+      <ellipse cx="100" cy="200" rx="56" ry="6" fill="rgba(0,0,0,0.5)"/>
+      <circle cx="100" cy="105" r="72" fill="url(#bodyGrad)" stroke="#7a0014" stroke-width="2"/>
+      <ellipse cx="100" cy="58" rx="38" ry="13" fill="rgba(255,255,255,0.25)"/>
+      <ellipse cx="100" cy="120" rx="50" ry="38" fill="#fff5f5"/>
+      <circle cx="78" cy="108" r="10" fill="#1a1c1f"/>
+      <circle cx="80" cy="105" r="3" fill="#fff"/>
+      <circle cx="122" cy="108" r="10" fill="#1a1c1f"/>
+      <circle cx="124" cy="105" r="3" fill="#fff"/>
+      <path d="M 86 138 Q 100 150 114 138" stroke="#1a1c1f" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 140 130 Q 140 118 152 116 Q 164 118 164 130 Q 164 146 152 152 Q 140 146 140 130 Z" fill="#fff" stroke="#7a0014" stroke-width="2"/>
+      <circle cx="152" cy="132" r="6" fill="none" stroke="#e63946" stroke-width="2.4"/>
+      <line x1="148" y1="136" x2="156" y2="128" stroke="#e63946" stroke-width="2.4" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

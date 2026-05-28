@@ -39,8 +39,9 @@ chrome-store/
 | Description (Russian – ru)         | `ru/description.txt`                                 |
 | Category                           | `meta.txt` — Productivity                            |
 | Store icon                         | `icons/store-icon-128.png`                           |
-| Localized screenshots (en)         | `screenshots/01..05-*.png`                           |
-| Global screenshots                 | same 5 files (use as global fallback)                |
+| Global screenshots                 | `screenshots/01..05-*.png` (English UI, default fallback) |
+| Localized screenshots (en)         | same 5 from `screenshots/` (English UI)              |
+| Localized screenshots (ru)         | `screenshots/ru/01..05-*.png` (Russian UI)           |
 | Small promo tile                   | `promo/small-tile-440x280.png`                       |
 | Marquee promo tile                 | `promo/marquee-1400x560.png`                         |
 | Official URL / Homepage URL        | `https://distract-blocker.marketmaker.cc`            |
