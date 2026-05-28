@@ -22,6 +22,7 @@ landing/.env.development
 # Extension build artifacts (none yet, but reserve)
 dist/
 build/
+*.zip
 
 # Local agent state
 .claude/
