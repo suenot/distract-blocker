@@ -1,15 +1,15 @@
 ================================================================
   CHROME WEB STORE — PASTE-READY TEXTS
 ================================================================
-Open the dashboard, switch to the "Privacy practices" tab,
-and paste each block below into the matching field.
+Open the dashboard. The "Privacy practices" tab is where most
+of these go. Where each field lives is annotated below.
 
 ================================================================
   Settings (top-right gear)
 ================================================================
-Contact email:         hello.working0520@gmail.com
-Verify:                click Send verification → open the email
-                       link before trying to publish
+Contact email:         suenot@gmail.com
+Verify:                click "Send verification" → open the
+                       email link before trying to publish.
 
 ================================================================
   Store listing (the form you've already filled)
@@ -32,48 +32,16 @@ applies.
   (one textarea per permission, paste the matching block)
 ================================================================
 
---- alarms ---
-Used to wake the service worker once per minute via
-chrome.alarms.create({ periodInMinutes: 1 }) so the extension
-can re-evaluate the user's blocking schedule. When the current
-time crosses a scheduled range boundary, blocking is enabled or
-disabled by updating declarativeNetRequest dynamic rules.
-Alarms are not used for any other purpose.
-
---- declarativeNetRequest ---
+--- declarativeNetRequest justification ---
 This is the core blocking mechanism. Dynamic rules redirect
 main_frame navigation to an in-extension blocked.html page for
 each domain the user has added to their blocklist, and block
 sub_frame requests to the same domains. Rules are created from
-the user's list using chrome.declarativeNetRequest
+the user's list via chrome.declarativeNetRequest
 .updateDynamicRules(). No content scripts are injected. No
 remote code is fetched. Chrome enforces the rules natively.
 
---- host permission (<all_urls>) ---
-Required by declarativeNetRequest's "redirect" action so the
-extension can redirect any matched navigation to a local
-extension page (blocked.html). The extension never reads,
-modifies, or transmits page content — the host permission only
-authorizes the redirect action that the user explicitly
-configured via their blocklist.
-
---- remote code use ---
-The extension uses no remote code. All JavaScript and HTML are
-bundled inside the extension package. Localization message
-files (_locales/<lang>/messages.json) are loaded via fetch from
-chrome-extension:// URLs — these files are part of the
-packaged extension, not external resources. No third-party
-script is ever loaded at runtime.
-
---- sidePanel ---
-The entire user interface (master toggle, blocklist editor,
-schedule editor, language switcher) lives inside the side
-panel that opens when the user clicks the action icon
-(chrome.sidePanel.setPanelBehavior({openPanelOnActionClick:
-true})). The extension does not open the side panel
-automatically or for any other purpose.
-
---- storage ---
+--- storage justification ---
 chrome.storage.local is used to persist user-managed settings
 locally: the blocklist of distracting domains, the master
 enabled toggle state, the schedule (mode + ranges), the chosen
@@ -81,25 +49,71 @@ UI language, and the list/text edit-mode preference. Nothing
 is synced via chrome.storage.sync, and nothing is sent off the
 device.
 
+--- sidePanel justification ---
+The entire user interface (master toggle, blocklist editor,
+schedule editor, language switcher) lives inside the side
+panel that opens when the user clicks the action icon
+(chrome.sidePanel.setPanelBehavior({openPanelOnActionClick:
+true})). The extension does not open the side panel
+automatically or for any other purpose.
+
+--- alarms justification ---
+Used to wake the service worker once per minute via
+chrome.alarms.create({ periodInMinutes: 1 }) so the extension
+can re-evaluate the user's blocking schedule. When the current
+time crosses a scheduled range boundary, blocking is enabled or
+disabled by updating declarativeNetRequest dynamic rules.
+Alarms are not used for any other purpose.
+
+--- Host permission justification ---
+Required by declarativeNetRequest's "redirect" action so the
+extension can redirect any matched navigation to a local
+extension page (blocked.html). The extension never reads,
+modifies, or transmits page content — the host permission only
+authorizes the redirect action that the user explicitly
+configured via their blocklist.
+
+================================================================
+  Privacy practices → Are you using remote code?
+================================================================
+Select:  "No, I am not using remote code"
+
+(All scripts and HTML are bundled in the extension package.
+ Localization message files _locales/<lang>/messages.json are
+ loaded via fetch from chrome-extension:// URLs — these are
+ part of the packaged extension, not remote resources.)
+
 ================================================================
   Privacy practices → Data usage
 ================================================================
-Tick ALL "I am not collecting…" boxes:
-  - personally identifiable information
-  - health information
-  - financial and payment information
-  - authentication information
-  - personal communications
-  - location
-  - web history
-  - user activity
-  - website content
+"What user data do you plan to collect from users now or in the
+ future?" — UNCHECK ALL (we collect nothing):
+  ☐ Personally identifiable information
+  ☐ Health information
+  ☐ Financial and payment information
+  ☐ Authentication information
+  ☐ Personal communications
+  ☐ Location
+  ☐ Web history
+  ☐ User activity
+  ☐ Website content
 
-Tick the bottom certification:
-  "I certify that the data usage disclosures above accurately
-   reflect my item's behavior."
+"I certify that the following disclosures are true:" — CHECK ALL THREE:
+  ☑ I do not sell or transfer user data to third parties, outside
+    of the approved use cases
+  ☑ I do not use or transfer user data for purposes that are
+    unrelated to my item's single purpose
+  ☑ I do not use or transfer user data to determine
+    creditworthiness or for lending purposes
 
-Reason: the extension only writes user-controlled settings to
-chrome.storage.local. It does not call any network endpoint,
-does not embed any analytics SDK, and does not transmit any
-data off the device.
+================================================================
+  Privacy practices → Privacy policy URL
+================================================================
+Use one of:
+
+  Primary:    https://distract-blocker.marketmaker.cc/privacy
+  Fallback:   https://github.com/suenot/distract-blocker/blob/main/PRIVACY.md
+
+(The landing /privacy page is the same content as PRIVACY.md.
+ If the landing isn't deployed yet, use the GitHub URL —
+ Google accepts it.)

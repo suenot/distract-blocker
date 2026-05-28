@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Privacy Policy — Distract Blocker"
+  description="Distract Blocker does not collect, transmit, or share any personal data. Everything happens locally on your device."
+>
+  <main class="container mx-auto max-w-3xl px-4 md:px-6 py-20 md:py-28">
+    <a href="/" class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-12">
+      <span aria-hidden="true">←</span>
+      Back to home
+    </a>
+
+    <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-4 leading-[1.1]">
+      <span class="bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/60">Privacy Policy</span>
+    </h1>
+    <p class="text-sm text-muted-foreground mb-12">Last updated: 2026-05-28</p>
+
+    <section class="space-y-10">
+      <div>
+        <h2 class="text-2xl font-bold mb-3">TL;DR</h2>
+        <p class="text-base md:text-lg text-muted-foreground leading-relaxed">
+          Distract Blocker does <strong class="text-foreground">not collect, transmit, or share any personal data</strong>. Everything happens locally on your device. There is no server, no analytics, no login, no advertising.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold mb-3">What the extension stores locally</h2>
+        <p class="text-muted-foreground mb-4">
+          The extension uses <code class="text-accent-darker bg-card/60 px-1.5 py-0.5 rounded">chrome.storage.local</code> to persist only the settings you enter or change yourself:
+        </p>
+        <ul class="space-y-2 text-muted-foreground list-disc pl-6">
+          <li>Your blocklist of distracting domains</li>
+          <li>Whether the master toggle is on or off</li>
+          <li>Your schedule (mode + day-of-week + time ranges)</li>
+          <li>The UI language you've selected</li>
+          <li>Whether you prefer the list or text view for editing the blocklist</li>
+        </ul>
+        <p class="text-muted-foreground mt-4">
+          This data stays entirely on your device. It is <strong class="text-foreground">not</strong> synced (we do not use <code class="text-accent-darker bg-card/60 px-1.5 py-0.5 rounded">chrome.storage.sync</code>). It is <strong class="text-foreground">not</strong> transmitted anywhere.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold mb-3">What the extension does NOT do</h2>
+        <ul class="space-y-2 text-muted-foreground list-disc pl-6">
+          <li>No analytics or telemetry</li>
+          <li>No remote code, no third-party scripts loaded at runtime</li>
+          <li>No tracking of which sites you visit</li>
+          <li>No reading of page content</li>
+          <li>No login or account</li>
+          <li>No advertising</li>
+          <li>No selling, transferring, or sharing of user data with any third party</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold mb-3">How blocking works</h2>
+        <p class="text-muted-foreground leading-relaxed">
+          We use Chrome's native <code class="text-accent-darker bg-card/60 px-1.5 py-0.5 rounded">declarativeNetRequest</code> API. Rules are derived from your blocklist and registered with Chrome. Chrome enforces the rules natively — the extension itself never sees the URLs you actually navigate to. The redirect action sends matched navigations to a local in-extension page (<code class="text-accent-darker bg-card/60 px-1.5 py-0.5 rounded">blocked.html</code>) packaged with the extension.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold mb-3">Permissions and why each is needed</h2>
+        <dl class="space-y-3 text-muted-foreground">
+          <div><dt class="font-mono text-foreground inline">storage</dt><dd class="inline"> — to save your settings on your device</dd></div>
+          <div><dt class="font-mono text-foreground inline">declarativeNetRequest</dt><dd class="inline"> — to register blocking rules with Chrome</dd></div>
+          <div><dt class="font-mono text-foreground inline">sidePanel</dt><dd class="inline"> — to render the user interface (the side panel)</dd></div>
+          <div><dt class="font-mono text-foreground inline">alarms</dt><dd class="inline"> — to wake the service worker once per minute so the schedule can be re-evaluated</dd></div>
+          <div><dt class="font-mono text-foreground inline">host_permissions: &lt;all_urls&gt;</dt><dd class="inline"> — required by Chrome to authorize <code class="text-accent-darker bg-card/60 px-1.5 py-0.5 rounded">declarativeNetRequest</code>'s <code class="text-accent-darker bg-card/60 px-1.5 py-0.5 rounded">redirect</code> action; the extension itself never reads, modifies, or transmits page content</dd></div>
+        </dl>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold mb-3">Open source</h2>
+        <p class="text-muted-foreground">
+          Source code (MIT-licensed):
+          <a href="https://github.com/suenot/distract-blocker" class="text-accent-darker underline underline-offset-2 hover:text-accent transition-colors">github.com/suenot/distract-blocker</a>
+        </p>
+        <p class="text-muted-foreground mt-2">You can audit every line and re-build the extension yourself.</p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold mb-3">Contact</h2>
+        <ul class="space-y-2 text-muted-foreground">
+          <li>Issues: <a href="https://github.com/suenot/distract-blocker/issues" class="text-accent-darker underline underline-offset-2 hover:text-accent transition-colors">github.com/suenot/distract-blocker/issues</a></li>
+          <li>Email: <a href="mailto:suenot@gmail.com" class="text-accent-darker underline underline-offset-2 hover:text-accent transition-colors">suenot@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold mb-3">Changes to this policy</h2>
+        <p class="text-muted-foreground">
+          Any future change will be reflected on this page and dated above. Because there is no server, you can always read the current policy by viewing this page or the corresponding file in the GitHub repository.
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
