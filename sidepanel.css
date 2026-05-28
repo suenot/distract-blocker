@@ -70,6 +70,7 @@ body.ready { visibility: visible; }
   color: var(--text);
   border-color: var(--text-soft);
 }
+a.header-btn { text-decoration: none; }
 
 .mascot {
   display: block;
