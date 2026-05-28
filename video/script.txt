@@ -1,0 +1,17 @@
+[hook · 0-5s]
+Doom-scrolling. We all do it. And we all wish we didn't.
+
+[overview · 5-18s]
+Distract Blocker is a tiny Chrome extension. Click the icon, the side panel slides in, and your distractions are gone. One toggle, one shortcut, and a list of sites you don't want to see.
+
+[schedule · 18-30s]
+Need focused work hours? Set a schedule. Pick days, pick times. Block during work, allow during breaks. Whatever fits.
+
+[languages · 30-40s]
+Twenty-one languages, including right-to-left Arabic. Auto-detected from your browser, switchable from the panel.
+
+[privacy · 40-50s]
+No tracking. No remote code. No account. Just native Chrome rules. MIT-licensed, on GitHub.
+
+[cta · 50-55s]
+Distract Blocker. Get it on the Chrome Web Store.

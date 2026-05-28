@@ -19,6 +19,10 @@ landing/.env
 landing/.env.production
 landing/.env.development
 
+# Video — Remotion
+video/node_modules/
+video/public/voiceover.aiff
+
 # Extension build artifacts (none yet, but reserve)
 dist/
 build/

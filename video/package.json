@@ -1,0 +1,21 @@
+{
+  "name": "distract-blocker-video",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "preview": "remotion studio",
+    "render": "remotion render distract-blocker out/distract-blocker.mp4",
+    "render-low": "remotion render distract-blocker out/distract-blocker-low.mp4 --jpeg-quality=70 --crf=28"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.5.3"
+  }
+}
