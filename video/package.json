@@ -5,6 +5,7 @@
   "scripts": {
     "preview": "remotion studio",
     "render": "remotion render distract-blocker out/distract-blocker.mp4",
+    "render-ru": "remotion render distract-blocker-ru out/distract-blocker-ru.mp4",
     "render-low": "remotion render distract-blocker out/distract-blocker-low.mp4 --jpeg-quality=70 --crf=28"
   },
   "dependencies": {

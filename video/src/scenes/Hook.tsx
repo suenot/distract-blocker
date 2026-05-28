@@ -3,10 +3,13 @@ import { Mascot } from "../components/Mascot";
 
 const FONT = "Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif";
 
-export const Hook: React.FC = () => {
+interface Props {
+  lines: [string, string, string];
+}
+
+export const Hook: React.FC<Props> = ({ lines }) => {
   const f = useCurrentFrame();
 
-  // Three lines of text appearing in sequence, each ~33 frames apart.
   const opacities = [0, 18, 50, 85].map((start, i) =>
     i === 0
       ? 0
@@ -69,7 +72,7 @@ export const Hook: React.FC = () => {
               transform: `translateY(${yShift(18)}px)`,
             }}
           >
-            Doom-scrolling.
+            {lines[0]}
           </div>
           <div
             style={{
@@ -81,7 +84,7 @@ export const Hook: React.FC = () => {
               fontWeight: 700,
             }}
           >
-            We all do it.
+            {lines[1]}
           </div>
           <div
             style={{
@@ -93,7 +96,7 @@ export const Hook: React.FC = () => {
               fontWeight: 700,
             }}
           >
-            We all wish we didn't.
+            {lines[2]}
           </div>
         </div>
       </AbsoluteFill>

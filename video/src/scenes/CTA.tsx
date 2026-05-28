@@ -3,7 +3,13 @@ import { Mascot } from "../components/Mascot";
 
 const FONT = "Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif";
 
-export const CTA: React.FC = () => {
+interface Props {
+  brand: string;
+  button: string;
+  domain: string;
+}
+
+export const CTA: React.FC<Props> = ({ brand, button, domain }) => {
   const f = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
 
@@ -54,7 +60,7 @@ export const CTA: React.FC = () => {
           color: "transparent",
         }}
       >
-        Distract Blocker
+        {brand}
       </div>
 
       <div
@@ -71,7 +77,7 @@ export const CTA: React.FC = () => {
           boxShadow: "0 12px 32px rgba(230,57,70,0.4)",
         }}
       >
-        Get it on the Chrome Web Store
+        {button}
       </div>
 
       <div
@@ -83,7 +89,7 @@ export const CTA: React.FC = () => {
           opacity: buttonOpacity,
         }}
       >
-        distract-blocker.marketmaker.cc
+        {domain}
       </div>
     </AbsoluteFill>
   );

@@ -3,15 +3,11 @@ import { Mascot } from "../components/Mascot";
 
 const FONT = "Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif";
 
-const POINTS = [
-  "No tracking",
-  "No remote code",
-  "No account",
-  "Native Chrome rules",
-  "MIT-licensed",
-];
+interface Props {
+  points: string[];
+}
 
-export const Privacy: React.FC = () => {
+export const Privacy: React.FC<Props> = ({ points }) => {
   const f = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
 
@@ -40,7 +36,7 @@ export const Privacy: React.FC = () => {
       <Mascot size={320} state="on" />
 
       <div>
-        {POINTS.map((p, i) => {
+        {points.map((p, i) => {
           const start = 10 + i * 18;
           const o = interpolate(f, [start, start + 14], [0, 1], {
             extrapolateLeft: "clamp",

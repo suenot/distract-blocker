@@ -1,42 +1,79 @@
 import { AbsoluteFill, Audio, Sequence, staticFile } from "remotion";
+import { LOCALES, Locale } from "./locales";
 import { Hook } from "./scenes/Hook";
-import { Overview } from "./scenes/Overview";
-import { Schedule } from "./scenes/Schedule";
-import { Languages } from "./scenes/Languages";
+import { ScreenshotScene } from "./scenes/ScreenshotScene";
 import { Privacy } from "./scenes/Privacy";
 import { CTA } from "./scenes/CTA";
 
 export const FPS = 30;
 
-// Section boundaries (frames) based on voiceover spectrogram:
-// hook  0:00 - 0:04 ≈ 0-120
-// over  0:04 - 0:15 ≈ 120-450
-// sched 0:15 - 0:23 ≈ 450-690
-// lang  0:23 - 0:29 ≈ 690-870
-// priv  0:29 - 0:35 ≈ 870-1050
-// cta   0:35 - 0:39 ≈ 1050-1170
-export const Video: React.FC = () => {
+export interface VideoProps {
+  locale: Locale;
+}
+
+export const Video: React.FC<VideoProps> = ({ locale }) => {
+  const cfg = LOCALES[locale];
+
   return (
     <AbsoluteFill style={{ backgroundColor: "#0d0e11" }}>
-      <Audio src={staticFile("voiceover.wav")} />
+      <Audio src={staticFile(cfg.audio)} />
 
-      <Sequence from={0} durationInFrames={120}>
-        <Hook />
+      <Sequence
+        from={cfg.timings.hook.from}
+        durationInFrames={cfg.timings.hook.durationInFrames}
+      >
+        <Hook lines={cfg.hook.lines} />
       </Sequence>
-      <Sequence from={120} durationInFrames={330}>
-        <Overview />
+
+      <Sequence
+        from={cfg.timings.overview.from}
+        durationInFrames={cfg.timings.overview.durationInFrames}
+      >
+        <ScreenshotScene
+          caption={cfg.overview.caption}
+          screenshot={cfg.overview.screenshot}
+          pan={cfg.overview.pan}
+        />
       </Sequence>
-      <Sequence from={450} durationInFrames={240}>
-        <Schedule />
+
+      <Sequence
+        from={cfg.timings.schedule.from}
+        durationInFrames={cfg.timings.schedule.durationInFrames}
+      >
+        <ScreenshotScene
+          caption={cfg.schedule.caption}
+          screenshot={cfg.schedule.screenshot}
+          pan={cfg.schedule.pan}
+        />
       </Sequence>
-      <Sequence from={690} durationInFrames={180}>
-        <Languages />
+
+      <Sequence
+        from={cfg.timings.languages.from}
+        durationInFrames={cfg.timings.languages.durationInFrames}
+      >
+        <ScreenshotScene
+          caption={cfg.languages.caption}
+          screenshot={cfg.languages.screenshot}
+          pan={cfg.languages.pan}
+        />
       </Sequence>
-      <Sequence from={870} durationInFrames={180}>
-        <Privacy />
+
+      <Sequence
+        from={cfg.timings.privacy.from}
+        durationInFrames={cfg.timings.privacy.durationInFrames}
+      >
+        <Privacy points={cfg.privacy.points} />
       </Sequence>
-      <Sequence from={1050} durationInFrames={120}>
-        <CTA />
+
+      <Sequence
+        from={cfg.timings.cta.from}
+        durationInFrames={cfg.timings.cta.durationInFrames}
+      >
+        <CTA
+          brand={cfg.cta.brand}
+          button={cfg.cta.button}
+          domain={cfg.cta.domain}
+        />
       </Sequence>
     </AbsoluteFill>
   );

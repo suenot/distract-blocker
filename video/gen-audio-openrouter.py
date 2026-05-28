@@ -12,8 +12,10 @@ if not API_KEY:
 
 MODEL = os.environ.get("TTS_MODEL", "openai/gpt-audio-mini")
 VOICE = os.environ.get("TTS_VOICE", "ash")  # alloy, ash, ballad, coral, echo, sage, shimmer, verse
-SCRIPT_PATH = os.path.join(os.path.dirname(__file__), "script.txt")
-OUT_PATH = os.path.join(os.path.dirname(__file__), "public", "voiceover.wav")
+SCRIPT_NAME = os.environ.get("SCRIPT_NAME", "script.txt")
+OUT_NAME = os.environ.get("OUT_NAME", "voiceover.wav")
+SCRIPT_PATH = os.path.join(os.path.dirname(__file__), SCRIPT_NAME)
+OUT_PATH = os.path.join(os.path.dirname(__file__), "public", OUT_NAME)
 
 os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
 
