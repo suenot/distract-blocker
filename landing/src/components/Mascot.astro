@@ -1,0 +1,62 @@
+---
+interface Props {
+  state?: 'on' | 'off';
+  class?: string;
+}
+const { state = 'on', class: className = '' } = Astro.props;
+---
+
+<div class={`mascot ${className}`} data-state={state} aria-hidden="true">
+  <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="bodyGrad" cx="50%" cy="38%" r="65%">
+        <stop offset="0%" stop-color="#ff7c7c" />
+        <stop offset="70%" stop-color="#e63946" />
+        <stop offset="100%" stop-color="#b3001b" />
+      </radialGradient>
+    </defs>
+
+    <ellipse class="m-shadow" cx="100" cy="200" rx="56" ry="6" fill="rgba(0,0,0,0.18)" />
+
+    <g class="m-body">
+      <circle cx="100" cy="105" r="72" fill="url(#bodyGrad)" stroke="#7a0014" stroke-width="2" />
+      <ellipse cx="100" cy="58" rx="38" ry="13" fill="rgba(255,255,255,0.25)" />
+      <ellipse cx="100" cy="120" rx="50" ry="38" fill="#fff5f5" />
+
+      <g class="m-eyes-open">
+        <g class="m-eye m-eye-l">
+          <circle cx="78" cy="108" r="10" fill="#1a1c1f" />
+          <circle cx="80" cy="105" r="3" fill="#fff" />
+        </g>
+        <g class="m-eye m-eye-r">
+          <circle cx="122" cy="108" r="10" fill="#1a1c1f" />
+          <circle cx="124" cy="105" r="3" fill="#fff" />
+        </g>
+      </g>
+
+      <g class="m-eyes-closed">
+        <path d="M 70 110 Q 78 117 86 110" stroke="#1a1c1f" stroke-width="3" fill="none" stroke-linecap="round" />
+        <path d="M 114 110 Q 122 117 130 110" stroke="#1a1c1f" stroke-width="3" fill="none" stroke-linecap="round" />
+      </g>
+
+      <path class="m-mouth-happy" d="M 86 138 Q 100 150 114 138" stroke="#1a1c1f" stroke-width="3" fill="none" stroke-linecap="round" />
+      <path class="m-mouth-sleep" d="M 90 144 Q 100 138 110 144" stroke="#1a1c1f" stroke-width="3" fill="none" stroke-linecap="round" />
+
+      <g class="m-shield">
+        <path d="M 140 130 Q 140 118 152 116 Q 164 118 164 130 Q 164 146 152 152 Q 140 146 140 130 Z" fill="#fff" stroke="#7a0014" stroke-width="2" />
+        <circle cx="152" cy="132" r="6" fill="none" stroke="#e63946" stroke-width="2.4" />
+        <line x1="148" y1="136" x2="156" y2="128" stroke="#e63946" stroke-width="2.4" stroke-linecap="round" />
+      </g>
+
+      <g class="m-zzz">
+        <text x="148" y="60" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="22" font-weight="700" fill="#fff" opacity="0.75">Z</text>
+        <text x="165" y="42" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="15" font-weight="700" fill="#fff" opacity="0.55">z</text>
+      </g>
+    </g>
+  </svg>
+</div>
+
+<style>
+  .mascot { display: block; }
+  .mascot svg { display: block; width: 100%; height: 100%; }
+</style>

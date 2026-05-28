@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "屏蔽分心网站。点击图标打开侧边面板，可在那里开关并编辑列表。" },
+  "commandToggleDescription": { "message": "快速切换：无需打开面板即可开启/关闭分心屏蔽" },
+
+  "appTagline": { "message": "减少分心" },
+
+  "blockingLabel": { "message": "屏蔽" },
+  "stateOn": { "message": "开启" },
+  "stateOff": { "message": "关闭" },
+
+  "sectionTitle": { "message": "已屏蔽的网站" },
+  "modeList": { "message": "列表" },
+  "modeText": { "message": "文本" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "添加" },
+  "removeAria": {
+    "message": "移除 $DOMAIN$",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "列表为空。请在上方添加网站。" },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "保存" },
+  "savedStatus": { "message": "已保存" },
+
+  "subdomainHint": { "message": "子域名会被自动屏蔽" },
+  "configureShortcut": { "message": "设置快捷键" },
+  "currentShortcut": {
+    "message": "当前快捷键：$SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "未设置快捷键" },
+  "shortcutInfoAria": { "message": "这些快捷键有何区别？" },
+  "shortcutHelp": { "message": "「Toggle distraction blocking」（本扩展）即时切换屏蔽。「Activate the extension」是 Chrome 的内置命令——它只是打开此侧边面板，就像点击图标。" },
+
+  "blockedTitle": { "message": "现在不行。" },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ 在你的分心列表中。",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "真的需要？请在侧边面板关闭 Distract Blocker。" },
+  "blockedBack": { "message": "返回" },
+  "blockedOpenPanel": { "message": "打开面板" },
+
+  "languageLabel": { "message": "语言" },
+  "localeAuto": { "message": "自动（浏览器）" }
+}

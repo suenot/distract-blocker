@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "ध्यान भटकाने वाली साइटें ब्लॉक करता है। आइकन पर क्लिक करके साइड पैनल खोलें — टॉगल और सूची वहीं हैं।" },
+  "commandToggleDescription": { "message": "त्वरित टॉगल: पैनल खोले बिना ब्लॉकिंग चालू/बंद करें" },
+
+  "appTagline": { "message": "कम विकर्षण" },
+
+  "blockingLabel": { "message": "ब्लॉकिंग" },
+  "stateOn": { "message": "चालू" },
+  "stateOff": { "message": "बंद" },
+
+  "sectionTitle": { "message": "ब्लॉक की गई साइटें" },
+  "modeList": { "message": "सूची" },
+  "modeText": { "message": "टेक्स्ट" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "जोड़ें" },
+  "removeAria": {
+    "message": "$DOMAIN$ हटाएं",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "सूची खाली है। ऊपर साइट जोड़ें।" },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "सहेजें" },
+  "savedStatus": { "message": "सहेजा गया" },
+
+  "subdomainHint": { "message": "सब-डोमेन भी अपने आप ब्लॉक हो जाते हैं" },
+  "configureShortcut": { "message": "कीबोर्ड शॉर्टकट सेट करें" },
+  "currentShortcut": {
+    "message": "वर्तमान शॉर्टकट: $SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "कोई शॉर्टकट सेट नहीं" },
+  "shortcutInfoAria": { "message": "इन शॉर्टकट में क्या अंतर है?" },
+  "shortcutHelp": { "message": "«Toggle distraction blocking» (यह एक्सटेंशन) ब्लॉकिंग को तुरंत बदलता है। «Activate the extension» Chrome का बिल्ट-इन कमांड है — यह केवल इस साइड पैनल को खोलता है, आइकन क्लिक की तरह।" },
+
+  "blockedTitle": { "message": "अभी नहीं।" },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ आपकी विकर्षण सूची में है।",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "सच में चाहिए? साइड पैनल से Distract Blocker बंद करें।" },
+  "blockedBack": { "message": "वापस" },
+  "blockedOpenPanel": { "message": "पैनल खोलें" },
+
+  "languageLabel": { "message": "भाषा" },
+  "localeAuto": { "message": "ऑटो (ब्राउज़र)" }
+}

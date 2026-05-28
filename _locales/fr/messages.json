@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "Bloque les sites qui vous distraient. Cliquez sur l’icône pour ouvrir le panneau latéral : interrupteur et liste s’y trouvent." },
+  "commandToggleDescription": { "message": "Bascule rapide : activer/désactiver le blocage sans ouvrir le panneau" },
+
+  "appTagline": { "message": "Moins de distractions" },
+
+  "blockingLabel": { "message": "Blocage" },
+  "stateOn": { "message": "activé" },
+  "stateOff": { "message": "désactivé" },
+
+  "sectionTitle": { "message": "Sites bloqués" },
+  "modeList": { "message": "Liste" },
+  "modeText": { "message": "Texte" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "Ajouter" },
+  "removeAria": {
+    "message": "Supprimer $DOMAIN$",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "La liste est vide. Ajoutez un site ci-dessus." },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "Enregistrer" },
+  "savedStatus": { "message": "Enregistré" },
+
+  "subdomainHint": { "message": "Les sous-domaines sont bloqués automatiquement" },
+  "configureShortcut": { "message": "Configurer le raccourci clavier" },
+  "currentShortcut": {
+    "message": "Raccourci actuel : $SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "Aucun raccourci défini" },
+  "shortcutInfoAria": { "message": "Quelle est la différence entre ces raccourcis ?" },
+  "shortcutHelp": { "message": "« Toggle distraction blocking » (cette extension) bascule le blocage instantanément. « Activate the extension » est la commande intégrée de Chrome — elle ouvre simplement ce panneau, comme un clic sur l’icône." },
+
+  "blockedTitle": { "message": "Pas maintenant." },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ est dans votre liste de distractions.",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "Vraiment nécessaire ? Désactivez Distract Blocker depuis le panneau latéral." },
+  "blockedBack": { "message": "Retour" },
+  "blockedOpenPanel": { "message": "Ouvrir le panneau" },
+
+  "languageLabel": { "message": "Langue" },
+  "localeAuto": { "message": "Auto (navigateur)" }
+}

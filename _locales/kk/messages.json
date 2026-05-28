@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "Назарды бөлетін сайттарды бөгейді. Бүйірлік панельді ашу үшін белгішені басыңыз — қосқыш пен тізім сол жерде." },
+  "commandToggleDescription": { "message": "Жылдам ауыстыру: панельді ашпай бөгеуді қосу/өшіру" },
+
+  "appTagline": { "message": "Аз алаңдау" },
+
+  "blockingLabel": { "message": "Бөгеу" },
+  "stateOn": { "message": "қосулы" },
+  "stateOff": { "message": "өшірулі" },
+
+  "sectionTitle": { "message": "Бөгелген сайттар" },
+  "modeList": { "message": "Тізім" },
+  "modeText": { "message": "Мәтін" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "Қосу" },
+  "removeAria": {
+    "message": "$DOMAIN$ жою",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "Тізім бос. Жоғарыдан сайт қосыңыз." },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "Сақтау" },
+  "savedStatus": { "message": "Сақталды" },
+
+  "subdomainHint": { "message": "Қосалқы домендер автоматты бөгеледі" },
+  "configureShortcut": { "message": "Жылдам перне баптау" },
+  "currentShortcut": {
+    "message": "Ағымдағы перне: $SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "Жылдам перне берілмеген" },
+  "shortcutInfoAria": { "message": "Бұл перне комбинацияларының айырмасы неде?" },
+  "shortcutHelp": { "message": "«Toggle distraction blocking» (бұл кеңейтім) бөгеуді бірден ауыстырады. «Activate the extension» — Chrome-ның кірістірілген командасы — белгішені басумен бірдей бұл бүйірлік панельді ашады." },
+
+  "blockedTitle": { "message": "Қазір емес." },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ алаңдау тізімінде.",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "Шынымен керек пе? Бүйірлік панельден Distract Blocker-ді өшіріңіз." },
+  "blockedBack": { "message": "Артқа" },
+  "blockedOpenPanel": { "message": "Панельді ашу" },
+
+  "languageLabel": { "message": "Тіл" },
+  "localeAuto": { "message": "Автоматты (браузер)" }
+}

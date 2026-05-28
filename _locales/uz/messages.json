@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "Diqqatni chalg'ituvchi saytlarni bloklaydi. Yon panelni ochish uchun belgini bosing — almashtirgich va ro'yxat o'sha yerda." },
+  "commandToggleDescription": { "message": "Tezkor almashtirish: panelni ochmasdan bloklashni yoqish/o'chirish" },
+
+  "appTagline": { "message": "Kamroq chalg'ish" },
+
+  "blockingLabel": { "message": "Bloklash" },
+  "stateOn": { "message": "yoqilgan" },
+  "stateOff": { "message": "o'chirilgan" },
+
+  "sectionTitle": { "message": "Bloklangan saytlar" },
+  "modeList": { "message": "Ro'yxat" },
+  "modeText": { "message": "Matn" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "Qo'shish" },
+  "removeAria": {
+    "message": "$DOMAIN$ ni o'chirish",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "Ro'yxat bo'sh. Yuqoridan sayt qo'shing." },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "Saqlash" },
+  "savedStatus": { "message": "Saqlandi" },
+
+  "subdomainHint": { "message": "Quyi domenlar avtomatik bloklanadi" },
+  "configureShortcut": { "message": "Klaviatura yorlig'ini sozlash" },
+  "currentShortcut": {
+    "message": "Joriy yorliq: $SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "Yorliq belgilanmagan" },
+  "shortcutInfoAria": { "message": "Bu yorliqlar nimasi bilan farq qiladi?" },
+  "shortcutHelp": { "message": "«Toggle distraction blocking» (ushbu kengaytma) bloklashni darhol almashtiradi. «Activate the extension» Chrome ning o'rnatilgan buyrug'i — u faqat yon panelni ochadi, xuddi belgini bosgandek." },
+
+  "blockedTitle": { "message": "Hozir emas." },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ chalg'itish ro'yxatida.",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "Haqiqatan kerakmi? Yon paneldan Distract Blocker'ni o'chiring." },
+  "blockedBack": { "message": "Orqaga" },
+  "blockedOpenPanel": { "message": "Panelni ochish" },
+
+  "languageLabel": { "message": "Til" },
+  "localeAuto": { "message": "Avto (brauzer)" }
+}

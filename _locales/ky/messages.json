@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "Көңүлдү буруучу сайттарды бөгөттөйт. Сүрөтчөнү басып каптал панелди ачыңыз — которгуч жана тизме ошол жерде." },
+  "commandToggleDescription": { "message": "Тез которуу: панелди ачпай бөгөттөөнү күйгүзүү/өчүрүү" },
+
+  "appTagline": { "message": "Азыраак алаксуу" },
+
+  "blockingLabel": { "message": "Бөгөттөө" },
+  "stateOn": { "message": "күйүк" },
+  "stateOff": { "message": "өчүк" },
+
+  "sectionTitle": { "message": "Бөгөттөлгөн сайттар" },
+  "modeList": { "message": "Тизме" },
+  "modeText": { "message": "Текст" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "Кошуу" },
+  "removeAria": {
+    "message": "$DOMAIN$ дегенди алып салуу",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "Тизме бош. Жогорудан сайт кошуңуз." },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "Сактоо" },
+  "savedStatus": { "message": "Сакталды" },
+
+  "subdomainHint": { "message": "Поддомендер автоматтык түрдө бөгөттөлөт" },
+  "configureShortcut": { "message": "Тез баскычты ырастоо" },
+  "currentShortcut": {
+    "message": "Учурдагы тез баскыч: $SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "Тез баскыч коюлган эмес" },
+  "shortcutInfoAria": { "message": "Бул тез баскычтардын айырмасы кандай?" },
+  "shortcutHelp": { "message": "«Toggle distraction blocking» (бул кеңейтүү) бөгөттөөнү дароо которот. «Activate the extension» — Chrome'дун орнотулган буйругу — сүрөтчөнү басуу сыяктуу бул каптал панелди гана ачат." },
+
+  "blockedTitle": { "message": "Азыр эмес." },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ алаксуу тизмесинде.",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "Чындап эле керекпи? Каптал панелден Distract Blocker'ди өчүрүңүз." },
+  "blockedBack": { "message": "Артка" },
+  "blockedOpenPanel": { "message": "Панелди ачуу" },
+
+  "languageLabel": { "message": "Тил" },
+  "localeAuto": { "message": "Автомат (браузер)" }
+}

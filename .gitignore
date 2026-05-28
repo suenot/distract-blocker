@@ -1,0 +1,27 @@
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+
+# Editors / IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Landing — Node
+landing/node_modules/
+landing/dist/
+landing/.astro/
+landing/.env
+landing/.env.production
+landing/.env.development
+
+# Extension build artifacts (none yet, but reserve)
+dist/
+build/
+
+# Local agent state
+.claude/

@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "Dikkat dağıtan siteleri engeller. Yan paneli açmak için simgeye tıklayın — açma/kapama ve liste oradadır." },
+  "commandToggleDescription": { "message": "Hızlı geçiş: paneli açmadan engellemeyi aç/kapat" },
+
+  "appTagline": { "message": "Daha az dikkat dağınıklığı" },
+
+  "blockingLabel": { "message": "Engelleme" },
+  "stateOn": { "message": "açık" },
+  "stateOff": { "message": "kapalı" },
+
+  "sectionTitle": { "message": "Engellenen siteler" },
+  "modeList": { "message": "Liste" },
+  "modeText": { "message": "Metin" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "Ekle" },
+  "removeAria": {
+    "message": "$DOMAIN$ kaldır",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "Liste boş. Yukarıdan site ekleyin." },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "Kaydet" },
+  "savedStatus": { "message": "Kaydedildi" },
+
+  "subdomainHint": { "message": "Alt etki alanları otomatik engellenir" },
+  "configureShortcut": { "message": "Klavye kısayolunu ayarla" },
+  "currentShortcut": {
+    "message": "Mevcut kısayol: $SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "Kısayol atanmamış" },
+  "shortcutInfoAria": { "message": "Bu kısayolların farkı nedir?" },
+  "shortcutHelp": { "message": "«Toggle distraction blocking» (bu uzantı) engellemeyi anında değiştirir. «Activate the extension» Chrome'un yerleşik komutudur — simgeye tıklamak gibi yalnızca bu yan paneli açar." },
+
+  "blockedTitle": { "message": "Şimdi olmaz." },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ dikkat dağıtıcılar listenizde.",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "Gerçekten gerekli mi? Yan panelden Distract Blocker'ı kapatın." },
+  "blockedBack": { "message": "Geri" },
+  "blockedOpenPanel": { "message": "Paneli aç" },
+
+  "languageLabel": { "message": "Dil" },
+  "localeAuto": { "message": "Otomatik (tarayıcı)" }
+}

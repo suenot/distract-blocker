@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "บล็อกเว็บไซต์ที่ทำให้เสียสมาธิ คลิกไอคอนเพื่อเปิดแผงด้านข้าง — สวิตช์และรายการอยู่ที่นั่น" },
+  "commandToggleDescription": { "message": "สลับเร็ว: เปิด/ปิดการบล็อกโดยไม่ต้องเปิดแผง" },
+
+  "appTagline": { "message": "เสียสมาธิน้อยลง" },
+
+  "blockingLabel": { "message": "การบล็อก" },
+  "stateOn": { "message": "เปิด" },
+  "stateOff": { "message": "ปิด" },
+
+  "sectionTitle": { "message": "เว็บไซต์ที่ถูกบล็อก" },
+  "modeList": { "message": "รายการ" },
+  "modeText": { "message": "ข้อความ" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "เพิ่ม" },
+  "removeAria": {
+    "message": "ลบ $DOMAIN$",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "รายการว่างเปล่า เพิ่มเว็บไซต์ด้านบน" },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "บันทึก" },
+  "savedStatus": { "message": "บันทึกแล้ว" },
+
+  "subdomainHint": { "message": "โดเมนย่อยจะถูกบล็อกโดยอัตโนมัติ" },
+  "configureShortcut": { "message": "กำหนดทางลัดคีย์บอร์ด" },
+  "currentShortcut": {
+    "message": "ทางลัดปัจจุบัน: $SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "ยังไม่ได้ตั้งทางลัด" },
+  "shortcutInfoAria": { "message": "ทางลัดเหล่านี้ต่างกันอย่างไร?" },
+  "shortcutHelp": { "message": "«Toggle distraction blocking» (ส่วนขยายนี้) สลับการบล็อกทันที «Activate the extension» เป็นคำสั่งในตัวของ Chrome — เปิดเฉพาะแผงด้านข้างนี้ เหมือนคลิกที่ไอคอน" },
+
+  "blockedTitle": { "message": "ไม่ใช่ตอนนี้" },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ อยู่ในรายการสิ่งรบกวนของคุณ",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "จำเป็นจริงๆ หรือ? ปิด Distract Blocker จากแผงด้านข้าง" },
+  "blockedBack": { "message": "ย้อนกลับ" },
+  "blockedOpenPanel": { "message": "เปิดแผง" },
+
+  "languageLabel": { "message": "ภาษา" },
+  "localeAuto": { "message": "อัตโนมัติ (เบราว์เซอร์)" }
+}

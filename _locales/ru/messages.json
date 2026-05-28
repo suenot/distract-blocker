@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "Блокирует отвлекающие сайты. Клик по иконке открывает боковую панель — там переключатель и список." },
+  "commandToggleDescription": { "message": "Быстрый тоггл: вкл/выкл блокировку без открытия панели" },
+
+  "appTagline": { "message": "Меньше отвлечений" },
+
+  "blockingLabel": { "message": "Блокировка" },
+  "stateOn": { "message": "включена" },
+  "stateOff": { "message": "выключена" },
+
+  "sectionTitle": { "message": "Заблокированные сайты" },
+  "modeList": { "message": "Список" },
+  "modeText": { "message": "Текст" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "Добавить" },
+  "removeAria": {
+    "message": "Удалить $DOMAIN$",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "Список пуст. Добавьте сайт выше." },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "Сохранить" },
+  "savedStatus": { "message": "Сохранено" },
+
+  "subdomainHint": { "message": "Поддомены блокируются автоматически" },
+  "configureShortcut": { "message": "Настроить горячую клавишу" },
+  "currentShortcut": {
+    "message": "Текущий шорткат: $SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "Шорткат не назначен" },
+  "shortcutInfoAria": { "message": "Чем отличаются эти шорткаты?" },
+  "shortcutHelp": { "message": "«Toggle distraction blocking» (это расширение) мгновенно переключает блокировку. «Activate the extension» — встроенная команда Chrome — просто открывает эту боковую панель, как клик по иконке." },
+
+  "blockedTitle": { "message": "Сейчас не время." },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ в списке отвлекающих сайтов.",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "Действительно надо? Выключи Distract Blocker в боковой панели." },
+  "blockedBack": { "message": "Назад" },
+  "blockedOpenPanel": { "message": "Открыть панель" },
+
+  "languageLabel": { "message": "Язык" },
+  "localeAuto": { "message": "Авто (браузер)" }
+}

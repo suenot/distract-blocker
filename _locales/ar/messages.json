@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "يحجب المواقع المشتتة. انقر على الأيقونة لفتح اللوحة الجانبية — التبديل والقائمة هناك." },
+  "commandToggleDescription": { "message": "تبديل سريع: تشغيل/إيقاف الحجب دون فتح اللوحة" },
+
+  "appTagline": { "message": "تشتيت أقل" },
+
+  "blockingLabel": { "message": "الحجب" },
+  "stateOn": { "message": "مفعل" },
+  "stateOff": { "message": "معطل" },
+
+  "sectionTitle": { "message": "المواقع المحجوبة" },
+  "modeList": { "message": "قائمة" },
+  "modeText": { "message": "نص" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "إضافة" },
+  "removeAria": {
+    "message": "إزالة $DOMAIN$",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "القائمة فارغة. أضف موقعًا أعلاه." },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "حفظ" },
+  "savedStatus": { "message": "تم الحفظ" },
+
+  "subdomainHint": { "message": "يتم حجب النطاقات الفرعية تلقائيًا" },
+  "configureShortcut": { "message": "إعداد اختصار لوحة المفاتيح" },
+  "currentShortcut": {
+    "message": "الاختصار الحالي: $SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "لم يتم تعيين اختصار" },
+  "shortcutInfoAria": { "message": "ما الفرق بين هذه الاختصارات؟" },
+  "shortcutHelp": { "message": "«Toggle distraction blocking» (هذا الامتداد) يبدّل الحجب فورًا. «Activate the extension» أمر مدمج في Chrome — يفتح هذه اللوحة الجانبية فقط، كأنك نقرت على الأيقونة." },
+
+  "blockedTitle": { "message": "ليس الآن." },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ ضمن قائمة المشتتات.",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "تحتاجه فعلًا؟ أوقف Distract Blocker من اللوحة الجانبية." },
+  "blockedBack": { "message": "رجوع" },
+  "blockedOpenPanel": { "message": "فتح اللوحة" },
+
+  "languageLabel": { "message": "اللغة" },
+  "localeAuto": { "message": "تلقائي (المتصفح)" }
+}

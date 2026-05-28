@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "Blok laman yang mengganggu tumpuan. Klik ikon untuk membuka panel sisi — suis dan senarai ada di sana." },
+  "commandToggleDescription": { "message": "Togol pantas: hidup/matikan halangan tanpa membuka panel" },
+
+  "appTagline": { "message": "Kurang gangguan" },
+
+  "blockingLabel": { "message": "Halangan" },
+  "stateOn": { "message": "hidup" },
+  "stateOff": { "message": "mati" },
+
+  "sectionTitle": { "message": "Laman yang dihalang" },
+  "modeList": { "message": "Senarai" },
+  "modeText": { "message": "Teks" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "Tambah" },
+  "removeAria": {
+    "message": "Buang $DOMAIN$",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "Senarai kosong. Tambah laman di atas." },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "Simpan" },
+  "savedStatus": { "message": "Disimpan" },
+
+  "subdomainHint": { "message": "Sub-domain dihalang secara automatik" },
+  "configureShortcut": { "message": "Tetapkan pintasan papan kekunci" },
+  "currentShortcut": {
+    "message": "Pintasan semasa: $SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "Tiada pintasan ditetapkan" },
+  "shortcutInfoAria": { "message": "Apakah perbezaan pintasan ini?" },
+  "shortcutHelp": { "message": "«Toggle distraction blocking» (sambungan ini) menukar halangan serta-merta. «Activate the extension» ialah perintah terbina Chrome — ia hanya membuka panel sisi ini, seperti mengklik ikon." },
+
+  "blockedTitle": { "message": "Bukan sekarang." },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ ada dalam senarai gangguan anda.",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "Betul-betul perlu? Matikan Distract Blocker dari panel sisi." },
+  "blockedBack": { "message": "Kembali" },
+  "blockedOpenPanel": { "message": "Buka panel" },
+
+  "languageLabel": { "message": "Bahasa" },
+  "localeAuto": { "message": "Auto (pelayar)" }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="extensionName">Distract Blocker</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <header class="header">
+    <div class="mascot mascot--small" data-state="on" id="mascot" aria-hidden="true"></div>
+    <div class="header-text">
+      <h1 data-i18n="extensionName">Distract Blocker</h1>
+      <span class="subtitle" data-i18n="appTagline">Fewer distractions</span>
+    </div>
+    <button type="button" class="header-btn" id="langBtn" data-i18n-aria-label="languageLabel" aria-label="Language">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M2 12h20"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    </button>
+  </header>
+
+  <aside class="aside-panel" id="languageAside" hidden>
+    <header class="aside-header">
+      <button type="button" class="icon-btn" id="langBackBtn" aria-label="Back">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+      <h2 data-i18n="languageLabel">Language</h2>
+    </header>
+    <ul class="lang-list" id="langList"></ul>
+  </aside>
+
+  <section class="status-card" id="statusCard">
+    <div class="status-info">
+      <span class="status-label" data-i18n="blockingLabel">Blocking</span>
+      <span class="status-value" id="statusValue">on</span>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="enabledToggle">
+      <span class="slider"></span>
+    </label>
+  </section>
+
+  <section class="sites-section">
+    <div class="section-header">
+      <h2 data-i18n="sectionTitle">Blocked sites</h2>
+      <span class="counter" id="counter">0</span>
+      <div class="mode-switch" role="tablist">
+        <button type="button" class="mode-btn is-active" data-mode="list" role="tab" aria-selected="true" data-i18n="modeList">List</button>
+        <button type="button" class="mode-btn" data-mode="text" role="tab" aria-selected="false" data-i18n="modeText">Text</button>
+      </div>
+    </div>
+
+    <div class="mode-pane" id="listPane">
+      <form class="add-form" id="addForm">
+        <input
+          type="text"
+          id="newSite"
+          autocomplete="off"
+          spellcheck="false"
+          data-i18n-placeholder="addPlaceholder"
+          placeholder="example.com">
+        <button type="submit" data-i18n-aria-label="addAria" aria-label="Add">＋</button>
+      </form>
+
+      <ul class="sites-list" id="sitesList"></ul>
+      <p class="empty" id="emptyHint" data-i18n="emptyHint" hidden>Your list is empty. Add a site above.</p>
+    </div>
+
+    <div class="mode-pane" id="textPane" hidden>
+      <textarea
+        id="sitesText"
+        spellcheck="false"
+        data-i18n-placeholder="textPlaceholder"></textarea>
+      <div class="text-actions">
+        <span class="text-status" id="textStatus"></span>
+        <button type="button" id="saveText" data-i18n="saveButton">Save</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span data-i18n="subdomainHint">Subdomains are blocked automatically</span>
+
+    <div class="shortcut-row">
+      <span class="shortcut-text" id="shortcutText" data-i18n="shortcutNotSet">No shortcut set</span>
+      <button type="button" class="info-btn" id="infoBtn" data-i18n-aria-label="shortcutInfoAria" aria-label="Help">?</button>
+    </div>
+
+    <button type="button" id="shortcutsBtn" class="link-btn" data-i18n="configureShortcut">Configure keyboard shortcut</button>
+
+    <div class="tooltip" id="shortcutTooltip" data-i18n="shortcutHelp" hidden></div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="mascot.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>

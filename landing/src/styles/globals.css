@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 100%;
+    --card: 240 10% 4.9%;
+    --card-foreground: 0 0% 100%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 354 73% 56%;
+    --accent-foreground: 0 0% 100%;
+    --accent-dark: 354 73% 46%;
+    --accent-darker: 354 90% 80%;
+    --border: 240 3.7% 20%;
+    --radius: 1.5rem;
+    --accent-rgb: 230, 57, 70;
+  }
+
+  * { @apply border-border; }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+}
+
+@layer utilities {
+  .shadow-glow {
+    box-shadow: 0 0 60px rgba(var(--accent-rgb), 0.25);
+  }
+}
+
+@keyframes shape-enter {
+  from { opacity: 0; transform: translateY(-150px) rotate(var(--shape-rotate-from)); }
+  to   { opacity: 1; transform: translateY(0) rotate(var(--shape-rotate-to)); }
+}
+
+@keyframes shape-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(15px); }
+}
+
+.shape-enter { opacity: 0; }
+
+@media (min-width: 768px) {
+  .shape-enter {
+    animation: shape-enter 2.4s cubic-bezier(0.23, 0.86, 0.39, 0.96) forwards;
+    animation-delay: var(--shape-delay, 0s);
+  }
+  .shape-float { animation: shape-float 12s ease-in-out infinite; }
+}
+
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-fade-up {
+  opacity: 0;
+  animation: hero-fade-up 0.8s cubic-bezier(0.23, 0.86, 0.39, 0.96) forwards;
+  animation-delay: var(--fade-delay, 0s);
+}
+
+@keyframes blink {
+  0%, 94%, 100% { transform: scaleY(1); }
+  96%, 98%      { transform: scaleY(0.05); }
+}
+.mascot .m-eyes-closed,
+.mascot .m-mouth-sleep,
+.mascot .m-zzz { display: none; }
+.mascot[data-state="on"] .m-eye {
+  animation: blink 5s infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.mascot[data-state="on"] .m-eye-r { animation-delay: .05s; }

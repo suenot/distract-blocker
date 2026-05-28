@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "気が散るサイトをブロックします。アイコンをクリックするとサイドパネルが開き、そこで切り替えとリスト編集ができます。" },
+  "commandToggleDescription": { "message": "クイック切り替え：パネルを開かずにブロックをオン/オフ" },
+
+  "appTagline": { "message": "気を散らされない" },
+
+  "blockingLabel": { "message": "ブロック" },
+  "stateOn": { "message": "オン" },
+  "stateOff": { "message": "オフ" },
+
+  "sectionTitle": { "message": "ブロック中のサイト" },
+  "modeList": { "message": "リスト" },
+  "modeText": { "message": "テキスト" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "追加" },
+  "removeAria": {
+    "message": "$DOMAIN$ を削除",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "リストは空です。上から追加してください。" },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "保存" },
+  "savedStatus": { "message": "保存しました" },
+
+  "subdomainHint": { "message": "サブドメインも自動でブロックされます" },
+  "configureShortcut": { "message": "ショートカットを設定" },
+  "currentShortcut": {
+    "message": "現在のショートカット：$SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "ショートカット未設定" },
+  "shortcutInfoAria": { "message": "これらのショートカットの違いは？" },
+  "shortcutHelp": { "message": "「Toggle distraction blocking」（この拡張機能）はブロックを即座に切り替えます。「Activate the extension」は Chrome 標準のコマンドで、アイコンをクリックするのと同じくこのサイドパネルを開くだけです。" },
+
+  "blockedTitle": { "message": "今は集中する時間です。" },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ はブロック対象です。",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "本当に必要？サイドパネルから Distract Blocker をオフにしてください。" },
+  "blockedBack": { "message": "戻る" },
+  "blockedOpenPanel": { "message": "パネルを開く" },
+
+  "languageLabel": { "message": "言語" },
+  "localeAuto": { "message": "自動（ブラウザ）" }
+}

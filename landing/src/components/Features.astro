@@ -1,0 +1,53 @@
+---
+const features = [
+  {
+    title: 'Side panel UI',
+    body: "Click the icon and the panel slides in next to your tabs — toggle, list, textarea, language. No popup that disappears the moment you sneeze.",
+  },
+  {
+    title: 'Two ways to edit the list',
+    body: 'Add and remove sites one by one, or switch to the textarea view and paste a whole list. The mode you pick is remembered.',
+  },
+  {
+    title: 'Quick toggle shortcut',
+    body: 'Assign any keyboard shortcut you want. The extension flips blocking on/off instantly without opening anything — perfect for the one moment you actually need that site.',
+  },
+  {
+    title: '21 languages',
+    body: "English, Русский, 中文, 日本語, 한국어, Español, Português, हिन्दी, العربية, Français, Deutsch, Italiano, Nederlands, Türkçe, Қазақша, O'zbek, Кыргызча, Bahasa Indonesia, Tiếng Việt, ไทย, Bahasa Melayu. Auto-detected from your browser.",
+  },
+  {
+    title: 'A friendly mascot',
+    body: "When blocking is on, the little guardian is awake and holding a shield. Turn it off and they fall asleep — zzz. They don't track your cursor. They just sit there and judge.",
+  },
+  {
+    title: 'declarativeNetRequest',
+    body: 'No content scripts, no remote code, no surveillance. Blocking is done with native Chrome rules — fast, cheap, and reviewable.',
+  },
+];
+---
+
+<section id="features" class="py-24 md:py-32 px-4 md:px-6 bg-background">
+  <div class="container mx-auto max-w-6xl">
+    <div class="text-center mb-16 md:mb-20">
+      <h2 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
+        <span class="bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/60">What you get</span>
+      </h2>
+      <p class="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+        Everything fits in a side panel. No account, no telemetry, no subscription.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {features.map((f) => (
+        <div class="group relative bg-card/40 border border-border rounded-2xl p-7 hover:border-accent/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/10">
+          <div class="absolute top-7 right-7 h-8 w-8 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center">
+            <span class="h-2 w-2 rounded-full bg-accent"></span>
+          </div>
+          <h3 class="text-xl md:text-2xl font-bold mb-4 pr-12 tracking-tight">{f.title}</h3>
+          <p class="text-sm md:text-base text-muted-foreground leading-relaxed">{f.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

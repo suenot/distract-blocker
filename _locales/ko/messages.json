@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "산만한 사이트를 차단합니다. 아이콘을 클릭하면 사이드 패널이 열리며, 그곳에서 켜기/끄기와 목록 편집이 가능합니다." },
+  "commandToggleDescription": { "message": "빠른 전환: 패널을 열지 않고 차단 켜기/끄기" },
+
+  "appTagline": { "message": "산만함을 줄이다" },
+
+  "blockingLabel": { "message": "차단" },
+  "stateOn": { "message": "켜짐" },
+  "stateOff": { "message": "꺼짐" },
+
+  "sectionTitle": { "message": "차단된 사이트" },
+  "modeList": { "message": "목록" },
+  "modeText": { "message": "텍스트" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "추가" },
+  "removeAria": {
+    "message": "$DOMAIN$ 제거",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "목록이 비어 있습니다. 위에서 사이트를 추가하세요." },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "저장" },
+  "savedStatus": { "message": "저장됨" },
+
+  "subdomainHint": { "message": "하위 도메인도 자동으로 차단됩니다" },
+  "configureShortcut": { "message": "단축키 설정" },
+  "currentShortcut": {
+    "message": "현재 단축키: $SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "단축키 미설정" },
+  "shortcutInfoAria": { "message": "이 단축키들의 차이는?" },
+  "shortcutHelp": { "message": "「Toggle distraction blocking」(이 확장 프로그램)은 차단을 즉시 전환합니다. 「Activate the extension」은 Chrome의 기본 명령으로, 아이콘 클릭과 마찬가지로 이 사이드 패널을 엽니다." },
+
+  "blockedTitle": { "message": "지금은 안 됩니다." },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ 은(는) 차단 목록에 있습니다.",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "정말 필요한가요? 사이드 패널에서 Distract Blocker를 꺼주세요." },
+  "blockedBack": { "message": "뒤로" },
+  "blockedOpenPanel": { "message": "패널 열기" },
+
+  "languageLabel": { "message": "언어" },
+  "localeAuto": { "message": "자동 (브라우저)" }
+}

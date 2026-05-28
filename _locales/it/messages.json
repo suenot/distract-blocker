@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "Blocca i siti che distraggono. Clicca sull'icona per aprire il pannello laterale — l'interruttore e l'elenco sono lì." },
+  "commandToggleDescription": { "message": "Cambio rapido: attiva/disattiva il blocco senza aprire il pannello" },
+
+  "appTagline": { "message": "Meno distrazioni" },
+
+  "blockingLabel": { "message": "Blocco" },
+  "stateOn": { "message": "attivo" },
+  "stateOff": { "message": "disattivo" },
+
+  "sectionTitle": { "message": "Siti bloccati" },
+  "modeList": { "message": "Elenco" },
+  "modeText": { "message": "Testo" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "Aggiungi" },
+  "removeAria": {
+    "message": "Rimuovi $DOMAIN$",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "L'elenco è vuoto. Aggiungi un sito sopra." },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "Salva" },
+  "savedStatus": { "message": "Salvato" },
+
+  "subdomainHint": { "message": "I sottodomini vengono bloccati automaticamente" },
+  "configureShortcut": { "message": "Configura scorciatoia da tastiera" },
+  "currentShortcut": {
+    "message": "Scorciatoia attuale: $SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "Nessuna scorciatoia impostata" },
+  "shortcutInfoAria": { "message": "Qual è la differenza tra queste scorciatoie?" },
+  "shortcutHelp": { "message": "«Toggle distraction blocking» (questa estensione) commuta il blocco all'istante. «Activate the extension» è il comando integrato di Chrome — apre solo questo pannello laterale, come cliccare sull'icona." },
+
+  "blockedTitle": { "message": "Non ora." },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ è nel tuo elenco di distrazioni.",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "Davvero necessario? Disattiva Distract Blocker dal pannello laterale." },
+  "blockedBack": { "message": "Indietro" },
+  "blockedOpenPanel": { "message": "Apri pannello" },
+
+  "languageLabel": { "message": "Lingua" },
+  "localeAuto": { "message": "Auto (browser)" }
+}

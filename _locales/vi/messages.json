@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "Chặn các trang gây phân tâm. Nhấp vào biểu tượng để mở bảng bên — công tắc và danh sách nằm ở đó." },
+  "commandToggleDescription": { "message": "Chuyển nhanh: bật/tắt chặn mà không mở bảng" },
+
+  "appTagline": { "message": "Ít phân tâm hơn" },
+
+  "blockingLabel": { "message": "Chặn" },
+  "stateOn": { "message": "bật" },
+  "stateOff": { "message": "tắt" },
+
+  "sectionTitle": { "message": "Trang đã chặn" },
+  "modeList": { "message": "Danh sách" },
+  "modeText": { "message": "Văn bản" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "Thêm" },
+  "removeAria": {
+    "message": "Xóa $DOMAIN$",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "Danh sách trống. Thêm trang ở trên." },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "Lưu" },
+  "savedStatus": { "message": "Đã lưu" },
+
+  "subdomainHint": { "message": "Tên miền phụ tự động bị chặn" },
+  "configureShortcut": { "message": "Cấu hình phím tắt" },
+  "currentShortcut": {
+    "message": "Phím tắt hiện tại: $SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "Chưa đặt phím tắt" },
+  "shortcutInfoAria": { "message": "Các phím tắt này khác nhau như thế nào?" },
+  "shortcutHelp": { "message": "«Toggle distraction blocking» (tiện ích này) lập tức chuyển đổi chặn. «Activate the extension» là lệnh tích hợp của Chrome — chỉ mở bảng bên này, giống như nhấp vào biểu tượng." },
+
+  "blockedTitle": { "message": "Không phải lúc này." },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ nằm trong danh sách phân tâm của bạn.",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "Thực sự cần? Tắt Distract Blocker từ bảng bên." },
+  "blockedBack": { "message": "Quay lại" },
+  "blockedOpenPanel": { "message": "Mở bảng" },
+
+  "languageLabel": { "message": "Ngôn ngữ" },
+  "localeAuto": { "message": "Tự động (trình duyệt)" }
+}

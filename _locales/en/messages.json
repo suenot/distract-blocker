@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "Block distracting sites. Click the icon to open the side panel — toggle and edit your list there." },
+  "commandToggleDescription": { "message": "Quick toggle: turn distraction blocking on/off without opening the panel" },
+
+  "appTagline": { "message": "Fewer distractions" },
+
+  "blockingLabel": { "message": "Blocking" },
+  "stateOn": { "message": "on" },
+  "stateOff": { "message": "off" },
+
+  "sectionTitle": { "message": "Blocked sites" },
+  "modeList": { "message": "List" },
+  "modeText": { "message": "Text" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "Add" },
+  "removeAria": {
+    "message": "Remove $DOMAIN$",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "Your list is empty. Add a site above." },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "Save" },
+  "savedStatus": { "message": "Saved" },
+
+  "subdomainHint": { "message": "Subdomains are blocked automatically" },
+  "configureShortcut": { "message": "Configure keyboard shortcut" },
+  "currentShortcut": {
+    "message": "Current shortcut: $SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "No shortcut set" },
+  "shortcutInfoAria": { "message": "What is the difference between these shortcuts?" },
+  "shortcutHelp": { "message": "“Toggle distraction blocking” (this extension) instantly flips the switch. “Activate the extension” is Chrome’s built-in command — it just opens this side panel, like clicking the icon." },
+
+  "blockedTitle": { "message": "Not now." },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ is on your distraction list.",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "Really need it? Turn Distract Blocker off from the side panel." },
+  "blockedBack": { "message": "Go back" },
+  "blockedOpenPanel": { "message": "Open panel" },
+
+  "languageLabel": { "message": "Language" },
+  "localeAuto": { "message": "Auto (browser)" }
+}

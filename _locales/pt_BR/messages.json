@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "Bloqueia sites que distraem. Clique no ícone para abrir o painel lateral — o interruptor e a lista ficam lá." },
+  "commandToggleDescription": { "message": "Alternância rápida: liga/desliga o bloqueio sem abrir o painel" },
+
+  "appTagline": { "message": "Menos distrações" },
+
+  "blockingLabel": { "message": "Bloqueio" },
+  "stateOn": { "message": "ligado" },
+  "stateOff": { "message": "desligado" },
+
+  "sectionTitle": { "message": "Sites bloqueados" },
+  "modeList": { "message": "Lista" },
+  "modeText": { "message": "Texto" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "Adicionar" },
+  "removeAria": {
+    "message": "Remover $DOMAIN$",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "A lista está vazia. Adicione um site acima." },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "Salvar" },
+  "savedStatus": { "message": "Salvo" },
+
+  "subdomainHint": { "message": "Subdomínios são bloqueados automaticamente" },
+  "configureShortcut": { "message": "Configurar atalho de teclado" },
+  "currentShortcut": {
+    "message": "Atalho atual: $SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "Nenhum atalho definido" },
+  "shortcutInfoAria": { "message": "Qual a diferença entre esses atalhos?" },
+  "shortcutHelp": { "message": "“Toggle distraction blocking” (esta extensão) alterna o bloqueio instantaneamente. “Activate the extension” é o comando integrado do Chrome — apenas abre este painel lateral, como clicar no ícone." },
+
+  "blockedTitle": { "message": "Agora não." },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ está na sua lista de distrações.",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "Realmente precisa? Desative o Distract Blocker no painel lateral." },
+  "blockedBack": { "message": "Voltar" },
+  "blockedOpenPanel": { "message": "Abrir painel" },
+
+  "languageLabel": { "message": "Idioma" },
+  "localeAuto": { "message": "Auto (navegador)" }
+}

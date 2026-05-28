@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="extensionName">Distract Blocker</title>
+  <link rel="stylesheet" href="blocked.css">
+</head>
+<body>
+  <main class="card">
+    <div class="mascot mascot--large" data-state="on" id="mascot" aria-hidden="true"></div>
+    <h1 data-i18n="blockedTitle">Not now.</h1>
+    <p class="subtitle" id="subtitle"></p>
+    <p class="hint" data-i18n="blockedHint">Really need it? Turn Distract Blocker off from the side panel.</p>
+    <div class="actions">
+      <button type="button" id="backBtn" class="btn btn--primary" data-i18n="blockedBack">Go back</button>
+    </div>
+  </main>
+
+  <script src="i18n.js"></script>
+  <script src="mascot.js"></script>
+  <script src="blocked.js"></script>
+</body>
+</html>

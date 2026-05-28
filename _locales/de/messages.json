@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "Blockiert ablenkende Seiten. Klick auf das Icon öffnet das Seitenpanel: Schalter und Liste sind dort." },
+  "commandToggleDescription": { "message": "Schnellumschaltung: Ablenkungsblocker ein-/ausschalten, ohne das Panel zu öffnen" },
+
+  "appTagline": { "message": "Weniger Ablenkung" },
+
+  "blockingLabel": { "message": "Blockierung" },
+  "stateOn": { "message": "aktiv" },
+  "stateOff": { "message": "inaktiv" },
+
+  "sectionTitle": { "message": "Blockierte Seiten" },
+  "modeList": { "message": "Liste" },
+  "modeText": { "message": "Text" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "Hinzufügen" },
+  "removeAria": {
+    "message": "$DOMAIN$ entfernen",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "Die Liste ist leer. Füge oben eine Seite hinzu." },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "Speichern" },
+  "savedStatus": { "message": "Gespeichert" },
+
+  "subdomainHint": { "message": "Subdomains werden automatisch blockiert" },
+  "configureShortcut": { "message": "Tastenkürzel konfigurieren" },
+  "currentShortcut": {
+    "message": "Aktuelles Tastenkürzel: $SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "Kein Tastenkürzel gesetzt" },
+  "shortcutInfoAria": { "message": "Was ist der Unterschied zwischen diesen Tastenkürzeln?" },
+  "shortcutHelp": { "message": "„Toggle distraction blocking“ (diese Erweiterung) schaltet die Blockierung sofort um. „Activate the extension“ ist Chromes eingebauter Befehl — er öffnet nur dieses Seitenpanel, wie ein Klick auf das Icon." },
+
+  "blockedTitle": { "message": "Jetzt nicht." },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ steht auf deiner Ablenkungsliste.",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "Wirklich nötig? Schalte Distract Blocker im Seitenpanel aus." },
+  "blockedBack": { "message": "Zurück" },
+  "blockedOpenPanel": { "message": "Panel öffnen" },
+
+  "languageLabel": { "message": "Sprache" },
+  "localeAuto": { "message": "Auto (Browser)" }
+}

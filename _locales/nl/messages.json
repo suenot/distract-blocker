@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "Blokkeert afleidende sites. Klik op het pictogram om het zijpaneel te openen — schakelaar en lijst staan daar." },
+  "commandToggleDescription": { "message": "Snel wisselen: blokkeren aan/uit zonder het paneel te openen" },
+
+  "appTagline": { "message": "Minder afleiding" },
+
+  "blockingLabel": { "message": "Blokkeren" },
+  "stateOn": { "message": "aan" },
+  "stateOff": { "message": "uit" },
+
+  "sectionTitle": { "message": "Geblokkeerde sites" },
+  "modeList": { "message": "Lijst" },
+  "modeText": { "message": "Tekst" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "Toevoegen" },
+  "removeAria": {
+    "message": "$DOMAIN$ verwijderen",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "De lijst is leeg. Voeg hierboven een site toe." },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "Opslaan" },
+  "savedStatus": { "message": "Opgeslagen" },
+
+  "subdomainHint": { "message": "Subdomeinen worden automatisch geblokkeerd" },
+  "configureShortcut": { "message": "Sneltoets instellen" },
+  "currentShortcut": {
+    "message": "Huidige sneltoets: $SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "Geen sneltoets ingesteld" },
+  "shortcutInfoAria": { "message": "Wat is het verschil tussen deze sneltoetsen?" },
+  "shortcutHelp": { "message": "«Toggle distraction blocking» (deze extensie) wisselt het blokkeren direct. «Activate the extension» is de ingebouwde opdracht van Chrome — opent alleen dit zijpaneel, net als klikken op het pictogram." },
+
+  "blockedTitle": { "message": "Nu niet." },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ staat op je afleidingslijst.",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "Echt nodig? Schakel Distract Blocker uit in het zijpaneel." },
+  "blockedBack": { "message": "Terug" },
+  "blockedOpenPanel": { "message": "Paneel openen" },
+
+  "languageLabel": { "message": "Taal" },
+  "localeAuto": { "message": "Auto (browser)" }
+}

@@ -1,0 +1,49 @@
+{
+  "extensionName": { "message": "Distract Blocker" },
+  "extensionDescription": { "message": "Memblokir situs yang mengganggu. Klik ikon untuk membuka panel samping — sakelar dan daftar ada di sana." },
+  "commandToggleDescription": { "message": "Sakelar cepat: hidup/matikan blokir tanpa membuka panel" },
+
+  "appTagline": { "message": "Lebih sedikit gangguan" },
+
+  "blockingLabel": { "message": "Blokir" },
+  "stateOn": { "message": "aktif" },
+  "stateOff": { "message": "nonaktif" },
+
+  "sectionTitle": { "message": "Situs yang diblokir" },
+  "modeList": { "message": "Daftar" },
+  "modeText": { "message": "Teks" },
+
+  "addPlaceholder": { "message": "example.com" },
+  "addAria": { "message": "Tambah" },
+  "removeAria": {
+    "message": "Hapus $DOMAIN$",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "emptyHint": { "message": "Daftar kosong. Tambahkan situs di atas." },
+
+  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "saveButton": { "message": "Simpan" },
+  "savedStatus": { "message": "Tersimpan" },
+
+  "subdomainHint": { "message": "Subdomain diblokir otomatis" },
+  "configureShortcut": { "message": "Atur pintasan papan ketik" },
+  "currentShortcut": {
+    "message": "Pintasan saat ini: $SHORTCUT$",
+    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+  },
+  "shortcutNotSet": { "message": "Pintasan belum diatur" },
+  "shortcutInfoAria": { "message": "Apa perbedaan pintasan ini?" },
+  "shortcutHelp": { "message": "«Toggle distraction blocking» (ekstensi ini) langsung mengubah blokir. «Activate the extension» adalah perintah bawaan Chrome — hanya membuka panel samping ini, seperti mengklik ikon." },
+
+  "blockedTitle": { "message": "Tidak sekarang." },
+  "blockedSubtitle": {
+    "message": "$DOMAIN$ ada di daftar gangguanmu.",
+    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+  },
+  "blockedHint": { "message": "Benar-benar perlu? Matikan Distract Blocker dari panel samping." },
+  "blockedBack": { "message": "Kembali" },
+  "blockedOpenPanel": { "message": "Buka panel" },
+
+  "languageLabel": { "message": "Bahasa" },
+  "localeAuto": { "message": "Otomatis (peramban)" }
+}
