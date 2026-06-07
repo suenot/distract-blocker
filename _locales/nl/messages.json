@@ -21,7 +21,7 @@
   },
   "emptyHint": { "message": "De lijst is leeg. Voeg hierboven een site toe." },
 
-  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "textPlaceholder": { "message": "example.com\nexample.net" },
   "saveButton": { "message": "Opslaan" },
   "savedStatus": { "message": "Opgeslagen" },
 
@@ -45,5 +45,39 @@
   "blockedOpenPanel": { "message": "Paneel openen" },
 
   "languageLabel": { "message": "Taal" },
-  "localeAuto": { "message": "Auto (browser)" }
+  "localeAuto": { "message": "Auto (browser)" },
+
+  "lockSectionOff": { "message": "Beveiligde modus" },
+  "lockSetUp": { "message": "Instellen" },
+  "lockProtected": { "message": "Beveiligd" },
+  "lockUnlock": { "message": "Ontgrendelen" },
+  "lockUnlocked": { "message": "Bewerken ontgrendeld" },
+  "lockRelock": { "message": "Opnieuw vergrendelen" },
+  "lockManage": { "message": "Beheren" },
+  "lockSetupTitle": { "message": "Beveiligde modus instellen" },
+  "lockUnlockTitle": { "message": "Ontgrendelen om te bewerken" },
+  "lockManageTitle": { "message": "Beveiligde modus" },
+  "lockTypePin": { "message": "Pincode van 4 cijfers" },
+  "lockTypePassword": { "message": "Wachtwoord" },
+  "lockNewCode": { "message": "Nieuwe code" },
+  "lockConfirmCode": { "message": "Code bevestigen" },
+  "lockYourCode": { "message": "Je code" },
+  "lockPinPlaceholder": { "message": "••••" },
+  "lockPasswordPlaceholder": { "message": "Je wachtwoord" },
+  "lockEnable": { "message": "Beveiliging inschakelen" },
+  "lockChange": { "message": "Code wijzigen" },
+  "lockRemove": { "message": "Beveiliging uitschakelen" },
+  "lockSubmitUnlock": { "message": "Ontgrendelen" },
+  "lockWrong": { "message": "Onjuiste code. Probeer opnieuw." },
+  "lockMismatch": { "message": "Codes komen niet overeen." },
+  "lockTooShort": { "message": "Gebruik minstens 4 tekens." },
+  "lockPinInvalid": { "message": "Voer precies 4 cijfers in." },
+  "lockTooManyAttempts": {
+    "message": "Te veel pogingen. Wacht $S$ s.",
+    "placeholders": { "s": { "content": "$1", "example": "30" } }
+  },
+  "lockOnToast": { "message": "Beveiligde modus is aan." },
+  "lockOffToast": { "message": "Beveiligde modus is uit." },
+  "lockChangedToast": { "message": "Code bijgewerkt." },
+  "lockCaveat": { "message": "Een lokale vergrendeling voor deze browser — een focushulp, geen sabotagebestendig ouderlijk toezicht. Bewaar je code op een veilige plek: hij kan niet worden hersteld." }
 }

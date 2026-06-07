@@ -4,6 +4,21 @@
 Open the dashboard. The "Privacy practices" tab is where most
 of these go. Where each field lives is annotated below.
 
+----------------------------------------------------------------
+  v1.1.0 — resubmission notes (rejection fix)
+----------------------------------------------------------------
+The previous draft was rejected for "excessive keywords in the
+description" (the list of site brand names under DEFAULTS).
+Fixed in this version:
+  • Store description: brand-name list removed; the DEFAULTS
+    section is now a generic "Getting started" (en + ru).
+  • Extension: the built-in starter blocklist is gone — the list
+    now starts empty (background.js DEFAULT_SITES = []).
+  • New feature: optional "Protected mode" — lock the panel with
+    a PIN or password (stored only as a salted hash, locally).
+RE-PASTE the Store listing → Detailed description from
+en/description.txt (and the localized ru/description.txt).
+
 ================================================================
   Settings (top-right gear)
 ================================================================
@@ -25,7 +40,8 @@ Mature content:        No
 Block user-defined distracting websites to help the user focus.
 The extension manages a blocklist, a master on/off toggle, and a
 day-of-week + time-of-day schedule that controls when blocking
-applies.
+applies. An optional Protected mode can lock the panel behind a
+PIN or password so blocking isn't switched off on impulse.
 
 ================================================================
   Privacy practices → Permission justifications
@@ -45,9 +61,10 @@ remote code is fetched. Chrome enforces the rules natively.
 chrome.storage.local is used to persist user-managed settings
 locally: the blocklist of distracting domains, the master
 enabled toggle state, the schedule (mode + ranges), the chosen
-UI language, and the list/text edit-mode preference. Nothing
-is synced via chrome.storage.sync, and nothing is sent off the
-device.
+UI language, the list/text edit-mode preference, and — if the
+user enables Protected mode — a salted PBKDF2 hash of their
+PIN/password (never the code itself). Nothing is synced via
+chrome.storage.sync, and nothing is sent off the device.
 
 --- sidePanel justification ---
 The entire user interface (master toggle, blocklist editor,

@@ -26,9 +26,23 @@ const $langBtn = document.getElementById("langBtn");
 const $langAside = document.getElementById("languageAside");
 const $langBackBtn = document.getElementById("langBackBtn");
 const $langList = document.getElementById("langList");
+const $lockBanner = document.getElementById("lockBanner");
+const $lockBannerLabel = document.getElementById("lockBannerLabel");
+const $lockBannerBtn = document.getElementById("lockBannerBtn");
+const $lockManageBtn = document.getElementById("lockManageBtn");
+const $lockAside = document.getElementById("lockAside");
+const $lockAsideTitle = document.getElementById("lockAsideTitle");
+const $lockBody = document.getElementById("lockBody");
+const $lockBackBtn = document.getElementById("lockBackBtn");
+const $toast = document.getElementById("toast");
 
 const MODE_KEY = "editMode";
 const DEFAULT_SCHEDULE = { mode: "always", ranges: [] };
+
+// Protected mode (in-memory unlock state — resets every time the panel opens)
+let lockInfo = null;
+let unlocked = false;
+const isLocked = () => !!lockInfo && !unlocked;
 
 renderMascot($mascot);
 
@@ -74,11 +88,20 @@ function timeToMinutes(t) {
 }
 
 function rangeActive(range, date) {
-  if (Array.isArray(range.days) && range.days.length > 0 && !range.days.includes(date.getDay())) return false;
+  const days = range.days;
+  const hasDays = Array.isArray(days) && days.length > 0;
   const cur = date.getHours() * 60 + date.getMinutes();
   const start = timeToMinutes(range.start);
   const end = timeToMinutes(range.end);
-  return start < end && cur >= start && cur < end;
+  if (start === end) return false;
+  if (start < end) {
+    if (hasDays && !days.includes(date.getDay())) return false;
+    return cur >= start && cur < end;
+  }
+  // Overnight window crossing midnight (start > end).
+  if (cur >= start) return !hasDays || days.includes(date.getDay());
+  if (cur < end) return !hasDays || days.includes((date.getDay() + 6) % 7);
+  return false;
 }
 
 function isBlockingNow(enabled, schedule, date = new Date()) {
@@ -213,11 +236,52 @@ function renderMode(mode) {
 }
 
 async function render() {
+  const data = await chrome.storage.local.get("lock");
+  lockInfo = data.lock || null;
+  if (!lockInfo) unlocked = false;
   const { enabled, sites, mode, schedule } = await getState();
   renderToggle(enabled, schedule);
   renderSites(sites);
   renderMode(mode);
   renderSchedule(schedule);
+  renderLockBanner();
+  applyLockUI();
+}
+
+function renderLockBanner() {
+  if (!lockInfo) {
+    $lockBanner.dataset.lock = "off";
+    $lockBannerLabel.textContent = t("lockSectionOff");
+    $lockBannerBtn.textContent = t("lockSetUp");
+    $lockManageBtn.hidden = true;
+  } else if (unlocked) {
+    $lockBanner.dataset.lock = "unlocked";
+    $lockBannerLabel.textContent = t("lockUnlocked");
+    $lockBannerBtn.textContent = t("lockRelock");
+    $lockManageBtn.textContent = t("lockManage");
+    $lockManageBtn.hidden = false;
+  } else {
+    $lockBanner.dataset.lock = "locked";
+    $lockBannerLabel.textContent = t("lockProtected");
+    $lockBannerBtn.textContent = t("lockUnlock");
+    $lockManageBtn.hidden = true;
+  }
+  $lockBanner.hidden = false;
+}
+
+function applyLockUI() {
+  const locked = isLocked();
+  document.body.classList.toggle("is-locked", locked);
+  $toggle.disabled = locked;
+  $input.disabled = locked;
+  const addBtn = $form.querySelector("button");
+  if (addBtn) addBtn.disabled = locked;
+  $sitesText.readOnly = locked;
+  $saveText.disabled = locked;
+  for (const b of $schedModeBtns) b.disabled = locked;
+  $addRangeBtn.disabled = locked;
+  for (const el of $rangeList.querySelectorAll("button, input")) el.disabled = locked;
+  for (const el of $list.querySelectorAll("button")) el.disabled = locked;
 }
 
 async function setSchedule(patch) {
@@ -227,6 +291,7 @@ async function setSchedule(patch) {
 }
 
 async function setSchedMode(mode) {
+  if (isLocked()) return;
   const data = await chrome.storage.local.get("schedule");
   const cur = data.schedule || DEFAULT_SCHEDULE;
   const next = { ...cur, mode };
@@ -237,6 +302,7 @@ async function setSchedMode(mode) {
 }
 
 async function updateRange(index, patch) {
+  if (isLocked()) return;
   const data = await chrome.storage.local.get("schedule");
   const sched = { ...(data.schedule || DEFAULT_SCHEDULE) };
   sched.ranges = [...(sched.ranges || [])];
@@ -245,6 +311,7 @@ async function updateRange(index, patch) {
 }
 
 async function toggleDay(index, day) {
+  if (isLocked()) return;
   const data = await chrome.storage.local.get("schedule");
   const sched = { ...(data.schedule || DEFAULT_SCHEDULE) };
   sched.ranges = [...(sched.ranges || [])];
@@ -257,6 +324,7 @@ async function toggleDay(index, day) {
 }
 
 async function removeRange(index) {
+  if (isLocked()) return;
   const data = await chrome.storage.local.get("schedule");
   const sched = { ...(data.schedule || DEFAULT_SCHEDULE) };
   sched.ranges = [...(sched.ranges || [])];
@@ -265,6 +333,7 @@ async function removeRange(index) {
 }
 
 async function addRange() {
+  if (isLocked()) return;
   const data = await chrome.storage.local.get("schedule");
   const sched = { ...(data.schedule || DEFAULT_SCHEDULE) };
   sched.ranges = [...(sched.ranges || []), { days: [1, 2, 3, 4, 5], start: "09:00", end: "18:00" }];
@@ -272,10 +341,12 @@ async function addRange() {
 }
 
 async function setEnabled(enabled) {
+  if (isLocked()) return;
   await chrome.storage.local.set({ enabled });
 }
 
 async function addSite(raw) {
+  if (isLocked()) return;
   const domain = normalize(raw);
   if (!isValidDomain(domain)) {
     $input.animate(
@@ -291,11 +362,13 @@ async function addSite(raw) {
 }
 
 async function removeSite(domain) {
+  if (isLocked()) return;
   const { sites } = await getState();
   await chrome.storage.local.set({ sites: sites.filter(s => s !== domain) });
 }
 
 async function saveTextarea() {
+  if (isLocked()) return;
   const sites = parseTextSites($sitesText.value);
   await chrome.storage.local.set({ sites });
   $sitesText.value = sites.join("\n");
@@ -374,6 +447,231 @@ function closeLangAside() {
   $langBtn.focus();
 }
 
+// ── Protected mode UI ───────────────────────────────────────
+
+let toastTimer = null;
+function toast(msg) {
+  $toast.textContent = msg;
+  $toast.hidden = false;
+  void $toast.offsetWidth;
+  $toast.classList.add("is-shown");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    $toast.classList.remove("is-shown");
+    setTimeout(() => { $toast.hidden = true; }, 220);
+  }, 1800);
+}
+
+function openLockAside(mode) {
+  renderLockBody(mode);
+  $lockAside.hidden = false;
+}
+function closeLockAside() {
+  $lockAside.hidden = true;
+  $lockBannerBtn.focus();
+}
+
+async function relock() {
+  unlocked = false;
+  await render();
+  toast(t("lockProtected"));
+}
+
+let unlockAttempts = 0;
+let unlockLockedUntil = 0;
+
+function showLockError(el, msg) {
+  el.textContent = msg;
+  el.classList.remove("shake");
+  void el.offsetWidth;
+  el.classList.add("shake");
+}
+
+function buildField(labelKey, input) {
+  const wrap = document.createElement("div");
+  wrap.className = "lock-field";
+  const label = document.createElement("label");
+  label.textContent = t(labelKey);
+  label.htmlFor = input.id;
+  wrap.append(label, input);
+  return wrap;
+}
+
+function makeCodeInput(id, type) {
+  const input = document.createElement("input");
+  input.id = id;
+  input.className = "code-input";
+  input.autocomplete = type === "password" ? "new-password" : "off";
+  if (type === "pin") {
+    input.classList.add("code-input--pin");
+    input.type = "text";
+    input.inputMode = "numeric";
+    input.maxLength = 4;
+    input.placeholder = t("lockPinPlaceholder");
+    input.addEventListener("input", () => {
+      input.value = input.value.replace(/\D/g, "").slice(0, 4);
+    });
+  } else {
+    input.type = "password";
+    input.placeholder = t("lockPasswordPlaceholder");
+  }
+  return input;
+}
+
+function renderLockBody(mode) {
+  $lockBody.replaceChildren();
+  if (mode === "setup" || mode === "change") {
+    $lockAsideTitle.textContent = t(mode === "change" ? "lockChange" : "lockSetupTitle");
+    renderSetupBody(mode);
+  } else if (mode === "unlock") {
+    $lockAsideTitle.textContent = t("lockUnlockTitle");
+    renderUnlockBody();
+  } else if (mode === "manage") {
+    $lockAsideTitle.textContent = t("lockManageTitle");
+    renderManageBody();
+  }
+}
+
+function renderSetupBody(mode) {
+  let type = (mode === "change" && lockInfo) ? lockInfo.type : "pin";
+
+  const typeSwitch = document.createElement("div");
+  typeSwitch.className = "lock-type-switch";
+  const pinBtn = document.createElement("button");
+  pinBtn.type = "button";
+  pinBtn.textContent = t("lockTypePin");
+  const pwBtn = document.createElement("button");
+  pwBtn.type = "button";
+  pwBtn.textContent = t("lockTypePassword");
+  typeSwitch.append(pinBtn, pwBtn);
+
+  const fieldsWrap = document.createElement("div");
+  fieldsWrap.className = "lock-fields";
+
+  const error = document.createElement("div");
+  error.className = "lock-error";
+
+  const submit = document.createElement("button");
+  submit.type = "button";
+  submit.className = "lock-primary-btn";
+  submit.textContent = t("lockEnable");
+
+  const caveat = document.createElement("div");
+  caveat.className = "lock-caveat";
+  caveat.textContent = t("lockCaveat");
+
+  function buildFields() {
+    const codeInput = makeCodeInput("lockNewCode", type);
+    const confirmInput = makeCodeInput("lockConfirmCode", type);
+    fieldsWrap.replaceChildren(
+      buildField("lockNewCode", codeInput),
+      buildField("lockConfirmCode", confirmInput)
+    );
+    codeInput.focus();
+  }
+  function syncTypeButtons() {
+    pinBtn.classList.toggle("is-active", type === "pin");
+    pwBtn.classList.toggle("is-active", type === "password");
+  }
+  pinBtn.addEventListener("click", () => { type = "pin"; syncTypeButtons(); buildFields(); });
+  pwBtn.addEventListener("click", () => { type = "password"; syncTypeButtons(); buildFields(); });
+
+  submit.addEventListener("click", async () => {
+    const code = document.getElementById("lockNewCode").value;
+    const confirm = document.getElementById("lockConfirmCode").value;
+    error.textContent = "";
+    if (type === "pin" && !/^\d{4}$/.test(code)) { showLockError(error, t("lockPinInvalid")); return; }
+    if (type === "password" && code.length < 4) { showLockError(error, t("lockTooShort")); return; }
+    if (code !== confirm) { showLockError(error, t("lockMismatch")); return; }
+    const lock = await createLock(type, code);
+    await chrome.storage.local.set({ lock });
+    lockInfo = lock;
+    unlocked = false;
+    closeLockAside();
+    await render();
+    toast(t(mode === "change" ? "lockChangedToast" : "lockOnToast"));
+  });
+
+  $lockBody.append(typeSwitch, fieldsWrap, error, submit, caveat);
+  syncTypeButtons();
+  buildFields();
+}
+
+function renderUnlockBody() {
+  const error = document.createElement("div");
+  error.className = "lock-error";
+  const codeInput = makeCodeInput("lockUnlockCode", lockInfo.type);
+
+  const submit = document.createElement("button");
+  submit.type = "button";
+  submit.className = "lock-primary-btn";
+  submit.textContent = t("lockSubmitUnlock");
+
+  async function attempt() {
+    error.textContent = "";
+    const now = Date.now();
+    if (now < unlockLockedUntil) {
+      showLockError(error, t("lockTooManyAttempts", [String(Math.ceil((unlockLockedUntil - now) / 1000))]));
+      return;
+    }
+    const ok = await verifyCode(lockInfo, codeInput.value);
+    if (ok) {
+      unlockAttempts = 0;
+      unlocked = true;
+      closeLockAside();
+      await render();
+    } else {
+      unlockAttempts++;
+      if (unlockAttempts >= 5) {
+        unlockLockedUntil = Date.now() + 30000;
+        unlockAttempts = 0;
+        showLockError(error, t("lockTooManyAttempts", ["30"]));
+      } else {
+        showLockError(error, t("lockWrong"));
+      }
+      codeInput.value = "";
+      codeInput.focus();
+    }
+  }
+  submit.addEventListener("click", attempt);
+  codeInput.addEventListener("keydown", e => { if (e.key === "Enter") attempt(); });
+
+  $lockBody.append(buildField("lockYourCode", codeInput), error, submit);
+  codeInput.focus();
+}
+
+function renderManageBody() {
+  const changeBtn = document.createElement("button");
+  changeBtn.type = "button";
+  changeBtn.className = "lock-primary-btn";
+  changeBtn.textContent = t("lockChange");
+  changeBtn.addEventListener("click", () => openLockAside("change"));
+
+  const removeBtn = document.createElement("button");
+  removeBtn.type = "button";
+  removeBtn.className = "lock-danger-btn";
+  removeBtn.textContent = t("lockRemove");
+  removeBtn.addEventListener("click", async () => {
+    await chrome.storage.local.remove("lock");
+    lockInfo = null;
+    unlocked = false;
+    closeLockAside();
+    await render();
+    toast(t("lockOffToast"));
+  });
+
+  $lockBody.append(changeBtn, removeBtn);
+}
+
+$lockBannerBtn.addEventListener("click", () => {
+  const state = $lockBanner.dataset.lock;
+  if (state === "off") openLockAside("setup");
+  else if (state === "locked") openLockAside("unlock");
+  else if (state === "unlocked") relock();
+});
+$lockManageBtn.addEventListener("click", () => openLockAside("manage"));
+$lockBackBtn.addEventListener("click", closeLockAside);
+
 $toggle.addEventListener("change", () => setEnabled($toggle.checked));
 
 $form.addEventListener("submit", e => {
@@ -414,7 +712,9 @@ $shortcutsBtn.addEventListener("click", () => {
 $langBtn.addEventListener("click", openLangAside);
 $langBackBtn.addEventListener("click", closeLangAside);
 document.addEventListener("keydown", e => {
-  if (e.key === "Escape" && !$langAside.hidden) closeLangAside();
+  if (e.key !== "Escape") return;
+  if (!$lockAside.hidden) closeLockAside();
+  else if (!$langAside.hidden) closeLangAside();
 });
 
 document.addEventListener("visibilitychange", () => {
@@ -423,7 +723,7 @@ document.addEventListener("visibilitychange", () => {
 
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area !== "local") return;
-  if (changes.enabled || changes.sites || changes[MODE_KEY] || changes.schedule) render();
+  if (changes.enabled || changes.sites || changes[MODE_KEY] || changes.schedule || changes.lock) render();
 });
 
 setInterval(async () => {

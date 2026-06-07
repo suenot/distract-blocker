@@ -21,7 +21,7 @@
   },
   "emptyHint": { "message": "Список пуст. Добавьте сайт выше." },
 
-  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "textPlaceholder": { "message": "example.com\nexample.net" },
   "saveButton": { "message": "Сохранить" },
   "savedStatus": { "message": "Сохранено" },
 
@@ -57,5 +57,39 @@
     "placeholders": { "n": { "content": "$1", "example": "1" } }
   },
   "statusActive": { "message": "блокирует сейчас" },
-  "statusIdle": { "message": "ожидает" }
+  "statusIdle": { "message": "ожидает" },
+
+  "lockSectionOff": { "message": "Защищённый режим" },
+  "lockSetUp": { "message": "Настроить" },
+  "lockProtected": { "message": "Под защитой" },
+  "lockUnlock": { "message": "Разблокировать" },
+  "lockUnlocked": { "message": "Редактирование разблокировано" },
+  "lockRelock": { "message": "Заблокировать снова" },
+  "lockManage": { "message": "Управление" },
+  "lockSetupTitle": { "message": "Настройка защищённого режима" },
+  "lockUnlockTitle": { "message": "Разблокируйте для редактирования" },
+  "lockManageTitle": { "message": "Защищённый режим" },
+  "lockTypePin": { "message": "4-значный PIN" },
+  "lockTypePassword": { "message": "Пароль" },
+  "lockNewCode": { "message": "Новый код" },
+  "lockConfirmCode": { "message": "Подтвердите код" },
+  "lockYourCode": { "message": "Ваш код" },
+  "lockPinPlaceholder": { "message": "••••" },
+  "lockPasswordPlaceholder": { "message": "Ваш пароль" },
+  "lockEnable": { "message": "Включить защиту" },
+  "lockChange": { "message": "Изменить код" },
+  "lockRemove": { "message": "Отключить защиту" },
+  "lockSubmitUnlock": { "message": "Разблокировать" },
+  "lockWrong": { "message": "Неверный код. Попробуйте ещё." },
+  "lockMismatch": { "message": "Коды не совпадают." },
+  "lockTooShort": { "message": "Минимум 4 символа." },
+  "lockPinInvalid": { "message": "Введите ровно 4 цифры." },
+  "lockTooManyAttempts": {
+    "message": "Слишком много попыток. Подождите $S$ с.",
+    "placeholders": { "s": { "content": "$1", "example": "30" } }
+  },
+  "lockOnToast": { "message": "Защищённый режим включён." },
+  "lockOffToast": { "message": "Защищённый режим выключен." },
+  "lockChangedToast": { "message": "Код обновлён." },
+  "lockCaveat": { "message": "Локальная блокировка для этого браузера — помощь для концентрации, а не защищённый от взлома родительский контроль. Сохраните код в надёжном месте: восстановить его нельзя." }
 }

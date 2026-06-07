@@ -21,7 +21,7 @@
   },
   "emptyHint": { "message": "リストは空です。上から追加してください。" },
 
-  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "textPlaceholder": { "message": "example.com\nexample.net" },
   "saveButton": { "message": "保存" },
   "savedStatus": { "message": "保存しました" },
 
@@ -45,5 +45,39 @@
   "blockedOpenPanel": { "message": "パネルを開く" },
 
   "languageLabel": { "message": "言語" },
-  "localeAuto": { "message": "自動（ブラウザ）" }
+  "localeAuto": { "message": "自動（ブラウザ）" },
+
+  "lockSectionOff": { "message": "保護モード" },
+  "lockSetUp": { "message": "設定" },
+  "lockProtected": { "message": "保護中" },
+  "lockUnlock": { "message": "ロック解除" },
+  "lockUnlocked": { "message": "編集のロックを解除しました" },
+  "lockRelock": { "message": "再ロック" },
+  "lockManage": { "message": "管理" },
+  "lockSetupTitle": { "message": "保護モードを設定" },
+  "lockUnlockTitle": { "message": "編集するにはロックを解除" },
+  "lockManageTitle": { "message": "保護モード" },
+  "lockTypePin": { "message": "4桁のPIN" },
+  "lockTypePassword": { "message": "パスワード" },
+  "lockNewCode": { "message": "新しいコード" },
+  "lockConfirmCode": { "message": "コードを確認" },
+  "lockYourCode": { "message": "コード" },
+  "lockPinPlaceholder": { "message": "••••" },
+  "lockPasswordPlaceholder": { "message": "パスワード" },
+  "lockEnable": { "message": "保護を有効にする" },
+  "lockChange": { "message": "コードを変更" },
+  "lockRemove": { "message": "保護を無効にする" },
+  "lockSubmitUnlock": { "message": "ロック解除" },
+  "lockWrong": { "message": "コードが違います。もう一度お試しください。" },
+  "lockMismatch": { "message": "コードが一致しません。" },
+  "lockTooShort": { "message": "4文字以上にしてください。" },
+  "lockPinInvalid": { "message": "4桁の数字を入力してください。" },
+  "lockTooManyAttempts": {
+    "message": "試行回数が多すぎます。$S$ 秒お待ちください。",
+    "placeholders": { "s": { "content": "$1", "example": "30" } }
+  },
+  "lockOnToast": { "message": "保護モードがオンになりました。" },
+  "lockOffToast": { "message": "保護モードがオフになりました。" },
+  "lockChangedToast": { "message": "コードを更新しました。" },
+  "lockCaveat": { "message": "このブラウザ用のローカルロックです。集中を助けるためのもので、改ざん防止の保護者による管理ではありません。コードは安全な場所に保管してください。復元できません。" }
 }

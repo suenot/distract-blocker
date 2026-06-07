@@ -16,6 +16,8 @@ The whole UI lives in a side panel that slides out when you click the icon. Ever
 
 • Custom keyboard shortcut — assign any combination at chrome://extensions/shortcuts. The shortcut instantly toggles blocking without opening anything — handy for that one moment you actually need a peek.
 
+• Protected mode — lock the side panel behind a 4-digit PIN or a password. Turn it on yourself for extra self-control, or have someone else set the code. While locked, the toggle, blocklist, and schedule are read-only until you unlock, and the shortcut can't switch blocking off. (This is a local focus deterrent within one browser, not tamper-proof parental control. Only a salted hash of your code is stored, on your device — it can't be recovered.)
+
 • 21 languages — English, Русский, 中文, 日本語, 한국어, Español, Português, हिन्दी, العربية (with RTL layout), Français, Deutsch, Italiano, Nederlands, Türkçe, Қазақша, Oʻzbek, Кыргызча, Bahasa Indonesia, Tiếng Việt, ไทย, Bahasa Melayu. Auto-detected from your browser, switchable from the panel header.
 
 • Friendly blocked page — instead of a generic Chrome error, blocked sites redirect to a small in-extension page that explains what happened, with a "Go back" button and a sleepy mascot.
@@ -26,9 +28,9 @@ The whole UI lives in a side panel that slides out when you click the icon. Ever
 Blocking uses Chrome's native declarativeNetRequest API. No content script is injected into pages, no remote code runs, and no network traffic leaves your machine. Everything is local: your blocklist, your schedule, your language. The extension never sees the content of the pages you visit.
 
 
-★ DEFAULTS
+★ GETTING STARTED
 
-The extension ships with a sensible starter list (YouTube, Facebook, Instagram, Twitter / X, TikTok, Reddit, VK, OK) which you can fully replace. The master toggle starts ON.
+Your blocklist starts empty — add the websites that pull your attention, one at a time or pasted as a list. Subdomains are covered automatically. The master toggle starts ON, so blocking is active the moment you add something.
 
 
 ★ PRIVACY

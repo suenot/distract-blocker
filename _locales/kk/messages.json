@@ -21,7 +21,7 @@
   },
   "emptyHint": { "message": "Тізім бос. Жоғарыдан сайт қосыңыз." },
 
-  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "textPlaceholder": { "message": "example.com\nexample.net" },
   "saveButton": { "message": "Сақтау" },
   "savedStatus": { "message": "Сақталды" },
 
@@ -45,5 +45,39 @@
   "blockedOpenPanel": { "message": "Панельді ашу" },
 
   "languageLabel": { "message": "Тіл" },
-  "localeAuto": { "message": "Автоматты (браузер)" }
+  "localeAuto": { "message": "Автоматты (браузер)" },
+
+  "lockSectionOff": { "message": "Қорғалған режим" },
+  "lockSetUp": { "message": "Баптау" },
+  "lockProtected": { "message": "Қорғалған" },
+  "lockUnlock": { "message": "Құлпын ашу" },
+  "lockUnlocked": { "message": "Өңдеу құлпы ашылды" },
+  "lockRelock": { "message": "Қайта құлыптау" },
+  "lockManage": { "message": "Басқару" },
+  "lockSetupTitle": { "message": "Қорғалған режимді баптау" },
+  "lockUnlockTitle": { "message": "Өңдеу үшін құлпын ашыңыз" },
+  "lockManageTitle": { "message": "Қорғалған режим" },
+  "lockTypePin": { "message": "4 саннан тұратын PIN" },
+  "lockTypePassword": { "message": "Құпия сөз" },
+  "lockNewCode": { "message": "Жаңа код" },
+  "lockConfirmCode": { "message": "Кодты растаңыз" },
+  "lockYourCode": { "message": "Кодыңыз" },
+  "lockPinPlaceholder": { "message": "••••" },
+  "lockPasswordPlaceholder": { "message": "Құпия сөзіңіз" },
+  "lockEnable": { "message": "Қорғауды қосу" },
+  "lockChange": { "message": "Кодты өзгерту" },
+  "lockRemove": { "message": "Қорғауды өшіру" },
+  "lockSubmitUnlock": { "message": "Құлпын ашу" },
+  "lockWrong": { "message": "Қате код. Қайталап көріңіз." },
+  "lockMismatch": { "message": "Кодтар сәйкес келмейді." },
+  "lockTooShort": { "message": "Кемінде 4 таңба қолданыңыз." },
+  "lockPinInvalid": { "message": "Дәл 4 сан енгізіңіз." },
+  "lockTooManyAttempts": {
+    "message": "Тым көп әрекет. $S$ с күтіңіз.",
+    "placeholders": { "s": { "content": "$1", "example": "30" } }
+  },
+  "lockOnToast": { "message": "Қорғалған режим қосулы." },
+  "lockOffToast": { "message": "Қорғалған режим өшірулі." },
+  "lockChangedToast": { "message": "Код жаңартылды." },
+  "lockCaveat": { "message": "Осы браузерге арналған жергілікті құлып — назарды сақтауға көмектесетін тосқауыл, бұзуға төзімді ата-ана бақылауы емес. Кодыңызды қауіпсіз жерде сақтаңыз: оны қалпына келтіру мүмкін емес." }
 }

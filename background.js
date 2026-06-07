@@ -1,14 +1,5 @@
-const DEFAULT_SITES = [
-  "youtube.com",
-  "facebook.com",
-  "instagram.com",
-  "twitter.com",
-  "x.com",
-  "tiktok.com",
-  "reddit.com",
-  "vk.com",
-  "ok.ru"
-];
+// The blocklist starts empty — users add their own distracting sites.
+const DEFAULT_SITES = [];
 
 const DEFAULT_SCHEDULE = { mode: "always", ranges: [] };
 
@@ -33,14 +24,22 @@ function timeToMinutes(t) {
 }
 
 function rangeActive(range, date) {
-  if (Array.isArray(range.days) && range.days.length > 0 && !range.days.includes(date.getDay())) {
-    return false;
-  }
+  const days = range.days;
+  const hasDays = Array.isArray(days) && days.length > 0;
   const cur = date.getHours() * 60 + date.getMinutes();
   const start = timeToMinutes(range.start);
   const end = timeToMinutes(range.end);
-  if (start >= end) return false;
-  return cur >= start && cur < end;
+  if (start === end) return false;
+  if (start < end) {
+    // Same-day window [start, end).
+    if (hasDays && !days.includes(date.getDay())) return false;
+    return cur >= start && cur < end;
+  }
+  // Overnight window crossing midnight: active [start, 24:00) on the start
+  // day, and [00:00, end) which belongs to the previous day's window.
+  if (cur >= start) return !hasDays || days.includes(date.getDay());
+  if (cur < end) return !hasDays || days.includes((date.getDay() + 6) % 7);
+  return false;
 }
 
 function shouldBlockNow(state, date = new Date()) {
@@ -152,6 +151,9 @@ chrome.alarms.onAlarm.addListener(alarm => {
 
 chrome.commands.onCommand.addListener(async command => {
   if (command !== "toggle-blocking") return;
+  // Protected mode: while a lock is set, the shortcut can't change blocking.
+  const { lock } = await chrome.storage.local.get("lock");
+  if (lock) return;
   const { enabled } = await getState();
   await chrome.storage.local.set({ enabled: !enabled });
 });

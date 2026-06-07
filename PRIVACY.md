@@ -1,6 +1,6 @@
 # Privacy Policy — Distract Blocker
 
-_Last updated: 2026-05-28_
+_Last updated: 2026-06-07_
 
 ## TL;DR
 
@@ -15,6 +15,7 @@ The extension uses `chrome.storage.local` to persist only the settings you enter
 - Your schedule (mode + day-of-week + time ranges)
 - The UI language you've selected
 - Whether you prefer the list or text view for editing the blocklist
+- If you turn on **Protected mode**: a salted PBKDF2 hash of your PIN or password — never the code itself. The hash cannot be reversed, and there is no recovery; clearing the extension's data removes the lock.
 
 This data stays entirely on your device. It is **not** synced (we do not use `chrome.storage.sync`). It is **not** transmitted anywhere.
 

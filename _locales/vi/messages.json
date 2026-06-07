@@ -21,7 +21,7 @@
   },
   "emptyHint": { "message": "Danh sách trống. Thêm trang ở trên." },
 
-  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "textPlaceholder": { "message": "example.com\nexample.net" },
   "saveButton": { "message": "Lưu" },
   "savedStatus": { "message": "Đã lưu" },
 
@@ -45,5 +45,39 @@
   "blockedOpenPanel": { "message": "Mở bảng" },
 
   "languageLabel": { "message": "Ngôn ngữ" },
-  "localeAuto": { "message": "Tự động (trình duyệt)" }
+  "localeAuto": { "message": "Tự động (trình duyệt)" },
+
+  "lockSectionOff": { "message": "Chế độ bảo vệ" },
+  "lockSetUp": { "message": "Thiết lập" },
+  "lockProtected": { "message": "Đã bảo vệ" },
+  "lockUnlock": { "message": "Mở khóa" },
+  "lockUnlocked": { "message": "Đã mở khóa chỉnh sửa" },
+  "lockRelock": { "message": "Khóa lại" },
+  "lockManage": { "message": "Quản lý" },
+  "lockSetupTitle": { "message": "Thiết lập chế độ bảo vệ" },
+  "lockUnlockTitle": { "message": "Mở khóa để chỉnh sửa" },
+  "lockManageTitle": { "message": "Chế độ bảo vệ" },
+  "lockTypePin": { "message": "Mã PIN 4 chữ số" },
+  "lockTypePassword": { "message": "Mật khẩu" },
+  "lockNewCode": { "message": "Mã mới" },
+  "lockConfirmCode": { "message": "Xác nhận mã" },
+  "lockYourCode": { "message": "Mã của bạn" },
+  "lockPinPlaceholder": { "message": "••••" },
+  "lockPasswordPlaceholder": { "message": "Mật khẩu của bạn" },
+  "lockEnable": { "message": "Bật bảo vệ" },
+  "lockChange": { "message": "Đổi mã" },
+  "lockRemove": { "message": "Tắt bảo vệ" },
+  "lockSubmitUnlock": { "message": "Mở khóa" },
+  "lockWrong": { "message": "Mã sai. Thử lại." },
+  "lockMismatch": { "message": "Mã không khớp." },
+  "lockTooShort": { "message": "Dùng ít nhất 4 ký tự." },
+  "lockPinInvalid": { "message": "Nhập đúng 4 chữ số." },
+  "lockTooManyAttempts": {
+    "message": "Quá nhiều lần thử. Đợi $S$ giây.",
+    "placeholders": { "s": { "content": "$1", "example": "30" } }
+  },
+  "lockOnToast": { "message": "Chế độ bảo vệ đang bật." },
+  "lockOffToast": { "message": "Chế độ bảo vệ đang tắt." },
+  "lockChangedToast": { "message": "Đã cập nhật mã." },
+  "lockCaveat": { "message": "Khóa cục bộ cho trình duyệt này — một biện pháp ngăn cản để tập trung, không phải kiểm soát của cha mẹ chống can thiệp. Hãy giữ mã ở nơi an toàn: không thể khôi phục được." }
 }

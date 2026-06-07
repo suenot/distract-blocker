@@ -21,7 +21,7 @@
   },
   "emptyHint": { "message": "Senarai kosong. Tambah laman di atas." },
 
-  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "textPlaceholder": { "message": "example.com\nexample.net" },
   "saveButton": { "message": "Simpan" },
   "savedStatus": { "message": "Disimpan" },
 
@@ -45,5 +45,39 @@
   "blockedOpenPanel": { "message": "Buka panel" },
 
   "languageLabel": { "message": "Bahasa" },
-  "localeAuto": { "message": "Auto (pelayar)" }
+  "localeAuto": { "message": "Auto (pelayar)" },
+
+  "lockSectionOff": { "message": "Mod terlindung" },
+  "lockSetUp": { "message": "Sediakan" },
+  "lockProtected": { "message": "Terlindung" },
+  "lockUnlock": { "message": "Buka kunci" },
+  "lockUnlocked": { "message": "Penyuntingan dibuka" },
+  "lockRelock": { "message": "Kunci semula" },
+  "lockManage": { "message": "Urus" },
+  "lockSetupTitle": { "message": "Sediakan mod terlindung" },
+  "lockUnlockTitle": { "message": "Buka kunci untuk menyunting" },
+  "lockManageTitle": { "message": "Mod terlindung" },
+  "lockTypePin": { "message": "PIN 4 digit" },
+  "lockTypePassword": { "message": "Kata laluan" },
+  "lockNewCode": { "message": "Kod baharu" },
+  "lockConfirmCode": { "message": "Sahkan kod" },
+  "lockYourCode": { "message": "Kod anda" },
+  "lockPinPlaceholder": { "message": "••••" },
+  "lockPasswordPlaceholder": { "message": "Kata laluan anda" },
+  "lockEnable": { "message": "Hidupkan perlindungan" },
+  "lockChange": { "message": "Tukar kod" },
+  "lockRemove": { "message": "Matikan perlindungan" },
+  "lockSubmitUnlock": { "message": "Buka kunci" },
+  "lockWrong": { "message": "Kod salah. Cuba lagi." },
+  "lockMismatch": { "message": "Kod tidak sepadan." },
+  "lockTooShort": { "message": "Guna sekurang-kurangnya 4 aksara." },
+  "lockPinInvalid": { "message": "Masukkan tepat 4 digit." },
+  "lockTooManyAttempts": {
+    "message": "Terlalu banyak cubaan. Tunggu $S$ saat.",
+    "placeholders": { "s": { "content": "$1", "example": "30" } }
+  },
+  "lockOnToast": { "message": "Mod terlindung dihidupkan." },
+  "lockOffToast": { "message": "Mod terlindung dimatikan." },
+  "lockChangedToast": { "message": "Kod dikemas kini." },
+  "lockCaveat": { "message": "Kunci tempatan untuk pelayar ini — penghalang untuk fokus, bukan kawalan ibu bapa yang kalis usik. Simpan kod anda di tempat selamat: ia tidak boleh dipulihkan." }
 }

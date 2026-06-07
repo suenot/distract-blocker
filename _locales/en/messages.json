@@ -21,7 +21,7 @@
   },
   "emptyHint": { "message": "Your list is empty. Add a site above." },
 
-  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "textPlaceholder": { "message": "example.com\nexample.net" },
   "saveButton": { "message": "Save" },
   "savedStatus": { "message": "Saved" },
 
@@ -57,5 +57,39 @@
     "placeholders": { "n": { "content": "$1", "example": "1" } }
   },
   "statusActive": { "message": "blocking now" },
-  "statusIdle": { "message": "idle now" }
+  "statusIdle": { "message": "idle now" },
+
+  "lockSectionOff": { "message": "Protected mode" },
+  "lockSetUp": { "message": "Set up" },
+  "lockProtected": { "message": "Protected" },
+  "lockUnlock": { "message": "Unlock" },
+  "lockUnlocked": { "message": "Editing unlocked" },
+  "lockRelock": { "message": "Re-lock" },
+  "lockManage": { "message": "Manage" },
+  "lockSetupTitle": { "message": "Set up Protected mode" },
+  "lockUnlockTitle": { "message": "Unlock to edit" },
+  "lockManageTitle": { "message": "Protected mode" },
+  "lockTypePin": { "message": "4-digit PIN" },
+  "lockTypePassword": { "message": "Password" },
+  "lockNewCode": { "message": "New code" },
+  "lockConfirmCode": { "message": "Confirm code" },
+  "lockYourCode": { "message": "Your code" },
+  "lockPinPlaceholder": { "message": "••••" },
+  "lockPasswordPlaceholder": { "message": "Your password" },
+  "lockEnable": { "message": "Enable protection" },
+  "lockChange": { "message": "Change code" },
+  "lockRemove": { "message": "Turn off protection" },
+  "lockSubmitUnlock": { "message": "Unlock" },
+  "lockWrong": { "message": "Wrong code. Try again." },
+  "lockMismatch": { "message": "Codes don’t match." },
+  "lockTooShort": { "message": "Use at least 4 characters." },
+  "lockPinInvalid": { "message": "Enter exactly 4 digits." },
+  "lockTooManyAttempts": {
+    "message": "Too many tries. Wait $S$ s.",
+    "placeholders": { "s": { "content": "$1", "example": "30" } }
+  },
+  "lockOnToast": { "message": "Protected mode is on." },
+  "lockOffToast": { "message": "Protected mode is off." },
+  "lockChangedToast": { "message": "Code updated." },
+  "lockCaveat": { "message": "A local lock for this browser — a focus deterrent, not tamper-proof parental control. Keep your code somewhere safe: it can’t be recovered." }
 }

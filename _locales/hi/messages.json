@@ -21,7 +21,7 @@
   },
   "emptyHint": { "message": "सूची खाली है। ऊपर साइट जोड़ें।" },
 
-  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "textPlaceholder": { "message": "example.com\nexample.net" },
   "saveButton": { "message": "सहेजें" },
   "savedStatus": { "message": "सहेजा गया" },
 
@@ -45,5 +45,39 @@
   "blockedOpenPanel": { "message": "पैनल खोलें" },
 
   "languageLabel": { "message": "भाषा" },
-  "localeAuto": { "message": "ऑटो (ब्राउज़र)" }
+  "localeAuto": { "message": "ऑटो (ब्राउज़र)" },
+
+  "lockSectionOff": { "message": "सुरक्षित मोड" },
+  "lockSetUp": { "message": "सेट अप करें" },
+  "lockProtected": { "message": "सुरक्षित" },
+  "lockUnlock": { "message": "अनलॉक करें" },
+  "lockUnlocked": { "message": "संपादन अनलॉक किया गया" },
+  "lockRelock": { "message": "फिर से लॉक करें" },
+  "lockManage": { "message": "प्रबंधित करें" },
+  "lockSetupTitle": { "message": "सुरक्षित मोड सेट अप करें" },
+  "lockUnlockTitle": { "message": "संपादित करने के लिए अनलॉक करें" },
+  "lockManageTitle": { "message": "सुरक्षित मोड" },
+  "lockTypePin": { "message": "4 अंकों का PIN" },
+  "lockTypePassword": { "message": "पासवर्ड" },
+  "lockNewCode": { "message": "नया कोड" },
+  "lockConfirmCode": { "message": "कोड की पुष्टि करें" },
+  "lockYourCode": { "message": "आपका कोड" },
+  "lockPinPlaceholder": { "message": "••••" },
+  "lockPasswordPlaceholder": { "message": "आपका पासवर्ड" },
+  "lockEnable": { "message": "सुरक्षा सक्षम करें" },
+  "lockChange": { "message": "कोड बदलें" },
+  "lockRemove": { "message": "सुरक्षा बंद करें" },
+  "lockSubmitUnlock": { "message": "अनलॉक करें" },
+  "lockWrong": { "message": "गलत कोड। फिर से कोशिश करें।" },
+  "lockMismatch": { "message": "कोड मेल नहीं खाते।" },
+  "lockTooShort": { "message": "कम से कम 4 वर्ण उपयोग करें।" },
+  "lockPinInvalid": { "message": "ठीक 4 अंक दर्ज करें।" },
+  "lockTooManyAttempts": {
+    "message": "बहुत अधिक प्रयास। $S$ सेकंड प्रतीक्षा करें।",
+    "placeholders": { "s": { "content": "$1", "example": "30" } }
+  },
+  "lockOnToast": { "message": "सुरक्षित मोड चालू है।" },
+  "lockOffToast": { "message": "सुरक्षित मोड बंद है।" },
+  "lockChangedToast": { "message": "कोड अपडेट किया गया।" },
+  "lockCaveat": { "message": "इस ब्राउज़र के लिए एक स्थानीय लॉक — फ़ोकस बनाए रखने में मददगार, लेकिन छेड़छाड़-रोधी अभिभावकीय नियंत्रण नहीं। अपना कोड किसी सुरक्षित जगह रखें: इसे पुनर्प्राप्त नहीं किया जा सकता।" }
 }

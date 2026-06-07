@@ -21,7 +21,7 @@
   },
   "emptyHint": { "message": "목록이 비어 있습니다. 위에서 사이트를 추가하세요." },
 
-  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "textPlaceholder": { "message": "example.com\nexample.net" },
   "saveButton": { "message": "저장" },
   "savedStatus": { "message": "저장됨" },
 
@@ -45,5 +45,39 @@
   "blockedOpenPanel": { "message": "패널 열기" },
 
   "languageLabel": { "message": "언어" },
-  "localeAuto": { "message": "자동 (브라우저)" }
+  "localeAuto": { "message": "자동 (브라우저)" },
+
+  "lockSectionOff": { "message": "보호 모드" },
+  "lockSetUp": { "message": "설정" },
+  "lockProtected": { "message": "보호됨" },
+  "lockUnlock": { "message": "잠금 해제" },
+  "lockUnlocked": { "message": "편집 잠금 해제됨" },
+  "lockRelock": { "message": "다시 잠금" },
+  "lockManage": { "message": "관리" },
+  "lockSetupTitle": { "message": "보호 모드 설정" },
+  "lockUnlockTitle": { "message": "편집하려면 잠금 해제" },
+  "lockManageTitle": { "message": "보호 모드" },
+  "lockTypePin": { "message": "4자리 PIN" },
+  "lockTypePassword": { "message": "비밀번호" },
+  "lockNewCode": { "message": "새 코드" },
+  "lockConfirmCode": { "message": "코드 확인" },
+  "lockYourCode": { "message": "코드" },
+  "lockPinPlaceholder": { "message": "••••" },
+  "lockPasswordPlaceholder": { "message": "비밀번호" },
+  "lockEnable": { "message": "보호 켜기" },
+  "lockChange": { "message": "코드 변경" },
+  "lockRemove": { "message": "보호 끄기" },
+  "lockSubmitUnlock": { "message": "잠금 해제" },
+  "lockWrong": { "message": "잘못된 코드입니다. 다시 시도하세요." },
+  "lockMismatch": { "message": "코드가 일치하지 않습니다." },
+  "lockTooShort": { "message": "4자 이상 입력하세요." },
+  "lockPinInvalid": { "message": "정확히 4자리 숫자를 입력하세요." },
+  "lockTooManyAttempts": {
+    "message": "시도가 너무 많습니다. $S$초 기다리세요.",
+    "placeholders": { "s": { "content": "$1", "example": "30" } }
+  },
+  "lockOnToast": { "message": "보호 모드가 켜졌습니다." },
+  "lockOffToast": { "message": "보호 모드가 꺼졌습니다." },
+  "lockChangedToast": { "message": "코드가 업데이트되었습니다." },
+  "lockCaveat": { "message": "이 브라우저용 로컬 잠금입니다. 집중을 돕기 위한 장치이며 변조 방지 자녀 보호 기능이 아닙니다. 코드는 안전한 곳에 보관하세요. 복구할 수 없습니다." }
 }

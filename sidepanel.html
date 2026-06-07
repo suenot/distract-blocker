@@ -27,6 +27,32 @@
     </button>
   </header>
 
+  <div class="lock-banner" id="lockBanner" data-lock="off" hidden>
+    <svg class="lock-ico lock-ico--closed" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="4" y="11" width="16" height="9" rx="2"/>
+      <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+    </svg>
+    <svg class="lock-ico lock-ico--open" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="4" y="11" width="16" height="9" rx="2"/>
+      <path d="M8 11V7a4 4 0 0 1 7.9-.9"/>
+    </svg>
+    <span class="lock-banner-label" id="lockBannerLabel"></span>
+    <button type="button" class="lock-banner-btn" id="lockManageBtn" hidden></button>
+    <button type="button" class="lock-banner-btn lock-banner-btn--primary" id="lockBannerBtn"></button>
+  </div>
+
+  <aside class="aside-panel" id="lockAside" hidden>
+    <header class="aside-header">
+      <button type="button" class="icon-btn" id="lockBackBtn" aria-label="Back">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+      <h2 id="lockAsideTitle"></h2>
+    </header>
+    <div class="lock-body" id="lockBody"></div>
+  </aside>
+
   <aside class="aside-panel" id="languageAside" hidden>
     <header class="aside-header">
       <button type="button" class="icon-btn" id="langBackBtn" aria-label="Back">
@@ -117,8 +143,11 @@
     <div class="tooltip" id="shortcutTooltip" data-i18n="shortcutHelp" hidden></div>
   </footer>
 
+  <div class="toast" id="toast" hidden></div>
+
   <script src="i18n.js"></script>
   <script src="mascot.js"></script>
+  <script src="lock.js"></script>
   <script src="sidepanel.js"></script>
 </body>
 </html>

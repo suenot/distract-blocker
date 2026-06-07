@@ -21,7 +21,7 @@
   },
   "emptyHint": { "message": "Die Liste ist leer. Füge oben eine Seite hinzu." },
 
-  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "textPlaceholder": { "message": "example.com\nexample.net" },
   "saveButton": { "message": "Speichern" },
   "savedStatus": { "message": "Gespeichert" },
 
@@ -45,5 +45,39 @@
   "blockedOpenPanel": { "message": "Panel öffnen" },
 
   "languageLabel": { "message": "Sprache" },
-  "localeAuto": { "message": "Auto (Browser)" }
+  "localeAuto": { "message": "Auto (Browser)" },
+
+  "lockSectionOff": { "message": "Geschützter Modus" },
+  "lockSetUp": { "message": "Einrichten" },
+  "lockProtected": { "message": "Geschützt" },
+  "lockUnlock": { "message": "Entsperren" },
+  "lockUnlocked": { "message": "Bearbeitung entsperrt" },
+  "lockRelock": { "message": "Wieder sperren" },
+  "lockManage": { "message": "Verwalten" },
+  "lockSetupTitle": { "message": "Geschützten Modus einrichten" },
+  "lockUnlockTitle": { "message": "Zum Bearbeiten entsperren" },
+  "lockManageTitle": { "message": "Geschützter Modus" },
+  "lockTypePin": { "message": "4-stellige PIN" },
+  "lockTypePassword": { "message": "Passwort" },
+  "lockNewCode": { "message": "Neuer Code" },
+  "lockConfirmCode": { "message": "Code bestätigen" },
+  "lockYourCode": { "message": "Dein Code" },
+  "lockPinPlaceholder": { "message": "••••" },
+  "lockPasswordPlaceholder": { "message": "Dein Passwort" },
+  "lockEnable": { "message": "Schutz aktivieren" },
+  "lockChange": { "message": "Code ändern" },
+  "lockRemove": { "message": "Schutz ausschalten" },
+  "lockSubmitUnlock": { "message": "Entsperren" },
+  "lockWrong": { "message": "Falscher Code. Versuch es erneut." },
+  "lockMismatch": { "message": "Codes stimmen nicht überein." },
+  "lockTooShort": { "message": "Mindestens 4 Zeichen verwenden." },
+  "lockPinInvalid": { "message": "Genau 4 Ziffern eingeben." },
+  "lockTooManyAttempts": {
+    "message": "Zu viele Versuche. Warte $S$ s.",
+    "placeholders": { "s": { "content": "$1", "example": "30" } }
+  },
+  "lockOnToast": { "message": "Der geschützte Modus ist aktiv." },
+  "lockOffToast": { "message": "Der geschützte Modus ist inaktiv." },
+  "lockChangedToast": { "message": "Code aktualisiert." },
+  "lockCaveat": { "message": "Eine lokale Sperre für diesen Browser — ein Fokus-Anreiz, keine manipulationssichere Kindersicherung. Bewahre deinen Code sicher auf: Er kann nicht wiederhergestellt werden." }
 }

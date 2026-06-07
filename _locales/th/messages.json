@@ -21,7 +21,7 @@
   },
   "emptyHint": { "message": "รายการว่างเปล่า เพิ่มเว็บไซต์ด้านบน" },
 
-  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "textPlaceholder": { "message": "example.com\nexample.net" },
   "saveButton": { "message": "บันทึก" },
   "savedStatus": { "message": "บันทึกแล้ว" },
 
@@ -45,5 +45,39 @@
   "blockedOpenPanel": { "message": "เปิดแผง" },
 
   "languageLabel": { "message": "ภาษา" },
-  "localeAuto": { "message": "อัตโนมัติ (เบราว์เซอร์)" }
+  "localeAuto": { "message": "อัตโนมัติ (เบราว์เซอร์)" },
+
+  "lockSectionOff": { "message": "โหมดป้องกัน" },
+  "lockSetUp": { "message": "ตั้งค่า" },
+  "lockProtected": { "message": "ป้องกันแล้ว" },
+  "lockUnlock": { "message": "ปลดล็อก" },
+  "lockUnlocked": { "message": "ปลดล็อกการแก้ไขแล้ว" },
+  "lockRelock": { "message": "ล็อกอีกครั้ง" },
+  "lockManage": { "message": "จัดการ" },
+  "lockSetupTitle": { "message": "ตั้งค่าโหมดป้องกัน" },
+  "lockUnlockTitle": { "message": "ปลดล็อกเพื่อแก้ไข" },
+  "lockManageTitle": { "message": "โหมดป้องกัน" },
+  "lockTypePin": { "message": "PIN 4 หลัก" },
+  "lockTypePassword": { "message": "รหัสผ่าน" },
+  "lockNewCode": { "message": "รหัสใหม่" },
+  "lockConfirmCode": { "message": "ยืนยันรหัส" },
+  "lockYourCode": { "message": "รหัสของคุณ" },
+  "lockPinPlaceholder": { "message": "••••" },
+  "lockPasswordPlaceholder": { "message": "รหัสผ่านของคุณ" },
+  "lockEnable": { "message": "เปิดการป้องกัน" },
+  "lockChange": { "message": "เปลี่ยนรหัส" },
+  "lockRemove": { "message": "ปิดการป้องกัน" },
+  "lockSubmitUnlock": { "message": "ปลดล็อก" },
+  "lockWrong": { "message": "รหัสไม่ถูกต้อง ลองอีกครั้ง" },
+  "lockMismatch": { "message": "รหัสไม่ตรงกัน" },
+  "lockTooShort": { "message": "ใช้อย่างน้อย 4 ตัวอักษร" },
+  "lockPinInvalid": { "message": "ป้อนตัวเลข 4 หลักพอดี" },
+  "lockTooManyAttempts": {
+    "message": "พยายามมากเกินไป รอ $S$ วินาที",
+    "placeholders": { "s": { "content": "$1", "example": "30" } }
+  },
+  "lockOnToast": { "message": "โหมดป้องกันเปิดอยู่" },
+  "lockOffToast": { "message": "โหมดป้องกันปิดอยู่" },
+  "lockChangedToast": { "message": "อัปเดตรหัสแล้ว" },
+  "lockCaveat": { "message": "ล็อกในเครื่องสำหรับเบราว์เซอร์นี้ — เป็นตัวช่วยให้มีสมาธิ ไม่ใช่การควบคุมโดยผู้ปกครองที่ป้องกันการแก้ไขได้ เก็บรหัสของคุณไว้ในที่ปลอดภัย: ไม่สามารถกู้คืนได้" }
 }

@@ -21,7 +21,7 @@
   },
   "emptyHint": { "message": "القائمة فارغة. أضف موقعًا أعلاه." },
 
-  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "textPlaceholder": { "message": "example.com\nexample.net" },
   "saveButton": { "message": "حفظ" },
   "savedStatus": { "message": "تم الحفظ" },
 
@@ -45,5 +45,39 @@
   "blockedOpenPanel": { "message": "فتح اللوحة" },
 
   "languageLabel": { "message": "اللغة" },
-  "localeAuto": { "message": "تلقائي (المتصفح)" }
+  "localeAuto": { "message": "تلقائي (المتصفح)" },
+
+  "lockSectionOff": { "message": "الوضع المحمي" },
+  "lockSetUp": { "message": "إعداد" },
+  "lockProtected": { "message": "محمي" },
+  "lockUnlock": { "message": "إلغاء القفل" },
+  "lockUnlocked": { "message": "تم إلغاء قفل التحرير" },
+  "lockRelock": { "message": "إعادة القفل" },
+  "lockManage": { "message": "إدارة" },
+  "lockSetupTitle": { "message": "إعداد الوضع المحمي" },
+  "lockUnlockTitle": { "message": "ألغِ القفل للتحرير" },
+  "lockManageTitle": { "message": "الوضع المحمي" },
+  "lockTypePin": { "message": "رمز PIN من 4 أرقام" },
+  "lockTypePassword": { "message": "كلمة المرور" },
+  "lockNewCode": { "message": "رمز جديد" },
+  "lockConfirmCode": { "message": "تأكيد الرمز" },
+  "lockYourCode": { "message": "رمزك" },
+  "lockPinPlaceholder": { "message": "••••" },
+  "lockPasswordPlaceholder": { "message": "كلمة المرور الخاصة بك" },
+  "lockEnable": { "message": "تفعيل الحماية" },
+  "lockChange": { "message": "تغيير الرمز" },
+  "lockRemove": { "message": "إيقاف الحماية" },
+  "lockSubmitUnlock": { "message": "إلغاء القفل" },
+  "lockWrong": { "message": "رمز خاطئ. حاول مرة أخرى." },
+  "lockMismatch": { "message": "الرمزان غير متطابقين." },
+  "lockTooShort": { "message": "استخدم 4 أحرف على الأقل." },
+  "lockPinInvalid": { "message": "أدخل 4 أرقام بالضبط." },
+  "lockTooManyAttempts": {
+    "message": "محاولات كثيرة جدًا. انتظر $S$ ثانية.",
+    "placeholders": { "s": { "content": "$1", "example": "30" } }
+  },
+  "lockOnToast": { "message": "الوضع المحمي مفعّل." },
+  "lockOffToast": { "message": "الوضع المحمي معطّل." },
+  "lockChangedToast": { "message": "تم تحديث الرمز." },
+  "lockCaveat": { "message": "قفل محلي لهذا المتصفح — رادع للحفاظ على التركيز، وليس أداة رقابة أبوية مقاومة للعبث. احتفظ برمزك في مكان آمن: لا يمكن استرجاعه." }
 }

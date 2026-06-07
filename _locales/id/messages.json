@@ -21,7 +21,7 @@
   },
   "emptyHint": { "message": "Daftar kosong. Tambahkan situs di atas." },
 
-  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "textPlaceholder": { "message": "example.com\nexample.net" },
   "saveButton": { "message": "Simpan" },
   "savedStatus": { "message": "Tersimpan" },
 
@@ -45,5 +45,39 @@
   "blockedOpenPanel": { "message": "Buka panel" },
 
   "languageLabel": { "message": "Bahasa" },
-  "localeAuto": { "message": "Otomatis (peramban)" }
+  "localeAuto": { "message": "Otomatis (peramban)" },
+
+  "lockSectionOff": { "message": "Mode terlindungi" },
+  "lockSetUp": { "message": "Siapkan" },
+  "lockProtected": { "message": "Terlindungi" },
+  "lockUnlock": { "message": "Buka kunci" },
+  "lockUnlocked": { "message": "Pengeditan dibuka" },
+  "lockRelock": { "message": "Kunci lagi" },
+  "lockManage": { "message": "Kelola" },
+  "lockSetupTitle": { "message": "Siapkan mode terlindungi" },
+  "lockUnlockTitle": { "message": "Buka kunci untuk mengedit" },
+  "lockManageTitle": { "message": "Mode terlindungi" },
+  "lockTypePin": { "message": "PIN 4 digit" },
+  "lockTypePassword": { "message": "Kata sandi" },
+  "lockNewCode": { "message": "Kode baru" },
+  "lockConfirmCode": { "message": "Konfirmasi kode" },
+  "lockYourCode": { "message": "Kode Anda" },
+  "lockPinPlaceholder": { "message": "••••" },
+  "lockPasswordPlaceholder": { "message": "Kata sandi Anda" },
+  "lockEnable": { "message": "Aktifkan perlindungan" },
+  "lockChange": { "message": "Ubah kode" },
+  "lockRemove": { "message": "Matikan perlindungan" },
+  "lockSubmitUnlock": { "message": "Buka kunci" },
+  "lockWrong": { "message": "Kode salah. Coba lagi." },
+  "lockMismatch": { "message": "Kode tidak cocok." },
+  "lockTooShort": { "message": "Gunakan minimal 4 karakter." },
+  "lockPinInvalid": { "message": "Masukkan tepat 4 digit." },
+  "lockTooManyAttempts": {
+    "message": "Terlalu banyak percobaan. Tunggu $S$ dtk.",
+    "placeholders": { "s": { "content": "$1", "example": "30" } }
+  },
+  "lockOnToast": { "message": "Mode terlindungi aktif." },
+  "lockOffToast": { "message": "Mode terlindungi nonaktif." },
+  "lockChangedToast": { "message": "Kode diperbarui." },
+  "lockCaveat": { "message": "Kunci lokal untuk peramban ini — pencegah agar tetap fokus, bukan kontrol orang tua yang anti-rusak. Simpan kode Anda di tempat aman: kode tidak dapat dipulihkan." }
 }

@@ -21,7 +21,7 @@
   },
   "emptyHint": { "message": "Ro'yxat bo'sh. Yuqoridan sayt qo'shing." },
 
-  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "textPlaceholder": { "message": "example.com\nexample.net" },
   "saveButton": { "message": "Saqlash" },
   "savedStatus": { "message": "Saqlandi" },
 
@@ -45,5 +45,39 @@
   "blockedOpenPanel": { "message": "Panelni ochish" },
 
   "languageLabel": { "message": "Til" },
-  "localeAuto": { "message": "Avto (brauzer)" }
+  "localeAuto": { "message": "Avto (brauzer)" },
+
+  "lockSectionOff": { "message": "Himoyalangan rejim" },
+  "lockSetUp": { "message": "Sozlash" },
+  "lockProtected": { "message": "Himoyalangan" },
+  "lockUnlock": { "message": "Qulfni ochish" },
+  "lockUnlocked": { "message": "Tahrirlash qulfi ochildi" },
+  "lockRelock": { "message": "Qayta qulflash" },
+  "lockManage": { "message": "Boshqarish" },
+  "lockSetupTitle": { "message": "Himoyalangan rejimni sozlash" },
+  "lockUnlockTitle": { "message": "Tahrirlash uchun qulfni oching" },
+  "lockManageTitle": { "message": "Himoyalangan rejim" },
+  "lockTypePin": { "message": "4 raqamli PIN" },
+  "lockTypePassword": { "message": "Parol" },
+  "lockNewCode": { "message": "Yangi kod" },
+  "lockConfirmCode": { "message": "Kodni tasdiqlang" },
+  "lockYourCode": { "message": "Kodingiz" },
+  "lockPinPlaceholder": { "message": "••••" },
+  "lockPasswordPlaceholder": { "message": "Parolingiz" },
+  "lockEnable": { "message": "Himoyani yoqish" },
+  "lockChange": { "message": "Kodni o'zgartirish" },
+  "lockRemove": { "message": "Himoyani o'chirish" },
+  "lockSubmitUnlock": { "message": "Qulfni ochish" },
+  "lockWrong": { "message": "Noto'g'ri kod. Qayta urinib ko'ring." },
+  "lockMismatch": { "message": "Kodlar mos kelmaydi." },
+  "lockTooShort": { "message": "Kamida 4 ta belgi ishlating." },
+  "lockPinInvalid": { "message": "Aniq 4 ta raqam kiriting." },
+  "lockTooManyAttempts": {
+    "message": "Juda ko'p urinish. $S$ s kuting.",
+    "placeholders": { "s": { "content": "$1", "example": "30" } }
+  },
+  "lockOnToast": { "message": "Himoyalangan rejim yoqilgan." },
+  "lockOffToast": { "message": "Himoyalangan rejim o'chirilgan." },
+  "lockChangedToast": { "message": "Kod yangilandi." },
+  "lockCaveat": { "message": "Ushbu brauzer uchun mahalliy qulf — diqqatni jamlashga yordam beruvchi to'siq, buzib bo'lmaydigan ota-ona nazorati emas. Kodingizni xavfsiz joyda saqlang: uni tiklab bo'lmaydi." }
 }

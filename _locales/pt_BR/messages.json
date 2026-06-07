@@ -21,7 +21,7 @@
   },
   "emptyHint": { "message": "A lista está vazia. Adicione um site acima." },
 
-  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "textPlaceholder": { "message": "example.com\nexample.net" },
   "saveButton": { "message": "Salvar" },
   "savedStatus": { "message": "Salvo" },
 
@@ -45,5 +45,39 @@
   "blockedOpenPanel": { "message": "Abrir painel" },
 
   "languageLabel": { "message": "Idioma" },
-  "localeAuto": { "message": "Auto (navegador)" }
+  "localeAuto": { "message": "Auto (navegador)" },
+
+  "lockSectionOff": { "message": "Modo protegido" },
+  "lockSetUp": { "message": "Configurar" },
+  "lockProtected": { "message": "Protegido" },
+  "lockUnlock": { "message": "Desbloquear" },
+  "lockUnlocked": { "message": "Edição desbloqueada" },
+  "lockRelock": { "message": "Bloquear novamente" },
+  "lockManage": { "message": "Gerenciar" },
+  "lockSetupTitle": { "message": "Configurar modo protegido" },
+  "lockUnlockTitle": { "message": "Desbloqueie para editar" },
+  "lockManageTitle": { "message": "Modo protegido" },
+  "lockTypePin": { "message": "PIN de 4 dígitos" },
+  "lockTypePassword": { "message": "Senha" },
+  "lockNewCode": { "message": "Novo código" },
+  "lockConfirmCode": { "message": "Confirmar código" },
+  "lockYourCode": { "message": "Seu código" },
+  "lockPinPlaceholder": { "message": "••••" },
+  "lockPasswordPlaceholder": { "message": "Sua senha" },
+  "lockEnable": { "message": "Ativar proteção" },
+  "lockChange": { "message": "Alterar código" },
+  "lockRemove": { "message": "Desativar proteção" },
+  "lockSubmitUnlock": { "message": "Desbloquear" },
+  "lockWrong": { "message": "Código incorreto. Tente de novo." },
+  "lockMismatch": { "message": "Os códigos não coincidem." },
+  "lockTooShort": { "message": "Use pelo menos 4 caracteres." },
+  "lockPinInvalid": { "message": "Digite exatamente 4 dígitos." },
+  "lockTooManyAttempts": {
+    "message": "Muitas tentativas. Aguarde $S$ s.",
+    "placeholders": { "s": { "content": "$1", "example": "30" } }
+  },
+  "lockOnToast": { "message": "O modo protegido está ativado." },
+  "lockOffToast": { "message": "O modo protegido está desativado." },
+  "lockChangedToast": { "message": "Código atualizado." },
+  "lockCaveat": { "message": "Um bloqueio local para este navegador — um dissuasor de foco, não um controle parental à prova de violação. Guarde seu código em local seguro: ele não pode ser recuperado." }
 }

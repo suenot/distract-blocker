@@ -21,7 +21,7 @@
   },
   "emptyHint": { "message": "Тизме бош. Жогорудан сайт кошуңуз." },
 
-  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "textPlaceholder": { "message": "example.com\nexample.net" },
   "saveButton": { "message": "Сактоо" },
   "savedStatus": { "message": "Сакталды" },
 
@@ -45,5 +45,39 @@
   "blockedOpenPanel": { "message": "Панелди ачуу" },
 
   "languageLabel": { "message": "Тил" },
-  "localeAuto": { "message": "Автомат (браузер)" }
+  "localeAuto": { "message": "Автомат (браузер)" },
+
+  "lockSectionOff": { "message": "Корголгон режим" },
+  "lockSetUp": { "message": "Орнотуу" },
+  "lockProtected": { "message": "Корголгон" },
+  "lockUnlock": { "message": "Кулпуну ачуу" },
+  "lockUnlocked": { "message": "Түзөтүү ачылды" },
+  "lockRelock": { "message": "Кайра кулпулоо" },
+  "lockManage": { "message": "Башкаруу" },
+  "lockSetupTitle": { "message": "Корголгон режимди орнотуу" },
+  "lockUnlockTitle": { "message": "Түзөтүү үчүн кулпуну ачыңыз" },
+  "lockManageTitle": { "message": "Корголгон режим" },
+  "lockTypePin": { "message": "4 сандуу PIN" },
+  "lockTypePassword": { "message": "Сырсөз" },
+  "lockNewCode": { "message": "Жаңы код" },
+  "lockConfirmCode": { "message": "Кодду ырастаңыз" },
+  "lockYourCode": { "message": "Сиздин код" },
+  "lockPinPlaceholder": { "message": "••••" },
+  "lockPasswordPlaceholder": { "message": "Сиздин сырсөз" },
+  "lockEnable": { "message": "Коргоону күйгүзүү" },
+  "lockChange": { "message": "Кодду өзгөртүү" },
+  "lockRemove": { "message": "Коргоону өчүрүү" },
+  "lockSubmitUnlock": { "message": "Кулпуну ачуу" },
+  "lockWrong": { "message": "Код туура эмес. Кайра аракет кылыңыз." },
+  "lockMismatch": { "message": "Коддор дал келбейт." },
+  "lockTooShort": { "message": "Кеминде 4 белги колдонуңуз." },
+  "lockPinInvalid": { "message": "Так 4 сан киргизиңиз." },
+  "lockTooManyAttempts": {
+    "message": "Өтө көп аракет. $S$ сек күтүңүз.",
+    "placeholders": { "s": { "content": "$1", "example": "30" } }
+  },
+  "lockOnToast": { "message": "Корголгон режим күйүк." },
+  "lockOffToast": { "message": "Корголгон режим өчүк." },
+  "lockChangedToast": { "message": "Код жаңыртылды." },
+  "lockCaveat": { "message": "Бул браузер үчүн жергиликтүү кулпу — көңүл топтоого жардам берет, бирок бузулбас ата-эне көзөмөлү эмес. Кодуңузду коопсуз жерде сактаңыз: аны калыбына келтирүүгө болбойт." }
 }

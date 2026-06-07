@@ -21,7 +21,7 @@
   },
   "emptyHint": { "message": "列表为空。请在上方添加网站。" },
 
-  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "textPlaceholder": { "message": "example.com\nexample.net" },
   "saveButton": { "message": "保存" },
   "savedStatus": { "message": "已保存" },
 
@@ -45,5 +45,39 @@
   "blockedOpenPanel": { "message": "打开面板" },
 
   "languageLabel": { "message": "语言" },
-  "localeAuto": { "message": "自动（浏览器）" }
+  "localeAuto": { "message": "自动（浏览器）" },
+
+  "lockSectionOff": { "message": "保护模式" },
+  "lockSetUp": { "message": "设置" },
+  "lockProtected": { "message": "已保护" },
+  "lockUnlock": { "message": "解锁" },
+  "lockUnlocked": { "message": "编辑已解锁" },
+  "lockRelock": { "message": "重新锁定" },
+  "lockManage": { "message": "管理" },
+  "lockSetupTitle": { "message": "设置保护模式" },
+  "lockUnlockTitle": { "message": "解锁以编辑" },
+  "lockManageTitle": { "message": "保护模式" },
+  "lockTypePin": { "message": "4 位 PIN 码" },
+  "lockTypePassword": { "message": "密码" },
+  "lockNewCode": { "message": "新密码" },
+  "lockConfirmCode": { "message": "确认密码" },
+  "lockYourCode": { "message": "你的密码" },
+  "lockPinPlaceholder": { "message": "••••" },
+  "lockPasswordPlaceholder": { "message": "你的密码" },
+  "lockEnable": { "message": "启用保护" },
+  "lockChange": { "message": "修改密码" },
+  "lockRemove": { "message": "关闭保护" },
+  "lockSubmitUnlock": { "message": "解锁" },
+  "lockWrong": { "message": "密码错误，请重试。" },
+  "lockMismatch": { "message": "两次输入不一致。" },
+  "lockTooShort": { "message": "至少需要 4 个字符。" },
+  "lockPinInvalid": { "message": "请输入正好 4 位数字。" },
+  "lockTooManyAttempts": {
+    "message": "尝试次数过多。请等待 $S$ 秒。",
+    "placeholders": { "s": { "content": "$1", "example": "30" } }
+  },
+  "lockOnToast": { "message": "保护模式已开启。" },
+  "lockOffToast": { "message": "保护模式已关闭。" },
+  "lockChangedToast": { "message": "密码已更新。" },
+  "lockCaveat": { "message": "仅对此浏览器生效的本地锁——用于帮助你专注，并非防篡改的家长控制。请妥善保管密码：无法找回。" }
 }

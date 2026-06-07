@@ -21,7 +21,7 @@
   },
   "emptyHint": { "message": "Liste boş. Yukarıdan site ekleyin." },
 
-  "textPlaceholder": { "message": "youtube.com\nfacebook.com" },
+  "textPlaceholder": { "message": "example.com\nexample.net" },
   "saveButton": { "message": "Kaydet" },
   "savedStatus": { "message": "Kaydedildi" },
 
@@ -45,5 +45,39 @@
   "blockedOpenPanel": { "message": "Paneli aç" },
 
   "languageLabel": { "message": "Dil" },
-  "localeAuto": { "message": "Otomatik (tarayıcı)" }
+  "localeAuto": { "message": "Otomatik (tarayıcı)" },
+
+  "lockSectionOff": { "message": "Korumalı mod" },
+  "lockSetUp": { "message": "Ayarla" },
+  "lockProtected": { "message": "Korumalı" },
+  "lockUnlock": { "message": "Kilidi aç" },
+  "lockUnlocked": { "message": "Düzenleme kilidi açık" },
+  "lockRelock": { "message": "Yeniden kilitle" },
+  "lockManage": { "message": "Yönet" },
+  "lockSetupTitle": { "message": "Korumalı modu ayarla" },
+  "lockUnlockTitle": { "message": "Düzenlemek için kilidi aç" },
+  "lockManageTitle": { "message": "Korumalı mod" },
+  "lockTypePin": { "message": "4 haneli PIN" },
+  "lockTypePassword": { "message": "Parola" },
+  "lockNewCode": { "message": "Yeni kod" },
+  "lockConfirmCode": { "message": "Kodu onayla" },
+  "lockYourCode": { "message": "Kodunuz" },
+  "lockPinPlaceholder": { "message": "••••" },
+  "lockPasswordPlaceholder": { "message": "Parolanız" },
+  "lockEnable": { "message": "Korumayı etkinleştir" },
+  "lockChange": { "message": "Kodu değiştir" },
+  "lockRemove": { "message": "Korumayı kapat" },
+  "lockSubmitUnlock": { "message": "Kilidi aç" },
+  "lockWrong": { "message": "Yanlış kod. Tekrar deneyin." },
+  "lockMismatch": { "message": "Kodlar eşleşmiyor." },
+  "lockTooShort": { "message": "En az 4 karakter kullanın." },
+  "lockPinInvalid": { "message": "Tam olarak 4 rakam girin." },
+  "lockTooManyAttempts": {
+    "message": "Çok fazla deneme. $S$ sn bekleyin.",
+    "placeholders": { "s": { "content": "$1", "example": "30" } }
+  },
+  "lockOnToast": { "message": "Korumalı mod açık." },
+  "lockOffToast": { "message": "Korumalı mod kapalı." },
+  "lockChangedToast": { "message": "Kod güncellendi." },
+  "lockCaveat": { "message": "Bu tarayıcı için yerel bir kilit — odaklanmaya yardımcı bir caydırıcı, kurcalamaya dayanıklı bir ebeveyn denetimi değil. Kodunuzu güvenli bir yerde saklayın: kurtarılamaz." }
 }

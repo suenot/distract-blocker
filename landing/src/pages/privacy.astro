@@ -16,7 +16,7 @@ import Footer from '../components/Footer.astro';
     <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-4 leading-[1.1]">
       <span class="bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/60">Privacy Policy</span>
     </h1>
-    <p class="text-sm text-muted-foreground mb-12">Last updated: 2026-05-28</p>
+    <p class="text-sm text-muted-foreground mb-12">Last updated: 2026-06-07</p>
 
     <section class="space-y-10">
       <div>
@@ -37,6 +37,7 @@ import Footer from '../components/Footer.astro';
           <li>Your schedule (mode + day-of-week + time ranges)</li>
           <li>The UI language you've selected</li>
           <li>Whether you prefer the list or text view for editing the blocklist</li>
+          <li>If you turn on <strong class="text-foreground">Protected mode</strong>: a salted PBKDF2 hash of your PIN or password — never the code itself. The hash can't be reversed, and there's no recovery; clearing the extension's data removes the lock.</li>
         </ul>
         <p class="text-muted-foreground mt-4">
           This data stays entirely on your device. It is <strong class="text-foreground">not</strong> synced (we do not use <code class="text-accent-darker bg-card/60 px-1.5 py-0.5 rounded">chrome.storage.sync</code>). It is <strong class="text-foreground">not</strong> transmitted anywhere.
