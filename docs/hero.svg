@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-labelledby="t d">
+  <title id="t">Distract Blocker: how it works</title>
+  <desc id="d">An animated browser window with a side panel. The toggle in the panel switches on, and the YouTube feed is replaced by a polite Not now page with the guardian mascot.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101014"/><stop offset="1" stop-color="#09090b"/></linearGradient>
+    <radialGradient id="body" cx="50%" cy="38%" r="65%"><stop offset="0" stop-color="#ff7c7c"/><stop offset=".7" stop-color="#e63946"/><stop offset="1" stop-color="#b3001b"/></radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#e63946" stop-opacity=".28"/><stop offset="1" stop-color="#e63946" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#000" flood-opacity=".6"/></filter>
+    <clipPath id="page"><rect x="140" y="218" width="740" height="372"/></clipPath>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      .cyc { animation-duration: 10s; animation-iteration-count: infinite; animation-timing-function: cubic-bezier(.23,.86,.39,.96); }
+      .feed { animation-name: drift; }
+      .cover { animation-name: cover; }
+      .mascot { animation-name: mascot; }
+      .txt { animation-name: txt; }
+      .txt2 { animation-name: txt2; }
+      .knob { animation-name: knob; }
+      .track { animation-name: track; }
+      .row { animation-name: row; }
+      .s1 { animation-name: s1; } .s2 { animation-name: s2; } .s3 { animation-name: s3; }
+      .float { animation: float 3s ease-in-out infinite; }
+      @keyframes drift { 0% { transform: translateY(0); } 36%,100% { transform: translateY(-44px); } }
+      @keyframes cover { 0%,38% { opacity: 0; } 46%,90% { opacity: 1; } 97%,100% { opacity: 0; } }
+      @keyframes mascot { 0%,42% { opacity: 0; transform: translateY(18px) scale(.94); } 52%,90% { opacity: 1; transform: none; } 96%,100% { opacity: 0; } }
+      @keyframes txt { 0%,48% { opacity: 0; transform: translateY(12px); } 56%,90% { opacity: 1; transform: none; } 96%,100% { opacity: 0; } }
+      @keyframes txt2 { 0%,54% { opacity: 0; transform: translateY(12px); } 62%,90% { opacity: 1; transform: none; } 96%,100% { opacity: 0; } }
+      @keyframes knob { 0%,30% { transform: translateX(0); } 36%,92% { transform: translateX(22px); } 98%,100% { transform: translateX(0); } }
+      @keyframes track { 0%,30% { fill: #3a3a42; } 36%,92% { fill: #e63946; } 98%,100% { fill: #3a3a42; } }
+      @keyframes row { 0%,12% { opacity: 0; transform: translateX(14px); } 20%,94% { opacity: 1; transform: none; } 99%,100% { opacity: 0; } }
+      @keyframes s1 { 0%,22% { opacity: 1; } 28%,94% { opacity: .35; } 100% { opacity: 1; } }
+      @keyframes s2 { 0%,24% { opacity: .35; } 30%,42% { opacity: 1; } 48%,100% { opacity: .35; } }
+      @keyframes s3 { 0%,46% { opacity: .35; } 54%,92% { opacity: 1; } 98%,100% { opacity: .35; } }
+      @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+      @media (prefers-reduced-motion: reduce) { .cyc, .float { animation: none !important; } .cover, .mascot, .txt, .txt2, .row, .s1, .s2, .s3 { opacity: 1 !important; } .knob { transform: translateX(22px); } .track { fill: #e63946; } }
+    </style>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+
+  <text x="640" y="88" text-anchor="middle" font-size="46" font-weight="700" fill="#fff" letter-spacing="-1">Block the sites you keep opening.</text>
+  <text x="640" y="130" text-anchor="middle" font-size="21" fill="#9a9aa4">One switch in a side panel. A polite "not now" instead of the feed.</text>
+
+  <!-- window -->
+  <g filter="url(#shadow)"><rect x="140" y="160" width="1000" height="430" rx="16" fill="#141418"/></g>
+  <path d="M140 176a16 16 0 0 1 16-16h968a16 16 0 0 1 16 16v42H140z" fill="#1d1d22"/>
+  <circle cx="168" cy="189" r="6" fill="#ff5f57"/><circle cx="190" cy="189" r="6" fill="#febc2e"/><circle cx="212" cy="189" r="6" fill="#28c840"/>
+  <rect x="250" y="174" width="480" height="30" rx="15" fill="#101014" stroke="#2c2c33"/>
+  <text x="490" y="194" text-anchor="middle" font-size="14" fill="#a0a0aa">youtube.com</text>
+
+  <!-- feed -->
+  <g clip-path="url(#page)">
+    <g class="cyc feed">
+      <g fill="#24242b">
+        <g transform="translate(164 238)"><rect width="216" height="122" rx="10"/><path d="M96 44l30 17-30 17z" fill="#55555f"/></g>
+        <g transform="translate(404 238)"><rect width="216" height="122" rx="10"/><path d="M96 44l30 17-30 17z" fill="#55555f"/></g>
+        <g transform="translate(644 238)"><rect width="216" height="122" rx="10"/><path d="M96 44l30 17-30 17z" fill="#55555f"/></g>
+        <g transform="translate(164 424)"><rect width="216" height="122" rx="10"/><path d="M96 44l30 17-30 17z" fill="#55555f"/></g>
+        <g transform="translate(404 424)"><rect width="216" height="122" rx="10"/><path d="M96 44l30 17-30 17z" fill="#55555f"/></g>
+        <g transform="translate(644 424)"><rect width="216" height="122" rx="10"/><path d="M96 44l30 17-30 17z" fill="#55555f"/></g>
+      </g>
+      <g fill="#2e2e36">
+        <rect x="164" y="370" width="180" height="11" rx="5"/><rect x="404" y="370" width="150" height="11" rx="5"/><rect x="644" y="370" width="190" height="11" rx="5"/>
+        <rect x="164" y="556" width="170" height="11" rx="5"/><rect x="404" y="556" width="190" height="11" rx="5"/><rect x="644" y="556" width="140" height="11" rx="5"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- blocked page -->
+  <g class="cyc cover">
+    <rect x="140" y="218" width="740" height="372" fill="#0f0f12"/>
+    <circle cx="510" cy="335" r="190" fill="url(#glow)"/>
+  </g>
+  <g class="cyc mascot">
+    <g transform="translate(440 246) scale(.7)">
+      <g class="float">
+        <ellipse cx="100" cy="200" rx="56" ry="6" fill="#000" opacity=".35"/>
+        <circle cx="100" cy="105" r="72" fill="url(#body)" stroke="#7a0014" stroke-width="2"/>
+        <ellipse cx="100" cy="58" rx="38" ry="13" fill="#fff" opacity=".25"/>
+        <ellipse cx="100" cy="120" rx="50" ry="38" fill="#fff5f5"/>
+        <path d="M70 110Q78 117 86 110" stroke="#1a1c1f" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M114 110Q122 117 130 110" stroke="#1a1c1f" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M90 144Q100 138 110 144" stroke="#1a1c1f" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <text x="148" y="60" font-size="22" font-weight="700" fill="#fff" opacity=".75">Z</text>
+        <text x="165" y="42" font-size="15" font-weight="700" fill="#fff" opacity=".55">z</text>
+      </g>
+    </g>
+  </g>
+  <g class="cyc txt">
+    <text x="510" y="452" text-anchor="middle" font-size="32" font-weight="700" fill="#fff">Not now.</text>
+  </g>
+  <g class="cyc txt2">
+    <rect x="445" y="466" width="130" height="28" rx="8" fill="#1a1a1f" stroke="#2c2c33"/>
+    <text x="510" y="485" text-anchor="middle" font-size="14" font-weight="600" fill="#ff7b86">youtube.com</text>
+    <text x="510" y="520" text-anchor="middle" font-size="14" fill="#8a8a94">is on your distraction list.</text>
+  </g>
+
+  <!-- side panel -->
+  <rect x="880" y="218" width="260" height="372" fill="#17171b"/>
+  <rect x="880" y="218" width="1" height="372" fill="#2c2c33"/>
+  <text x="904" y="256" font-size="16" font-weight="700" fill="#fff">Distract Blocker</text>
+  <text x="904" y="288" font-size="14" fill="#a0a0aa">Blocking</text>
+  <rect class="cyc track" x="1070" y="272" width="46" height="24" rx="12" fill="#3a3a42"/>
+  <circle class="cyc knob" cx="1084" cy="284" r="9" fill="#fff"/>
+  <rect x="904" y="316" width="212" height="1" fill="#2c2c33"/>
+  <g class="cyc row"><rect x="904" y="332" width="212" height="38" rx="10" fill="#202026"/><text x="920" y="356" font-size="14" fill="#e8e8ee">youtube.com</text><text x="1096" y="356" text-anchor="end" font-size="16" fill="#6a6a74">×</text></g>
+  <g class="cyc row" style="animation-delay:.12s"><rect x="904" y="380" width="212" height="38" rx="10" fill="#202026"/><text x="920" y="404" font-size="14" fill="#e8e8ee">x.com</text><text x="1096" y="404" text-anchor="end" font-size="16" fill="#6a6a74">×</text></g>
+  <g class="cyc row" style="animation-delay:.24s"><rect x="904" y="428" width="212" height="38" rx="10" fill="#202026"/><text x="920" y="452" font-size="14" fill="#e8e8ee">reddit.com</text><text x="1096" y="452" text-anchor="end" font-size="16" fill="#6a6a74">×</text></g>
+  <rect x="904" y="484" width="212" height="38" rx="10" fill="none" stroke="#3a3a42" stroke-dasharray="4 4"/>
+  <text x="1010" y="508" text-anchor="middle" font-size="14" fill="#8a8a94">+ Add a site</text>
+
+  <!-- steps -->
+  <g class="cyc s1"><circle cx="270" cy="650" r="15" fill="#e63946"/><text x="270" y="656" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">1</text><text x="296" y="656" font-size="18" font-weight="500" fill="#fff">Add the sites you want gone</text></g>
+  <g class="cyc s2"><circle cx="650" cy="650" r="15" fill="#e63946"/><text x="650" y="656" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">2</text><text x="676" y="656" font-size="18" font-weight="500" fill="#fff">Flip the switch</text></g>
+  <g class="cyc s3"><circle cx="900" cy="650" r="15" fill="#e63946"/><text x="900" y="656" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">3</text><text x="926" y="656" font-size="18" font-weight="500" fill="#fff">Get a polite "not now"</text></g>
+</svg>

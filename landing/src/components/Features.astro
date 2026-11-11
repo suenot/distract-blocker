@@ -30,17 +30,17 @@ const features = [
 <section id="features" class="py-24 md:py-32 px-4 md:px-6 bg-background">
   <div class="container mx-auto max-w-6xl">
     <div class="text-center mb-16 md:mb-20">
-      <h2 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
+      <h2 class="rv text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
         <span class="bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/60">What you get</span>
       </h2>
-      <p class="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+      <p class="rv text-base md:text-lg text-muted-foreground max-w-2xl mx-auto" style="--d:1">
         Everything fits in a side panel. No account, no telemetry, no subscription.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {features.map((f) => (
-        <div class="group relative bg-card/40 border border-border rounded-2xl p-7 hover:border-accent/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/10">
+      {features.map((f, i) => (
+        <div style={`--d:${i % 3}`} class="rv group relative bg-card/40 border border-border rounded-2xl p-7 hover:border-accent/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/10">
           <div class="absolute top-7 right-7 h-8 w-8 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center">
             <span class="h-2 w-2 rounded-full bg-accent"></span>
           </div>
