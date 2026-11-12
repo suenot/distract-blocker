@@ -1,7 +1,8 @@
 // The blocklist starts empty — users add their own distracting sites.
 const DEFAULT_SITES = [];
 
-importScripts("rules.js");
+// Chrome service worker loads the shared rules here; Firefox lists rules.js in manifest background.scripts.
+if (typeof importScripts === "function") importScripts("rules.js");
 
 const DEFAULT_SCHEDULE = DBRules.DEFAULT_SCHEDULE;
 
@@ -126,9 +127,14 @@ async function ensureScheduleAlarm() {
   await chrome.alarms.create("schedule-tick", { periodInMinutes: 1 });
 }
 
-chrome.sidePanel
-  .setPanelBehavior({ openPanelOnActionClick: true })
-  .catch(err => console.error("sidePanel.setPanelBehavior failed:", err));
+if (chrome.sidePanel) {
+  chrome.sidePanel
+    .setPanelBehavior({ openPanelOnActionClick: true })
+    .catch(err => console.error("sidePanel.setPanelBehavior failed:", err));
+} else if (typeof browser !== "undefined" && browser.sidebarAction) {
+  // Firefox: toolbar button toggles the sidebar.
+  chrome.action.onClicked.addListener(() => browser.sidebarAction.toggle());
+}
 
 chrome.runtime.onInstalled.addListener(async () => {
   const data = await chrome.storage.local.get(Object.values(STORAGE_KEYS));

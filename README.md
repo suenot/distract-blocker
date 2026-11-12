@@ -50,6 +50,14 @@ From source, until the store listing is live:
 1. Open `chrome://extensions/` and turn on **Developer mode**.
 2. Click **Load unpacked** and select the repository root.
 
+### Firefox (121+)
+
+1. Run `./build-firefox.sh`. It writes `dist-firefox/` and `dist-firefox.zip` (Firefox uses a sidebar instead of the side panel and a background script instead of a service worker).
+2. Open `about:debugging#/runtime/this-firefox`, click "Load Temporary Add-on" and pick `dist-firefox/manifest.json`.
+3. Open `about:addons`, find Distract Blocker, tab "Permissions", and allow "Access your data for all websites". Firefox leaves host permissions off by default, and blocking needs them.
+
+A temporary add-on is removed when Firefox restarts; a permanent install needs a build signed on addons.mozilla.org.
+
 ## Repo layout
 
 ```
