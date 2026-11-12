@@ -30,7 +30,7 @@ Verify:                click "Send verification" → open the
   Store listing (the form you've already filled)
 ================================================================
 Category:              Productivity
-Homepage URL:          https://distract-blocker.marketmaker.cc
+Homepage URL:          https://distract-blocker.suenot.com
 Support URL:           https://github.com/suenot/distract-blocker/issues
 Mature content:        No
 
@@ -128,7 +128,7 @@ Select:  "No, I am not using remote code"
 ================================================================
 Use one of:
 
-  Primary:    https://distract-blocker.marketmaker.cc/privacy
+  Primary:    https://distract-blocker.suenot.com/privacy
   Fallback:   https://github.com/suenot/distract-blocker/blob/main/PRIVACY.md
 
 (The landing /privacy page is the same content as PRIVACY.md.

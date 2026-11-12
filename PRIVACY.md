@@ -13,6 +13,7 @@ The extension uses `chrome.storage.local` to persist only the settings you enter
 - Your blocklist of distracting domains
 - Whether the master toggle is on or off
 - Your schedule (mode + day-of-week + time ranges)
+- Your per-site allow lists (pages you let through), your daily unlock limit and how many unlocks you used today
 - The UI language you've selected
 - Whether you prefer the list or text view for editing the blocklist
 - If you turn on **Protected mode**: a salted PBKDF2 hash of your PIN or password — never the code itself. The hash cannot be reversed, and there is no recovery; clearing the extension's data removes the lock.
@@ -38,6 +39,7 @@ We use Chrome's native `declarativeNetRequest` API. Rules are derived from your 
 - **`storage`** — to save your settings on your device
 - **`declarativeNetRequest`** — to register blocking rules with Chrome
 - **`sidePanel`** — to render the user interface (the side panel)
+- **`scripting`** — to register a small local guard script on sites that have an allow list, so in-page navigation can be checked against it. It reads only the page address, never page content
 - **`alarms`** — to wake the service worker once per minute so the schedule can be re-evaluated
 - **`host_permissions: <all_urls>`** — required by Chrome to authorize `declarativeNetRequest`'s `redirect` action against any domain on your blocklist; the extension itself never reads, modifies, or transmits page content
 

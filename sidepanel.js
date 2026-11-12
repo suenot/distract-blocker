@@ -35,6 +35,8 @@ const $lockAsideTitle = document.getElementById("lockAsideTitle");
 const $lockBody = document.getElementById("lockBody");
 const $lockBackBtn = document.getElementById("lockBackBtn");
 const $toast = document.getElementById("toast");
+const $unlockLimit = document.getElementById("unlockLimit");
+const $unlockUsed = document.getElementById("unlockUsed");
 
 const MODE_KEY = "editMode";
 const DEFAULT_SCHEDULE = { mode: "always", ranges: [] };
@@ -73,8 +75,11 @@ function parseTextSites(text) {
 }
 
 async function getState() {
-  const data = await chrome.storage.local.get(["enabled", "sites", MODE_KEY, "schedule"]);
+  const data = await chrome.storage.local.get(["enabled", "sites", MODE_KEY, "schedule", "allow", "unlockLimit", "unlockLog"]);
   return {
+    allow: data.allow ?? {},
+    unlockLimit: data.unlockLimit,
+    unlockLog: data.unlockLog,
     enabled: data.enabled ?? true,
     sites: Array.isArray(data.sites) ? data.sites : [],
     mode: data[MODE_KEY] === "text" ? "text" : "list",
@@ -200,19 +205,62 @@ function buildRangeItem(range, index, dayNames) {
   return li;
 }
 
-function renderSites(sites) {
+const openAllow = new Set();
+
+function renderSites(sites, allow = {}) {
   const items = sites.map(domain => {
+    const entries = allow[domain] || [];
     const li = document.createElement("li");
+    li.className = "site-item";
+    const row = document.createElement("div");
+    row.className = "site-row";
     const span = document.createElement("span");
     span.className = "domain";
     span.textContent = domain;
+    const allowBtn = document.createElement("button");
+    allowBtn.className = "allow-btn";
+    allowBtn.type = "button";
+    allowBtn.classList.toggle("has-entries", entries.length > 0);
+    allowBtn.textContent = "✓ " + entries.length;
+    allowBtn.setAttribute("aria-label", t("allowToggleAria", [domain]));
+    allowBtn.title = t("allowLabel");
+    allowBtn.addEventListener("click", () => {
+      if (openAllow.has(domain)) openAllow.delete(domain); else openAllow.add(domain);
+      render();
+    });
     const btn = document.createElement("button");
     btn.className = "remove";
     btn.type = "button";
     btn.setAttribute("aria-label", t("removeAria", [domain]));
     btn.textContent = "×";
     btn.addEventListener("click", () => removeSite(domain));
-    li.append(span, btn);
+    row.append(span, allowBtn, btn);
+    li.append(row);
+
+    if (openAllow.has(domain)) {
+      const box = document.createElement("div");
+      box.className = "allow-box";
+      const ta = document.createElement("textarea");
+      ta.spellcheck = false;
+      ta.rows = 4;
+      ta.placeholder = t("allowPlaceholder");
+      ta.value = entries.join("\n");
+      ta.readOnly = isLocked();
+      const hint = document.createElement("p");
+      hint.className = "allow-hint";
+      hint.textContent = t("allowHint");
+      const save = document.createElement("button");
+      save.type = "button";
+      save.className = "allow-save";
+      save.textContent = t("saveButton");
+      save.disabled = isLocked();
+      save.addEventListener("click", async () => {
+        await saveAllow(domain, DBRules.parseAllowText(ta.value));
+        toast(t("allowSaved"));
+      });
+      box.append(ta, hint, save);
+      li.append(box);
+    }
     return li;
   });
   $list.replaceChildren(...items);
@@ -222,6 +270,20 @@ function renderSites(sites) {
   if (document.activeElement !== $sitesText) {
     $sitesText.value = sites.join("\n");
   }
+}
+
+async function saveAllow(domain, entries) {
+  if (isLocked()) return;
+  const { allow } = await getState();
+  const next = { ...allow };
+  if (entries.length) next[domain] = entries; else delete next[domain];
+  await chrome.storage.local.set({ allow: next });
+}
+
+function renderUnlockSection(state) {
+  if (document.activeElement !== $unlockLimit) $unlockLimit.value = String(DBRules.unlockLimit(state));
+  $unlockUsed.textContent = t("unlockUsedToday", [String(DBRules.unlocksUsedToday(state))]);
+  $unlockLimit.disabled = isLocked();
 }
 
 function renderMode(mode) {
@@ -239,9 +301,11 @@ async function render() {
   const data = await chrome.storage.local.get("lock");
   lockInfo = data.lock || null;
   if (!lockInfo) unlocked = false;
-  const { enabled, sites, mode, schedule } = await getState();
+  const state = await getState();
+  const { enabled, sites, mode, schedule } = state;
   renderToggle(enabled, schedule);
-  renderSites(sites);
+  renderSites(sites, state.allow);
+  renderUnlockSection(state);
   renderMode(mode);
   renderSchedule(schedule);
   renderLockBanner();
@@ -281,7 +345,9 @@ function applyLockUI() {
   for (const b of $schedModeBtns) b.disabled = locked;
   $addRangeBtn.disabled = locked;
   for (const el of $rangeList.querySelectorAll("button, input")) el.disabled = locked;
-  for (const el of $list.querySelectorAll("button")) el.disabled = locked;
+  for (const el of $list.querySelectorAll(".remove, .allow-save")) el.disabled = locked;
+  for (const el of $list.querySelectorAll("textarea")) el.readOnly = locked;
+  $unlockLimit.disabled = locked;
 }
 
 async function setSchedule(patch) {
@@ -363,8 +429,11 @@ async function addSite(raw) {
 
 async function removeSite(domain) {
   if (isLocked()) return;
-  const { sites } = await getState();
-  await chrome.storage.local.set({ sites: sites.filter(s => s !== domain) });
+  const { sites, allow } = await getState();
+  const nextAllow = { ...allow };
+  delete nextAllow[domain];
+  openAllow.delete(domain);
+  await chrome.storage.local.set({ sites: sites.filter(s => s !== domain), allow: nextAllow });
 }
 
 async function saveTextarea() {
@@ -681,6 +750,12 @@ $form.addEventListener("submit", e => {
 
 $saveText.addEventListener("click", saveTextarea);
 
+$unlockLimit.addEventListener("change", async () => {
+  if (isLocked()) return;
+  const n = Math.min(20, Math.max(0, Math.floor(Number($unlockLimit.value) || 0)));
+  await chrome.storage.local.set({ unlockLimit: n });
+});
+
 for (const b of $modeBtns) {
   b.addEventListener("click", () => {
     chrome.storage.local.set({ [MODE_KEY]: b.dataset.mode });
@@ -723,7 +798,7 @@ document.addEventListener("visibilitychange", () => {
 
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area !== "local") return;
-  if (changes.enabled || changes.sites || changes[MODE_KEY] || changes.schedule || changes.lock) render();
+  if (changes.enabled || changes.sites || changes[MODE_KEY] || changes.schedule || changes.lock || changes.allow || changes.unlockLimit || changes.unlockLog) render();
 });
 
 setInterval(async () => {

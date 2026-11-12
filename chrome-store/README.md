@@ -44,7 +44,7 @@ chrome-store/
 | Localized screenshots (ru)         | `screenshots/ru/01..05-*.png` (Russian UI)           |
 | Small promo tile                   | `promo/small-tile-440x280.png`                       |
 | Marquee promo tile                 | `promo/marquee-1400x560.png`                         |
-| Official URL / Homepage URL        | `https://distract-blocker.marketmaker.cc`            |
+| Official URL / Homepage URL        | `https://distract-blocker.suenot.com`            |
 | Support URL                        | `https://github.com/suenot/distract-blocker/issues`  |
 | Mature content                     | No                                                   |
 

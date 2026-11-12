@@ -1,95 +1,290 @@
 {
-  "extensionName": { "message": "Distract Blocker" },
-  "extensionDescription": { "message": "Block distracting sites. Click the icon to open the side panel — toggle and edit your list there." },
-  "commandToggleDescription": { "message": "Quick toggle: turn distraction blocking on/off without opening the panel" },
-
-  "appTagline": { "message": "Fewer distractions" },
-
-  "blockingLabel": { "message": "Blocking" },
-  "stateOn": { "message": "on" },
-  "stateOff": { "message": "off" },
-
-  "sectionTitle": { "message": "Blocked sites" },
-  "modeList": { "message": "List" },
-  "modeText": { "message": "Text" },
-
-  "addPlaceholder": { "message": "example.com" },
-  "addAria": { "message": "Add" },
+  "extensionName": {
+    "message": "Distract Blocker"
+  },
+  "extensionDescription": {
+    "message": "Block distracting sites. Click the icon to open the side panel — toggle and edit your list there."
+  },
+  "commandToggleDescription": {
+    "message": "Quick toggle: turn distraction blocking on/off without opening the panel"
+  },
+  "appTagline": {
+    "message": "Fewer distractions"
+  },
+  "blockingLabel": {
+    "message": "Blocking"
+  },
+  "stateOn": {
+    "message": "on"
+  },
+  "stateOff": {
+    "message": "off"
+  },
+  "sectionTitle": {
+    "message": "Blocked sites"
+  },
+  "modeList": {
+    "message": "List"
+  },
+  "modeText": {
+    "message": "Text"
+  },
+  "addPlaceholder": {
+    "message": "example.com"
+  },
+  "addAria": {
+    "message": "Add"
+  },
   "removeAria": {
     "message": "Remove $DOMAIN$",
-    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "youtube.com"
+      }
+    }
   },
-  "emptyHint": { "message": "Your list is empty. Add a site above." },
-
-  "textPlaceholder": { "message": "example.com\nexample.net" },
-  "saveButton": { "message": "Save" },
-  "savedStatus": { "message": "Saved" },
-
-  "subdomainHint": { "message": "Subdomains are blocked automatically" },
-  "configureShortcut": { "message": "Configure keyboard shortcut" },
+  "emptyHint": {
+    "message": "Your list is empty. Add a site above."
+  },
+  "textPlaceholder": {
+    "message": "example.com\nexample.net"
+  },
+  "saveButton": {
+    "message": "Save"
+  },
+  "savedStatus": {
+    "message": "Saved"
+  },
+  "subdomainHint": {
+    "message": "Subdomains are blocked automatically"
+  },
+  "configureShortcut": {
+    "message": "Configure keyboard shortcut"
+  },
   "currentShortcut": {
     "message": "Current shortcut: $SHORTCUT$",
-    "placeholders": { "shortcut": { "content": "$1", "example": "Alt+Shift+B" } }
+    "placeholders": {
+      "shortcut": {
+        "content": "$1",
+        "example": "Alt+Shift+B"
+      }
+    }
   },
-  "shortcutNotSet": { "message": "No shortcut set" },
-  "shortcutInfoAria": { "message": "What is the difference between these shortcuts?" },
-  "shortcutHelp": { "message": "“Toggle distraction blocking” (this extension) instantly flips the switch. “Activate the extension” is Chrome’s built-in command — it just opens this side panel, like clicking the icon." },
-
-  "blockedTitle": { "message": "Not now." },
+  "shortcutNotSet": {
+    "message": "No shortcut set"
+  },
+  "shortcutInfoAria": {
+    "message": "What is the difference between these shortcuts?"
+  },
+  "shortcutHelp": {
+    "message": "“Toggle distraction blocking” (this extension) instantly flips the switch. “Activate the extension” is Chrome’s built-in command — it just opens this side panel, like clicking the icon."
+  },
+  "blockedTitle": {
+    "message": "Not now."
+  },
   "blockedSubtitle": {
     "message": "$DOMAIN$ is on your distraction list.",
-    "placeholders": { "domain": { "content": "$1", "example": "youtube.com" } }
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "youtube.com"
+      }
+    }
   },
-  "blockedHint": { "message": "Really need it? Turn Distract Blocker off from the side panel." },
-  "blockedBack": { "message": "Go back" },
-  "blockedOpenPanel": { "message": "Open panel" },
-
-  "languageLabel": { "message": "Language" },
-  "localeAuto": { "message": "Auto (browser)" },
-
-  "scheduleLabel": { "message": "Schedule" },
-  "scheduleAlways": { "message": "Always" },
-  "scheduleBlockDuring": { "message": "Block during" },
-  "scheduleAllowDuring": { "message": "Allow during" },
-  "addRange": { "message": "+ Add range" },
+  "blockedHint": {
+    "message": "Really need it? Turn Distract Blocker off from the side panel."
+  },
+  "blockedBack": {
+    "message": "Go back"
+  },
+  "blockedOpenPanel": {
+    "message": "Open panel"
+  },
+  "languageLabel": {
+    "message": "Language"
+  },
+  "localeAuto": {
+    "message": "Auto (browser)"
+  },
+  "scheduleLabel": {
+    "message": "Schedule"
+  },
+  "scheduleAlways": {
+    "message": "Always"
+  },
+  "scheduleBlockDuring": {
+    "message": "Block during"
+  },
+  "scheduleAllowDuring": {
+    "message": "Allow during"
+  },
+  "addRange": {
+    "message": "+ Add range"
+  },
   "removeRangeAria": {
     "message": "Remove range $N$",
-    "placeholders": { "n": { "content": "$1", "example": "1" } }
+    "placeholders": {
+      "n": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
   },
-  "statusActive": { "message": "blocking now" },
-  "statusIdle": { "message": "idle now" },
-
-  "lockSectionOff": { "message": "Protected mode" },
-  "lockSetUp": { "message": "Set up" },
-  "lockProtected": { "message": "Protected" },
-  "lockUnlock": { "message": "Unlock" },
-  "lockUnlocked": { "message": "Editing unlocked" },
-  "lockRelock": { "message": "Re-lock" },
-  "lockManage": { "message": "Manage" },
-  "lockSetupTitle": { "message": "Set up Protected mode" },
-  "lockUnlockTitle": { "message": "Unlock to edit" },
-  "lockManageTitle": { "message": "Protected mode" },
-  "lockTypePin": { "message": "4-digit PIN" },
-  "lockTypePassword": { "message": "Password" },
-  "lockNewCode": { "message": "New code" },
-  "lockConfirmCode": { "message": "Confirm code" },
-  "lockYourCode": { "message": "Your code" },
-  "lockPinPlaceholder": { "message": "••••" },
-  "lockPasswordPlaceholder": { "message": "Your password" },
-  "lockEnable": { "message": "Enable protection" },
-  "lockChange": { "message": "Change code" },
-  "lockRemove": { "message": "Turn off protection" },
-  "lockSubmitUnlock": { "message": "Unlock" },
-  "lockWrong": { "message": "Wrong code. Try again." },
-  "lockMismatch": { "message": "Codes don’t match." },
-  "lockTooShort": { "message": "Use at least 4 characters." },
-  "lockPinInvalid": { "message": "Enter exactly 4 digits." },
+  "statusActive": {
+    "message": "blocking now"
+  },
+  "statusIdle": {
+    "message": "idle now"
+  },
+  "lockSectionOff": {
+    "message": "Protected mode"
+  },
+  "lockSetUp": {
+    "message": "Set up"
+  },
+  "lockProtected": {
+    "message": "Protected"
+  },
+  "lockUnlock": {
+    "message": "Unlock"
+  },
+  "lockUnlocked": {
+    "message": "Editing unlocked"
+  },
+  "lockRelock": {
+    "message": "Re-lock"
+  },
+  "lockManage": {
+    "message": "Manage"
+  },
+  "lockSetupTitle": {
+    "message": "Set up Protected mode"
+  },
+  "lockUnlockTitle": {
+    "message": "Unlock to edit"
+  },
+  "lockManageTitle": {
+    "message": "Protected mode"
+  },
+  "lockTypePin": {
+    "message": "4-digit PIN"
+  },
+  "lockTypePassword": {
+    "message": "Password"
+  },
+  "lockNewCode": {
+    "message": "New code"
+  },
+  "lockConfirmCode": {
+    "message": "Confirm code"
+  },
+  "lockYourCode": {
+    "message": "Your code"
+  },
+  "lockPinPlaceholder": {
+    "message": "••••"
+  },
+  "lockPasswordPlaceholder": {
+    "message": "Your password"
+  },
+  "lockEnable": {
+    "message": "Enable protection"
+  },
+  "lockChange": {
+    "message": "Change code"
+  },
+  "lockRemove": {
+    "message": "Turn off protection"
+  },
+  "lockSubmitUnlock": {
+    "message": "Unlock"
+  },
+  "lockWrong": {
+    "message": "Wrong code. Try again."
+  },
+  "lockMismatch": {
+    "message": "Codes don’t match."
+  },
+  "lockTooShort": {
+    "message": "Use at least 4 characters."
+  },
+  "lockPinInvalid": {
+    "message": "Enter exactly 4 digits."
+  },
   "lockTooManyAttempts": {
     "message": "Too many tries. Wait $S$ s.",
-    "placeholders": { "s": { "content": "$1", "example": "30" } }
+    "placeholders": {
+      "s": {
+        "content": "$1",
+        "example": "30"
+      }
+    }
   },
-  "lockOnToast": { "message": "Protected mode is on." },
-  "lockOffToast": { "message": "Protected mode is off." },
-  "lockChangedToast": { "message": "Code updated." },
-  "lockCaveat": { "message": "A local lock for this browser — a focus deterrent, not tamper-proof parental control. Keep your code somewhere safe: it can’t be recovered." }
+  "lockOnToast": {
+    "message": "Protected mode is on."
+  },
+  "lockOffToast": {
+    "message": "Protected mode is off."
+  },
+  "lockChangedToast": {
+    "message": "Code updated."
+  },
+  "lockCaveat": {
+    "message": "A local lock for this browser — a focus deterrent, not tamper-proof parental control. Keep your code somewhere safe: it can’t be recovered."
+  },
+  "allowedTitle": {
+    "message": "Allowed here"
+  },
+  "unlockButton": {
+    "message": "Unlock for 5 minutes ($N$ left today)",
+    "placeholders": {
+      "n": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "unlockNone": {
+    "message": "No unlocks left today."
+  },
+  "unlockLocked": {
+    "message": "Protected mode is on: unlock from the side panel."
+  },
+  "allowLabel": {
+    "message": "Allowed pages"
+  },
+  "allowPlaceholder": {
+    "message": "studio.youtube.com\n@mychannel\n/channel_switcher"
+  },
+  "allowHint": {
+    "message": "One per line: a host, a path, an @handle or a channel ID. Everything else on this site stays blocked."
+  },
+  "allowToggleAria": {
+    "message": "Allowed pages for $N$",
+    "placeholders": {
+      "n": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "allowSaved": {
+    "message": "Saved"
+  },
+  "unlockLimitLabel": {
+    "message": "Unlocks per day"
+  },
+  "unlockLimitHint": {
+    "message": "Each 5-minute unlock from the blocked page counts. 0 means never."
+  },
+  "unlockUsedToday": {
+    "message": "Used today: $N$",
+    "placeholders": {
+      "n": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  }
 }

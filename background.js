@@ -1,115 +1,116 @@
 // The blocklist starts empty — users add their own distracting sites.
 const DEFAULT_SITES = [];
 
-const DEFAULT_SCHEDULE = { mode: "always", ranges: [] };
+importScripts("rules.js");
 
-const STORAGE_KEYS = { ENABLED: "enabled", SITES: "sites", SCHEDULE: "schedule" };
+const DEFAULT_SCHEDULE = DBRules.DEFAULT_SCHEDULE;
+
+const STORAGE_KEYS = {
+  ENABLED: "enabled", SITES: "sites", SCHEDULE: "schedule",
+  ALLOW: "allow", UNLOCK_LIMIT: "unlockLimit", UNLOCK_LOG: "unlockLog", UNLOCK_UNTIL: "unlockUntil"
+};
 
 async function getState() {
-  const data = await chrome.storage.local.get([
-    STORAGE_KEYS.ENABLED,
-    STORAGE_KEYS.SITES,
-    STORAGE_KEYS.SCHEDULE
-  ]);
+  const data = await chrome.storage.local.get(Object.values(STORAGE_KEYS));
   return {
     enabled: data.enabled ?? true,
     sites: data.sites ?? DEFAULT_SITES,
-    schedule: data.schedule ?? DEFAULT_SCHEDULE
+    schedule: data.schedule ?? DEFAULT_SCHEDULE,
+    allow: data.allow ?? {},
+    unlockLimit: data.unlockLimit,
+    unlockLog: data.unlockLog,
+    unlockUntil: data.unlockUntil ?? 0
   };
 }
 
-function timeToMinutes(t) {
-  const [h, m] = String(t).split(":").map(Number);
-  return (h || 0) * 60 + (m || 0);
-}
+const shouldBlockNow = (state, date = new Date()) => DBRules.shouldBlockNow(state, date);
 
-function rangeActive(range, date) {
-  const days = range.days;
-  const hasDays = Array.isArray(days) && days.length > 0;
-  const cur = date.getHours() * 60 + date.getMinutes();
-  const start = timeToMinutes(range.start);
-  const end = timeToMinutes(range.end);
-  if (start === end) return false;
-  if (start < end) {
-    // Same-day window [start, end).
-    if (hasDays && !days.includes(date.getDay())) return false;
-    return cur >= start && cur < end;
-  }
-  // Overnight window crossing midnight: active [start, 24:00) on the start
-  // day, and [00:00, end) which belongs to the previous day's window.
-  if (cur >= start) return !hasDays || days.includes(date.getDay());
-  if (cur < end) return !hasDays || days.includes((date.getDay() + 6) % 7);
-  return false;
-}
+const blockedPageUrl = () => chrome.runtime.getURL("blocked.html");
 
-function shouldBlockNow(state, date = new Date()) {
-  if (!state.enabled) return false;
-  const sched = state.schedule || DEFAULT_SCHEDULE;
-  if (sched.mode === "always") return true;
-  const anyActive = (sched.ranges || []).some(r => rangeActive(r, date));
-  if (sched.mode === "blockDuring") return anyActive;
-  if (sched.mode === "allowDuring") return !anyActive;
-  return true;
-}
-
-function buildRules(sites) {
+function buildRules(state) {
   const rules = [];
   let id = 1;
-  for (const domain of sites) {
+  for (const domain of state.sites) {
+    const entries = state.allow[domain] || [];
+    const host = DBRules.escRe(domain);
+    // Full-page navigations land on the blocked page; "u" carries the original URL.
     rules.push({
       id: id++,
       priority: 1,
       action: {
         type: "redirect",
-        redirect: {
-          url: chrome.runtime.getURL(`blocked.html?d=${encodeURIComponent(domain)}`)
-        }
+        redirect: { regexSubstitution: `${blockedPageUrl()}?d=${encodeURIComponent(domain)}&u=\\1` }
       },
       condition: {
-        urlFilter: `||${domain}^`,
+        regexFilter: `^(https?://([^/?#]+\\.)?${host}(:[0-9]+)?([/?#].*)?)$`,
+        isUrlFilterCaseSensitive: false,
         resourceTypes: ["main_frame"]
       }
     });
-    rules.push({
-      id: id++,
-      priority: 1,
-      action: { type: "block" },
-      condition: {
-        urlFilter: `||${domain}^`,
-        resourceTypes: ["sub_frame"]
-      }
-    });
+    if (entries.length === 0) {
+      // Plain blocklist entry: also block the site embedded in other pages.
+      rules.push({
+        id: id++,
+        priority: 1,
+        action: { type: "block" },
+        condition: { urlFilter: `||${domain}^`, resourceTypes: ["sub_frame"] }
+      });
+    }
+    // Allow list: exceptions beat the redirect rule.
+    for (const entry of entries) {
+      const re = DBRules.allowRegex(domain, entry);
+      if (!re) continue;
+      rules.push({
+        id: id++,
+        priority: 2,
+        action: { type: "allow" },
+        condition: { regexFilter: re, isUrlFilterCaseSensitive: false, resourceTypes: ["main_frame"] }
+      });
+    }
   }
   return rules;
 }
 
-function tabMatchesBlocked(tab, sites) {
-  if (!tab.url) return null;
-  let host;
-  try { host = new URL(tab.url).hostname; } catch { return null; }
-  return sites.find(s => host === s || host.endsWith(`.${s}`)) ?? null;
-}
-
-async function reloadBlockedTabs(sites) {
-  if (!sites.length) return;
+async function reloadBlockedTabs(state) {
+  if (!state.sites.length) return;
   const tabs = await chrome.tabs.query({});
   for (const tab of tabs) {
-    if (!tab.id) continue;
-    if (tabMatchesBlocked(tab, sites)) {
-      chrome.tabs.reload(tab.id).catch(() => {});
-    }
+    if (!tab.id || !tab.url) continue;
+    if (DBRules.isBlockedUrl(tab.url, state)) chrome.tabs.reload(tab.id).catch(() => {});
   }
 }
 
-async function applyRules() {
+// Sites with an allow list also need a guard script: YouTube-style sites
+// navigate inside the page, which network rules cannot see.
+async function syncGuardScripts(state) {
+  const domains = state.sites.filter(s => (state.allow[s] || []).length);
+  try { await chrome.scripting.unregisterContentScripts({ ids: ["db-guard"] }); } catch {}
+  if (!domains.length) return;
+  const matches = domains.map(d => `*://*.${d}/*`);
+  await chrome.scripting.registerContentScripts([{
+    id: "db-guard", matches, js: ["rules.js", "guard.js"], runAt: "document_start", persistAcrossSessions: true
+  }]);
+  const tabs = await chrome.tabs.query({ url: matches });
+  for (const tab of tabs) {
+    if (!tab.id) continue;
+    chrome.scripting.executeScript({ target: { tabId: tab.id }, files: ["rules.js", "guard.js"] }).catch(() => {});
+  }
+}
+
+async function applyRules(force = false) {
   const state = await getState();
   const blocking = shouldBlockNow(state);
+  await updateBadge(state.enabled, blocking);
+  const sig = JSON.stringify([blocking, state.sites, state.allow]);
+  const { sig: prev } = await chrome.storage.session.get("sig");
+  if (!force && sig === prev) return;
   const existing = await chrome.declarativeNetRequest.getDynamicRules();
   const removeRuleIds = existing.map(r => r.id);
-  const addRules = blocking ? buildRules(state.sites) : [];
+  const addRules = blocking ? buildRules(state) : [];
   await chrome.declarativeNetRequest.updateDynamicRules({ removeRuleIds, addRules });
-  await updateBadge(state.enabled, blocking);
-  if (blocking) await reloadBlockedTabs(state.sites);
+  await chrome.storage.session.set({ sig });
+  await syncGuardScripts(state);
+  if (blocking) await reloadBlockedTabs(state);
 }
 
 async function updateBadge(enabled, blockingNow) {
@@ -137,16 +138,16 @@ chrome.runtime.onInstalled.addListener(async () => {
   if (data.schedule === undefined) updates.schedule = DEFAULT_SCHEDULE;
   if (Object.keys(updates).length) await chrome.storage.local.set(updates);
   await ensureScheduleAlarm();
-  await applyRules();
+  await applyRules(true);
 });
 
 chrome.runtime.onStartup.addListener(async () => {
   await ensureScheduleAlarm();
-  await applyRules();
+  await applyRules(true);
 });
 
 chrome.alarms.onAlarm.addListener(alarm => {
-  if (alarm.name === "schedule-tick") applyRules();
+  if (alarm.name === "schedule-tick" || alarm.name === "unlock-end") applyRules();
 });
 
 chrome.commands.onCommand.addListener(async command => {
@@ -160,5 +161,27 @@ chrome.commands.onCommand.addListener(async command => {
 
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area !== "local") return;
-  if (changes.sites || changes.enabled || changes.schedule) applyRules();
+  if (changes.sites || changes.enabled || changes.schedule || changes.allow || changes.unlockUntil) applyRules();
+});
+
+// Spend one daily unlock: pause blocking for 5 minutes. Done here, not in the
+// page, so the count and the limit are enforced in one place.
+async function doUnlock() {
+  const { lock } = await chrome.storage.local.get("lock");
+  if (lock) return { ok: false, reason: "locked" };
+  const state = await getState();
+  if (DBRules.isUnlocked(state)) return { ok: true, left: DBRules.unlocksLeft(state) };
+  if (DBRules.unlocksLeft(state) === 0) return { ok: false, reason: "limit" };
+  const until = Date.now() + DBRules.UNLOCK_MS;
+  const used = DBRules.unlocksUsedToday(state) + 1;
+  await chrome.storage.local.set({ unlockUntil: until, unlockLog: { day: DBRules.dayKey(), count: used } });
+  await chrome.alarms.create("unlock-end", { when: until + 1000 });
+  await applyRules();
+  return { ok: true, left: DBRules.unlocksLeft({ ...state, unlockLog: { day: DBRules.dayKey(), count: used } }) };
+}
+
+chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  if (sender.id !== chrome.runtime.id || msg?.type !== "unlock") return;
+  doUnlock().then(sendResponse, () => sendResponse({ ok: false, reason: "error" }));
+  return true;
 });

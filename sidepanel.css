@@ -869,3 +869,16 @@ body.is-locked .switch { cursor: not-allowed; }
 }
 .toast[hidden] { display: none; }
 .toast.is-shown { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* allow list */
+.sites-list .site-item { display: block; }
+.site-row { display: flex; align-items: center; gap: 8px; width: 100%; }
+.site-row .domain { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.allow-btn { border: 1px solid var(--border, #3a3a42); background: transparent; color: inherit; opacity: .55; border-radius: 8px; padding: 2px 8px; font-size: 12px; cursor: pointer; }
+.allow-btn.has-entries, .allow-btn:hover { opacity: 1; }
+.allow-box { margin-top: 8px; display: grid; gap: 6px; }
+.allow-box textarea { width: 100%; font: 12px ui-monospace, Menlo, monospace; padding: 8px; border-radius: 8px; border: 1px solid var(--border, #3a3a42); background: transparent; color: inherit; resize: vertical; }
+.allow-hint, .unlock-hint { margin: 0; font-size: 12px; opacity: .65; }
+.allow-save { justify-self: end; padding: 6px 14px; border-radius: 8px; border: 0; cursor: pointer; }
+.unlock-section { padding: 12px 16px; display: grid; gap: 8px; }
+.unlock-section input[type=number] { width: 90px; padding: 8px; border-radius: 8px; border: 1px solid var(--border, #3a3a42); background: transparent; color: inherit; }

@@ -121,3 +121,17 @@ h1 {
   color: white;
 }
 .btn--primary:hover { filter: brightness(1.08); }
+
+.btn--ghost { background: transparent; color: var(--text-soft); border: 1px solid var(--border); }
+.btn--ghost:hover:not(:disabled) { color: var(--text); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.allowed { margin: 0 0 22px; }
+.allowed-title { margin: 0 0 8px; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-soft); }
+.allowed-links { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.allowed-links a {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px;
+  padding: 6px 12px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); text-decoration: none; transition: border-color .15s, color .15s;
+}
+.allowed-links a:hover { border-color: var(--accent); color: var(--accent); }
+.unlock-note { margin: 14px 0 0; font-size: 12px; color: var(--text-soft); }

@@ -42,5 +42,5 @@ Distract Blocker — небольшое и сосредоточенное Chrome
 • Исходный код: github.com/suenot/distract-blocker (лицензия MIT)
 
 
-Сайт: https://distract-blocker.marketmaker.cc
-Сделано в marketmaker.cc.
+Сайт: https://distract-blocker.suenot.com
+Сделано suenot.com.

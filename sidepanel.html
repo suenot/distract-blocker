@@ -130,6 +130,15 @@
     </div>
   </section>
 
+  <section class="unlock-section">
+    <div class="section-header">
+      <h2 data-i18n="unlockLimitLabel">Unlocks per day</h2>
+      <span class="counter" id="unlockUsed"></span>
+    </div>
+    <input type="number" id="unlockLimit" min="0" max="20" step="1" inputmode="numeric">
+    <p class="unlock-hint" data-i18n="unlockLimitHint"></p>
+  </section>
+
   <footer class="footer">
     <span data-i18n="subdomainHint">Subdomains are blocked automatically</span>
 
@@ -147,6 +156,7 @@
 
   <script src="i18n.js"></script>
   <script src="mascot.js"></script>
+  <script src="rules.js"></script>
   <script src="lock.js"></script>
   <script src="sidepanel.js"></script>
 </body>

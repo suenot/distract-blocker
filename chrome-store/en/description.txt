@@ -42,5 +42,5 @@ Your blocklist starts empty — add the websites that pull your attention, one a
 • Source code: github.com/suenot/distract-blocker (MIT licensed)
 
 
-Website: https://distract-blocker.marketmaker.cc
-Made by marketmaker.cc.
+Website: https://distract-blocker.suenot.com
+Made by suenot.com.

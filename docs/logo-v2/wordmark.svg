@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 160" width="760" height="160" role="img" aria-label="Distract Blocker">
+  <style>
+    .wm-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 74px; fill: #e63946; }
+    .wm-light { font-weight: 500; }
+    .wm-bold { font-weight: 800; }
+  </style>
+  <!-- icon, same artwork as icon.svg at 0.28 scale -->
+  <g transform="translate(8 8) scale(0.28125)">
+    <path d="M256 104 C322 104 372 90 424 48 C450 116 464 184 464 250 C464 366 368 444 256 474 C144 444 48 366 48 250 C48 184 62 116 88 48 C140 90 190 104 256 104 Z"
+          fill="#e63946" stroke="#e63946" stroke-width="28" stroke-linejoin="round"/>
+    <circle cx="170" cy="244" r="94" fill="#fff6ea"/>
+    <circle cx="342" cy="244" r="94" fill="#fff6ea"/>
+    <ellipse cx="256" cy="312" rx="78" ry="62" fill="#fff6ea"/>
+    <circle cx="178" cy="248" r="46" fill="#1d3557"/>
+    <circle cx="334" cy="248" r="46" fill="#1d3557"/>
+    <circle cx="194" cy="230" r="14" fill="#fff"/>
+    <circle cx="350" cy="230" r="14" fill="#fff"/>
+    <path d="M226 304 Q256 290 286 304 Q280 344 256 360 Q232 344 226 304 Z" fill="#f4a261" stroke="#f4a261" stroke-width="8" stroke-linejoin="round"/>
+  </g>
+  <text class="wm-text" x="176" y="106" textLength="568" lengthAdjust="spacingAndGlyphs"><tspan class="wm-light">Distract</tspan><tspan class="wm-bold"> Blocker</tspan></text>
+</svg>

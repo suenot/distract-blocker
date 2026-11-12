@@ -28,7 +28,7 @@
 3. Flip the switch. Any visit to a listed site lands on a friendly "Not now" page instead of the site.
 4. Need the site for a minute? Turn blocking off from the panel, or press your custom shortcut.
 
-Blocking uses Chrome's native `declarativeNetRequest` rules. There are no content scripts and no remote code.
+Blocking uses Chrome's native `declarativeNetRequest` rules. There is no remote code. A small guard script runs only on sites that have an allow list (see below).
 
 ## Features
 
@@ -36,6 +36,8 @@ Blocking uses Chrome's native `declarativeNetRequest` rules. There are no conten
 - **Custom keyboard shortcut** flips blocking without opening the panel.
 - **Two list editors**: list view with add and remove, or a textarea for pasting a full list. The mode you pick is remembered.
 - **Schedule**: always, only during chosen hours, or only outside chosen hours. Day-of-week chips and time pickers, overnight ranges work.
+- **Allow list per site**: keep a site blocked but let specific pages through. Add a host (`studio.youtube.com`), a path (`/channel_switcher`), an `@handle` or a channel ID. Handy for creators: block `youtube.com`, allow Studio and your own channels. The blocked page lists the allowed links.
+- **Daily unlock limit**: the blocked page has "Unlock for 5 minutes". Unlocks are counted per day; set the limit in the panel (3 by default, 0 means never). Protected mode disables the button.
 - **Protected mode**: lock the panel with a PIN or password. Stored only as a salted hash, locally.
 - **21 languages** with RTL support: English, Русский, 中文, 日本語, 한국어, Español, Português, हिन्दी, العربية, Français, Deutsch, Italiano, Nederlands, Türkçe, Қазақша, Oʻzbek, Кыргызча, Bahasa Indonesia, Tiếng Việt, ไทย, Bahasa Melayu.
 - **Friendly blocked page**: a polite "not now" with the mascot instead of a Chrome error.

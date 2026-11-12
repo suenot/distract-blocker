@@ -62,7 +62,7 @@ export const LOCALES: Record<Locale, LocaleConfig> = {
     cta: {
       brand: "Distract Blocker",
       button: "Get it on the Chrome Web Store",
-      domain: "distract-blocker.marketmaker.cc",
+      domain: "distract-blocker.suenot.com",
     },
     timings: {
       hook: { from: 0, durationInFrames: 120 },
@@ -107,7 +107,7 @@ export const LOCALES: Record<Locale, LocaleConfig> = {
     cta: {
       brand: "Distract Blocker",
       button: "Бери в Chrome Web Store",
-      domain: "distract-blocker.marketmaker.cc",
+      domain: "distract-blocker.suenot.com",
     },
     timings: {
       hook: { from: 0, durationInFrames: 130 },
